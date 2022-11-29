@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [HideInInspector]public bool prevInput;
     [Tooltip("init HP")]private int m_maxHP = 90;  
     [ReadOnly][SerializeField] private int m_curHP;
-    [Tooltip("init Sp , max 100")][SerializeField] private int m_maxSP;
+    [Tooltip("init Sp , max 100")] public int MaxSP;
     [Tooltip("몬스터 충돌시 밀어낼 힘")] public float m_PlayerPushForceForUpper = 10.0f;
 
    
@@ -113,7 +113,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [Tooltip("한손검 2타 진행시간")] public float OneHandAttack_2 = 0.33f;
     [Tooltip("한손검 3타 진행시간")] public float OneHandAttack_3 = 0.56f;
 
-    [HideInInspector] public float walkSpeed => m_OneHandWalkSpeed;                     //player walk speed
     [HideInInspector] public float jumpForce => m_OneHandJumpForce;                     //player jump foce(animator)
     [HideInInspector] public float dashForce => m_OneHandDashForce;                     //player dash force (animator)
     [HideInInspector] public float dashRunningTime => m_OneHandDashRunTime;             //player dash running time
@@ -355,8 +354,8 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         if(value == 1){
             Player_Intro = false;
             m_Scissors.SetActive(true);
+            m_Delete_Scissors.SetActive(false);
             m_OneHandWalkSpeed = m_SaveHighSpeed;
-            //m_Delete_Scissors.SetActive(false);
             }
         else 
             return;
@@ -420,7 +419,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         if (CheckMonster() || CheckWall())  rigid.velocity = new Vector3(0, rigid.velocity.y);
         else if (!CheckWall())  {
             var vector = Mathf.Abs(walkVector);
-            var move = new Vector3(lookVector.x * vector * walkSpeed, rigid.velocity.y, 0);
+            var move = new Vector3(lookVector.x * vector * m_OneHandWalkSpeed, rigid.velocity.y, 0);
             rigid.velocity = move;
         }
         else    return;
@@ -509,6 +508,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
             ani.SetBool("isIntro" , true);
             m_OneHandWalkSpeed = m_SaveLowSpeed;
             m_Scissors.SetActive(false);
+            ui.SP_Using = true;
         }
         else    {
             ani.SetBool("isIntro" , false);
@@ -570,12 +570,6 @@ protected void Update() {
         SetVibrationXbox(LeftMoter, RightMoter, ConRunningTime, isInfinityVib);
     }
 
-void OnApplicationQuit()    {
-#if !UNITY_EDITOR
-        System.Diagnostics.Process.GetCurrentProcess().Kill();
-#endif
-    }
-
 protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts.
         if (isLookTarget)   {
             if (Gamepad.current == null)    {
@@ -593,9 +587,9 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
 
 #region  Check Bool With Ray
             //Check Wire Obj
-            if(Physics.SphereCast(PlayerLookat.transform.position, PlayerLookat.transform.lossyScale.x * 1.5f,PlayerLookat.transform.up, out m_Lookat_hit, m_WireDistance , ~wireBlock)){   
+            if(Physics.SphereCast(PlayerLookat.transform.position, PlayerLookat.transform.lossyScale.x * 1.5f,PlayerLookat.transform.up, out m_Lookat_hit, m_WireDistance , wireBlock)){   
                 Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.red );
-                if(m_Lookat_hit.collider.CompareTag("Monster")  || (m_Lookat_hit.collider.CompareTag("WireNode")) || (m_Lookat_hit.collider.CompareTag("Boss")) &&  !(m_Lookat_hit.collider.CompareTag("Ground"))) isLookDir = true;
+                if(m_Lookat_hit.collider.CompareTag("Monster")  || (m_Lookat_hit.collider.CompareTag("WireNode")) || (m_Lookat_hit.collider.CompareTag("Boss"))) isLookDir = true;
                 else    isLookDir = false;
             }
             else{   
@@ -665,7 +659,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
 
     public void SetMaxHP(int hp) { m_maxHP = hp; }
 
-    public void SetMaxSp(int sp) { m_maxSP = sp; }
+    public void SetMaxSp(int sp) { MaxSP = sp; }
 
     public void SetThrowState(bool value)   {
         input.SetInputAction(!value);
@@ -731,7 +725,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
     private void PlayerInitialize() {
         m_curHP = 90;
         ui.SetHP(m_curHP);
-        ui.SetSp(m_maxSP);
+        ui.SetSp(MaxSP);
 
         CheckJumpAttack = false;
         m_SaveColSize = collid.center;
