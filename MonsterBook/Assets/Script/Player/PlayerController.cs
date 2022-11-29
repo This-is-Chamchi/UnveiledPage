@@ -76,9 +76,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [Tooltip("init HP")]private int m_maxHP = 90;  
     [ReadOnly][SerializeField] private int m_curHP;
     [Tooltip("init Sp , max 100")] public int MaxSP;
-    [Tooltip("몬스터 충돌시 밀어낼 힘")] public float m_PlayerPushForceForUpper = 10.0f;
 
-   
     [HideInInspector] public int attackCount;                   //attck counter . max 3.
     [HideInInspector] public bool CheckDamage = false;          //Check player get hit or something. same m_CheckDamage. this thing is for other script.
     [HideInInspector] public bool CheckJumpAttack = false;      //Check player Attack with jump
@@ -124,22 +122,22 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [Header("=====[Move Value]=====")] 
     public LayerMask wallLayer;
     public LayerMask groundLayer;
-    public LayerMask wireBlock;
+    public LayerMask wireBlock;                                                         //made Wire Lay cant Thru the ground
+    public bool checkJump { get; set; }
     [SerializeField] private LayerMask monsterLayer;
-    [SerializeField] CURRENT_TERRAIN currentTranin;                                      //Check Ground For Sound
+    [SerializeField] CURRENT_TERRAIN currentTranin;                                     //Check Ground For Sound
 
-    [HideInInspector][ReadOnly] public Vector3 lookVector;                              //check player look dir,
-    [HideInInspector][ReadOnly] public float walkVector;                                //Check player Walk dir,
+    [HideInInspector] public Vector3 lookVector;                                        //check player look dir,
+    [HideInInspector] public float walkVector;                                          //Check player Walk dir,
     [HideInInspector] public bool Falling = false;                                      //check player is falling,
     [HideInInspector] public bool isGround;                                             //check player is Grounded,
-    [Tooltip("캐릭터 회전 배속")][SerializeField] protected float RotationSpeed = 6.0f;
-    [Tooltip("경사 체크 길이")][SerializeField]private float m_SlopeDistance = 2.0f;
-    [Tooltip("경사 체크할 각도")][SerializeField]private float m_MaxAngle = 30.0f;
-
-    public bool checkJump { get; set; }
-    private AxisRotateObject m_axisRotate;
     [HideInInspector] public int isJump = 0;
-
+    [Tooltip("캐릭터 회전 배속")] protected float RotationSpeed = 6.0f;
+    [Tooltip("경사 체크 길이")][SerializeField] private float m_SlopeDistance = 2.0f;
+    [Tooltip("경사 체크할 각도")][SerializeField] private float m_MaxAngle = 30.0f;
+  
+    private AxisRotateObject m_axisRotate;
+    
     #endregion
 
     #region LookatTartget(Wire)
@@ -176,7 +174,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [HideInInspector]public Weapon[] attackWeapon;
 
     private MultiAimConstraint m_HeadAim_Const;
-    private GameObject m_WeaponIK;
+    private PlayerWeapon_Rigging m_WeaponIK;
     private Rig m_PlayerRig;
     [HideInInspector]public LineRenderer line;
     [HideInInspector]public Transform effectEuler;
@@ -203,7 +201,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         rigid = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
 
-        m_WeaponIK = GameObject.Find("RayDown_Weapon");
+        m_WeaponIK = GameObject.Find("RayDown_Weapon").GetComponent<PlayerWeapon_Rigging>();
         m_Scissors = GameObject.Find("Scissors_Player");
         PlayerLookat = GameObject.Find("Lookat");
         Arrow_Lookat = GameObject.Find("Arrow");
@@ -385,22 +383,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
 
     public void ChangePatrol(){ChangeState(PlayerState.PatrolState);}
 
-    private Collider m_Locate;
-    protected void OnCollisionStay(Collision col)   {
-        if (col.gameObject.CompareTag("Monster") && !isGround)  {
-            m_Locate = col.gameObject.GetComponentInChildren<Collider>();
-            var Yeet = col.contacts[0].point;
-            if (Yeet.x >= m_Locate.transform.position.x){
-                rigid.AddForce(Vector3.right * m_PlayerPushForceForUpper, ForceMode.Impulse);
-            }
-            else{
-                rigid.AddForce(Vector3.left * m_PlayerPushForceForUpper, ForceMode.Impulse);
-            }
-        }
-        else
-            return;
-    }
-
     private float m_HeadUpWeight = .0f;
     private void LookUpHead()   {
         m_HeadAim_Const.weight = 1;
@@ -535,14 +517,12 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         }
 
         if (isLookTarget)   {
-            // if (isLookDir)  {
-            //     Gizmos.color = Color.green;
-            //     Gizmos.DrawWireSphere(PlayerLookat.transform.position + PlayerLookat.transform.up * m_Lookat_hit.distance, PlayerLookat.transform.lossyScale.x *1.5f);
-            // }
-            Gizmos.color = Color.green;
+            if (isLookDir)  {
+                Gizmos.color = Color.green;
                 Gizmos.DrawWireSphere(PlayerLookat.transform.position + PlayerLookat.transform.up * m_Lookat_hit.distance, PlayerLookat.transform.lossyScale.x *1.5f);
-            // else
-            //     return;
+            }
+            else
+                return;
         }
     }
 
@@ -559,10 +539,10 @@ protected void FixedUpdate()  {
 
         //=================Debug . ing=================//
         if (Input.GetKeyDown(KeyCode.F11))  {
-            //Cursor.visible = false;
-            IntroProduction();
+            Cursor.visible = false;
+            //IntroProduction();
         }
-        if(Input.GetKeyDown(KeyCode.F5)) input.SetInputAction(true);
+        //if(Input.GetKeyDown(KeyCode.F5)) input.SetInputAction(true);
         //=============================================//
     }
 
@@ -685,7 +665,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
 
         if (m_curHP <= 0)   {
             m_curHP = 0;
-            m_WeaponIK.GetComponent<PlayerWeapon_Rigging>().m_WeaponIKSet.weight = 0;
+            m_WeaponIK.m_WeaponIKSet.weight = 0;
 
             SoundShot("Player_Dead");
             SoundShot("Player_Dead_Voice");
@@ -771,7 +751,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
         if (!isGround && !LockLookTartget &&
          state != PlayerState.AttackState && state != PlayerState.DashState)    {
 
-                m_WeaponIK.GetComponent<PlayerWeapon_Rigging>().m_WeaponIKSet.weight = 0;
+                m_WeaponIK.m_WeaponIKSet.weight = 0;
                 ParticleStopPlay("Run");
 
                 if(!CheckJumpAttack)    {
