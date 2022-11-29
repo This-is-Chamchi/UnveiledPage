@@ -1,0 +1,453 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3519921704000853768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3519921704000853770}
+  - component: {fileID: 3519921704000853771}
+  - component: {fileID: 3519921704000853765}
+  m_Layer: 0
+  m_Name: WholeSoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3519921704000853770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519921704000853768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3519921704000853771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519921704000853768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba961eb9b0bc535498f44bc55a822bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 2115a2f3e8a5714429bced7a21bdb072, type: 2}
+  soundList:
+    m_keys:
+    - 1Stage_Lollol_Drop
+    - 1Stage_Lollol_Hit
+    - 1Stage_Lollol_Scream
+    - 1Stage_Macarong_Hit
+    - 1Stage_SpikeWorm_Attack
+    - 2Stage_BurnnigHead_Scream
+    - 2Stage_Bug_Hit
+    - 2Stage_Crow_Flapping
+    - 2Stage_MatchBox_Summon
+    - 1StageGretel_ChocolateDrop
+    - 1StageGretel_ChocolateDropSizzle
+    - 1StageGretel_Dead
+    - 1StageGretel_KnifePulling
+    - 1StageGretel_KnifeTwisting
+    - 1StageHansel_Dead
+    - 1StageHansel_Rolling
+    - 1StageHansel_RollingDust
+    - 1StageHansel_Strike
+    - 2StageAnna_Dead
+    - 2StageAnna_DeadFreezing
+    - 2StageAnna_DeadFreezingCreak
+    - 2StageAnna_Groggy
+    - 2StageAnna_GroggyScream
+    - 2StageAnna_Pattern3Pray
+    - 1Stage_OwlHooting
+    - 1Stage_RiverSteam
+    - 1Stage_Wind
+    - 1StageBoss_BurnigFire
+    - 1StageBoss_Cooking
+    - 1StageBoss_LightElectricity
+    - 1StageBoss_PotBoilling
+    - 2Stage_BackgroundMouse
+    - 2Stage_ClockTowerBell
+    - 2Stage_DisturbingSound
+    - 2Stage_WindBellRing
+    - 2StageBoss_MatchIgnite
+    - 1Stage_Boss_BGM
+    - 1Stage_Nomal_BGM
+    - 2Stage_Boss_1PageBGM
+    - 2Stage_Boss_2PageBGM
+    - 2Stage_Boss_2-2PageBGM
+    - 2Stage_Boss_GroggyBGM
+    - 2Stage_Nomal_BGM
+    - Lobby_BGM
+    m_values:
+    - {fileID: 8300000, guid: 22f0dee79ca92c344875028c44ff41b8, type: 3}
+    - {fileID: 8300000, guid: 9f303ae3dac52104297f2f9efbffae78, type: 3}
+    - {fileID: 8300000, guid: 39f9bfd33167f15499bc24b294db297e, type: 3}
+    - {fileID: 8300000, guid: b2bb26d62a0f26d48a287044e475373f, type: 3}
+    - {fileID: 8300000, guid: 345bc4a387c15824bbd1a87d2c11051d, type: 3}
+    - {fileID: 8300000, guid: b2eba6c7fe2733a4383bbca522205599, type: 3}
+    - {fileID: 8300000, guid: a0ca534922923244eb8a5c2694dfac1e, type: 3}
+    - {fileID: 8300000, guid: 16ba60d57a853a04d96e097bfb925a81, type: 3}
+    - {fileID: 8300000, guid: 2b90ddd0c3a4b1e419104ba849185a47, type: 3}
+    - {fileID: 8300000, guid: 161e6575dd28d704cb3fcb38f262d0da, type: 3}
+    - {fileID: 8300000, guid: dd24ffc047fd80e49a9afccf61ad732a, type: 3}
+    - {fileID: 8300000, guid: 862507622eeabf1469923cc6aee733f4, type: 3}
+    - {fileID: 8300000, guid: e9b5a14c6c74a0b4e89438410d1413bd, type: 3}
+    - {fileID: 8300000, guid: 00ef098b065ee834887e873e54d01c2a, type: 3}
+    - {fileID: 8300000, guid: 6c057d1fe3ae75c4eb59fb39b7d03182, type: 3}
+    - {fileID: 8300000, guid: f2c822a91cc7f4d429eaa3e2ebeabd8c, type: 3}
+    - {fileID: 8300000, guid: ccacf36e692eac64686937fe171f4b29, type: 3}
+    - {fileID: 8300000, guid: 7751a9158437cee4d9ecc68242cd12de, type: 3}
+    - {fileID: 8300000, guid: 590009dfaeeef93458268666ad6fa50c, type: 3}
+    - {fileID: 8300000, guid: b924c18a99a4a884c96c9bdf69bd389f, type: 3}
+    - {fileID: 8300000, guid: 6adf8ddd3addca9428d364409ccff1ac, type: 3}
+    - {fileID: 8300000, guid: 9f9d143aac3556c40a81d2377eea26e4, type: 3}
+    - {fileID: 8300000, guid: 69dbfadc84ecaeb4f9a9dfa6311abfbf, type: 3}
+    - {fileID: 8300000, guid: a8c47fdbc94c8e84386203b20fab07a0, type: 3}
+    - {fileID: 8300000, guid: 55decfe5f39dbd34eb66585746f2daf1, type: 3}
+    - {fileID: 8300000, guid: fcdac7df94b53b048b4e5966641521dc, type: 3}
+    - {fileID: 8300000, guid: 2337391a0ab882a4d8a9c957862e0d96, type: 3}
+    - {fileID: 8300000, guid: fff5cee4cd49cf44d9fc9e2a7f832dbb, type: 3}
+    - {fileID: 8300000, guid: 09c827b5239a98049aab13942096fa6e, type: 3}
+    - {fileID: 8300000, guid: 15e5651b4027e3f4eb330d179e4ffb76, type: 3}
+    - {fileID: 8300000, guid: 3b0616726fa416b4b97e46251971c8c3, type: 3}
+    - {fileID: 8300000, guid: c556c6a09edc14e47a96124c8bb5bd7a, type: 3}
+    - {fileID: 8300000, guid: fff4348ba4990db40853db2c2cb55183, type: 3}
+    - {fileID: 8300000, guid: 5f1c1370ae23b1a47b18cc4411ec25cf, type: 3}
+    - {fileID: 8300000, guid: fe5216bef93666a4380d809110234179, type: 3}
+    - {fileID: 8300000, guid: e84f6c1b181466d41a911bdfeed65c04, type: 3}
+    - {fileID: 8300000, guid: 5ca292fb7266fe34bbee7d50e47a4cb5, type: 3}
+    - {fileID: 8300000, guid: 20f95b3c6a1b3484eb3ebe818e6a73ed, type: 3}
+    - {fileID: 8300000, guid: 18fe431f5548d344a9d9d34f0074609f, type: 3}
+    - {fileID: 8300000, guid: 83dfad62a45fa894683ea06d31cdbe1d, type: 3}
+    - {fileID: 8300000, guid: e62e85170b711a543ac6dfbe1dbb2d9e, type: 3}
+    - {fileID: 8300000, guid: df222a6fcfa767541bb4a92c0f81230f, type: 3}
+    - {fileID: 8300000, guid: ce052e87f17958c4a8437812c8494fdc, type: 3}
+    - {fileID: 8300000, guid: eb351770a4b5bec479e83cce15092aee, type: 3}
+  soundsList:
+  - name: 1Stage_Lollol_Cry
+    clip:
+    - {fileID: 8300000, guid: 4b874b9b6657f874e8c46e4c1761352a, type: 3}
+    - {fileID: 8300000, guid: 931b20928d5665341ab3c087d222e2bc, type: 3}
+  - name: 1Stage_Macarong_Attack
+    clip:
+    - {fileID: 8300000, guid: a772116c7a79bbb4f98daef458a7295c, type: 3}
+    - {fileID: 8300000, guid: c9df05a2fd82c38449657af1a11cb007, type: 3}
+    - {fileID: 8300000, guid: 7df9571aaa4151a47866bf768c356cb7, type: 3}
+  - name: 1Stage_Macarong_Dead
+    clip:
+    - {fileID: 8300000, guid: 16e566dca32fb444aba011e19da1801b, type: 3}
+    - {fileID: 8300000, guid: b60294c39e6065e458da9ca0240faa69, type: 3}
+  - name: 1Stage_SpikeWorm_Dead
+    clip:
+    - {fileID: 8300000, guid: 293c15b8eb30f8c47916c92379dbf4c9, type: 3}
+    - {fileID: 8300000, guid: a0f0298ee4dac9d43a9082b7c198fc97, type: 3}
+  - name: 1Stage_SpikeWorm_Hit
+    clip:
+    - {fileID: 8300000, guid: bdd93ddd209f1c249a420cf00cc85e5b, type: 3}
+    - {fileID: 8300000, guid: bebc8401aa08a094b92948e0b1ea3bb1, type: 3}
+    - {fileID: 8300000, guid: 5dea8ddaaeaf29b418c0816f08a3a4ce, type: 3}
+  - name: 2Stage_BurnnigHead_explosion
+    clip:
+    - {fileID: 8300000, guid: 65293c24cbd819541bf2d03aac953259, type: 3}
+    - {fileID: 8300000, guid: 8712fffccc920304b8f4bd24dd121e5a, type: 3}
+    - {fileID: 8300000, guid: 5ddf49f06f2024c429516599820d16a1, type: 3}
+  - name: 2Stage_Bug_Summon
+    clip:
+    - {fileID: 8300000, guid: 0551d94447970604c8538504241ce31b, type: 3}
+    - {fileID: 8300000, guid: 49b8d9cff2574984ca83e875c7324f68, type: 3}
+    - {fileID: 8300000, guid: 503de37f1c789e546a62969c67a7d8a2, type: 3}
+  - name: 2Stage_Bug_Talking
+    clip:
+    - {fileID: 8300000, guid: a911e359078862f488a1d68e93003643, type: 3}
+    - {fileID: 8300000, guid: a102864638aa90343ad3e178c5533185, type: 3}
+    - {fileID: 8300000, guid: 10d8c76e88aa86a438d250ae1488edd2, type: 3}
+    - {fileID: 8300000, guid: b20806a8401c65e47916cc5c6e91ac46, type: 3}
+    - {fileID: 8300000, guid: e88cde4788b182140af745462e44c9e5, type: 3}
+    - {fileID: 8300000, guid: 361ae589281b1ee42bb56b6b897b3437, type: 3}
+    - {fileID: 8300000, guid: 269e4fd29e145e346af135a319f2edb1, type: 3}
+    - {fileID: 8300000, guid: 1df0eb2a2793afe499ffd2459c31b2c0, type: 3}
+  - name: 2Stage_Crow_Cawing
+    clip:
+    - {fileID: 8300000, guid: 6ac37764abda6c0408612829e254033c, type: 3}
+    - {fileID: 8300000, guid: 38838a98733823840b9ae771c2b939ef, type: 3}
+    - {fileID: 8300000, guid: 48de2b00924b51d49a8330baca77b19a, type: 3}
+    - {fileID: 8300000, guid: 1b3b855ba06285349a72e3ae95433eac, type: 3}
+    - {fileID: 8300000, guid: da78c92ca54d3a94d9064357c7f5f397, type: 3}
+  - name: 2Stage_Crow_Dead
+    clip:
+    - {fileID: 8300000, guid: 4c2a7a6877ed9914d85f6757449cabc6, type: 3}
+    - {fileID: 8300000, guid: 5541638b73ed9ea4b91a6b486cc0e8a2, type: 3}
+  - name: 2Stage_Crow_Hit
+    clip:
+    - {fileID: 8300000, guid: a82008f63d94e9644913b62beaaaa7f9, type: 3}
+    - {fileID: 8300000, guid: b4d8081c823fbdd4dbfa35edbda2b038, type: 3}
+    - {fileID: 8300000, guid: b3c011ab75ca34b42bdf161cdff7428e, type: 3}
+    - {fileID: 8300000, guid: 31d348ade07aa21488ec6c41e8ed0dfa, type: 3}
+  - name: 2Stage_Crow_Woosh
+    clip:
+    - {fileID: 8300000, guid: 0a60eba34ecf6d545aaddff4a1d1b778, type: 3}
+    - {fileID: 8300000, guid: 0921e1a6ad7a05b46aec47eaadf401f9, type: 3}
+    - {fileID: 8300000, guid: 8661407b335da444aafb59273dc045f7, type: 3}
+  - name: 2Stage_MatchBox_Dead
+    clip:
+    - {fileID: 8300000, guid: c730e6caf3d180d4e898ca65f70b2b75, type: 3}
+    - {fileID: 8300000, guid: 485c7dd63a630b545b29d96d662f6888, type: 3}
+    - {fileID: 8300000, guid: 4428a842577b5cb48a5d46e11faf8cec, type: 3}
+  - name: 2Stage_MatchBox_Hit
+    clip:
+    - {fileID: 8300000, guid: 69dcbb6b3424df347be8f80836588e8f, type: 3}
+    - {fileID: 8300000, guid: 14a436b2a8a544a459af9b6d83e72a80, type: 3}
+  - name: 1StageGretel_Hit
+    clip:
+    - {fileID: 8300000, guid: c370fa4b1a39663499a039753417a3d3, type: 3}
+    - {fileID: 8300000, guid: 824f2b567edb769439b3c105d394640f, type: 3}
+    - {fileID: 8300000, guid: 91962ecd4129b6042ad34ad05ed12e9a, type: 3}
+    - {fileID: 8300000, guid: 5b9dabb26e4dec04ca1d964cf0c3bd75, type: 3}
+  - name: 1StageGretel_HitVoice
+    clip:
+    - {fileID: 8300000, guid: 3b9f2fe44aac23748b54e096dfdbe900, type: 3}
+    - {fileID: 8300000, guid: 8f07193acf044cc4e8f035aad4e59a96, type: 3}
+    - {fileID: 8300000, guid: bc5c2df7560f1f749bceb1f1f3af0807, type: 3}
+  - name: 1StageGretel_KnifeSwing
+    clip:
+    - {fileID: 8300000, guid: 4305536996437ec41b154aa08a9428fa, type: 3}
+    - {fileID: 8300000, guid: 8a325bcc3a2805c429f974e78bd55dc8, type: 3}
+  - name: 1StageHansel_Attack
+    clip:
+    - {fileID: 8300000, guid: 6b5c22ce74ea75a40b1fa2d47ec42a42, type: 3}
+    - {fileID: 8300000, guid: f37b682a017935549b7588d4edefe7c4, type: 3}
+    - {fileID: 8300000, guid: 4c035a23da3769344aff48061aaf73ee, type: 3}
+  - name: 1StageHansel_Bouncing
+    clip:
+    - {fileID: 8300000, guid: 6a5d69b3cf0cfdf4fba17a0246c6c8e0, type: 3}
+    - {fileID: 8300000, guid: 416c5421a26cebc43beb757e3106f50a, type: 3}
+    - {fileID: 8300000, guid: 5cdc8a6a93d95504dbd7c476849ea993, type: 3}
+  - name: 1StageHansel_Crying
+    clip:
+    - {fileID: 8300000, guid: 55ba3d75fb9446443908500d46543fb9, type: 3}
+    - {fileID: 8300000, guid: 756f81b553bcb5041a67fd2311e15471, type: 3}
+  - name: 1StageHansel_Eating
+    clip:
+    - {fileID: 8300000, guid: 27d942c972e5a1d429a8035fc899e176, type: 3}
+    - {fileID: 8300000, guid: 4df3ceda3a3225248afae20393d871f9, type: 3}
+  - name: 1StageHansel_Footstep
+    clip:
+    - {fileID: 8300000, guid: c7a1bb2f5efbd5141af53495f1259bf5, type: 3}
+    - {fileID: 8300000, guid: 23a39d7ac514f6c468c3b3c96da144ff, type: 3}
+    - {fileID: 8300000, guid: 004335816de987445a079de038fa4c9b, type: 3}
+    - {fileID: 8300000, guid: 182a36b0051d8d14081f1222aebca6e9, type: 3}
+    - {fileID: 8300000, guid: ef5fc7227ae59fc479a2993651eed99d, type: 3}
+    - {fileID: 8300000, guid: f5c6d1c870dd708448f6abd8ef61e2df, type: 3}
+    - {fileID: 8300000, guid: a75aa8ccd9f83dc4e9ee47bba98c74df, type: 3}
+  - name: 1StageHansel_Hit
+    clip:
+    - {fileID: 8300000, guid: a74617ed23e64ce47985af6ef2479dc5, type: 3}
+    - {fileID: 8300000, guid: 585824757a1fe9041acc03e32afc05d6, type: 3}
+    - {fileID: 8300000, guid: ce9965122f2c83143bc077a07f71f314, type: 3}
+  - name: 1StageHansel_HitVoice
+    clip:
+    - {fileID: 8300000, guid: 162680c02f077a04fa182ea2a2d92437, type: 3}
+    - {fileID: 8300000, guid: e8b3875ecc30ca14baacd1bc63b38df5, type: 3}
+    - {fileID: 8300000, guid: 9bea2ab33788d184199bd7162f56e8c1, type: 3}
+  - name: 1StageHansel_RollingSmash
+    clip:
+    - {fileID: 8300000, guid: d6934b040bec5d9449204266b507b2fb, type: 3}
+    - {fileID: 8300000, guid: 4b0b8caecdea4e74b9b0595638c8ae55, type: 3}
+  - name: 1StageHansel_RushingSmash
+    clip:
+    - {fileID: 8300000, guid: b1592e6236251b24bbc3cc26ca26443b, type: 3}
+    - {fileID: 8300000, guid: 809f25404b8256f46a619a0994b002df, type: 3}
+    - {fileID: 8300000, guid: 3abc17862fd7ab949aac0d4ebca1f5d1, type: 3}
+  - name: 2StageAnna_HitVoice
+    clip:
+    - {fileID: 8300000, guid: 239c031099892494a988df85e47d1bc1, type: 3}
+    - {fileID: 8300000, guid: 0ded8d9ae18f6774682f0ffef084d9af, type: 3}
+    - {fileID: 8300000, guid: 0febd68f17358b84eabc648cab20a4da, type: 3}
+  - name: 2StageAnna_MatchSummon
+    clip:
+    - {fileID: 8300000, guid: 2b39e63bb039be64586adbd26a53aaf3, type: 3}
+    - {fileID: 8300000, guid: 7e5a3acc04da31f409c17fd77625c0de, type: 3}
+    - {fileID: 8300000, guid: f574d54f5435e0e4ca11f44c9cea8227, type: 3}
+  - name: 2StageAnna_Pattern1MatchShooting
+    clip:
+    - {fileID: 8300000, guid: 5d051a5bb33614249a295963fa2cb22b, type: 3}
+    - {fileID: 8300000, guid: 528f48cfa0409a54fac218bcaeb8f60f, type: 3}
+    - {fileID: 8300000, guid: c22a9dc18e6247247b6e0ee92496780e, type: 3}
+    - {fileID: 8300000, guid: 76a64b8e451c5a0408034c4c583bd1f7, type: 3}
+    - {fileID: 8300000, guid: 810e01e85a16f2244acce59f9211d7ab, type: 3}
+  - name: 2StageAnna_Pattern2MatchRunning
+    clip:
+    - {fileID: 8300000, guid: 8e03168001eb5364a8e5bc68e96af2c4, type: 3}
+    - {fileID: 8300000, guid: 21afbe342e19b0e41bdcf24dabf5ed07, type: 3}
+  - name: 2StageAnna_Pattern3MultiShooting
+    clip:
+    - {fileID: 8300000, guid: 278177374f0c9be48afca2066e2add7b, type: 3}
+    - {fileID: 8300000, guid: 529ab3eb76336e5469e7ebf2f0f92ba8, type: 3}
+    - {fileID: 8300000, guid: 50681f03bcc406c45a0164fe37e7c3c4, type: 3}
+  - name: 1Stage_Forest
+    clip:
+    - {fileID: 8300000, guid: bf0ddc6ae37f7eb469a49653426f0348, type: 3}
+    - {fileID: 8300000, guid: 8e597151dce9c9b4e932e9342eb15ad1, type: 3}
+  - name: 1Stage_Waves_loop
+    clip:
+    - {fileID: 8300000, guid: 537fa7cccead7f04a8465ed75bc9533e, type: 3}
+    - {fileID: 8300000, guid: 87981912e1d042847abe5f1bf55306d9, type: 3}
+  - name: 1StageBoss_LightWireHit
+    clip:
+    - {fileID: 8300000, guid: 270fc8384ea16104b84d306d94bf9689, type: 3}
+    - {fileID: 8300000, guid: cecd062ddbdcec74c8a8f7b7d6b1e189, type: 3}
+    - {fileID: 8300000, guid: de15def3063fd8f4cadf00ab51bce6fc, type: 3}
+    - {fileID: 8300000, guid: 93edb52b65416474f8cecf8dfd12be96, type: 3}
+  - name: 2Stage_BackgroundCrow
+    clip:
+    - {fileID: 8300000, guid: 9faf32e616e41084887f0d4c97317145, type: 3}
+    - {fileID: 8300000, guid: b047902ca55c96f4b967b3d7f03c0229, type: 3}
+  - name: 2StageBoss_BackgroundBurnig
+    clip:
+    - {fileID: 8300000, guid: 6732d3274ccab344f8f5b3da1821c2dc, type: 3}
+    - {fileID: 8300000, guid: 37ae5126c0ef6a24fb10524aaffe02a2, type: 3}
+    - {fileID: 8300000, guid: 70f2641c0686f8841b127085a1a7f7ca, type: 3}
+  - name: 2StageBoss_Brizzard
+    clip:
+    - {fileID: 8300000, guid: 4991db5f5def37c41b6e011da1e3a7fc, type: 3}
+    - {fileID: 8300000, guid: 43b8094dc97af8f44b73218c8996827e, type: 3}
+  - name: 2StageBoss_GrandmaGhost
+    clip:
+    - {fileID: 8300000, guid: dc94f3a3e3efdb84082ef89d4cb1e24d, type: 3}
+    - {fileID: 8300000, guid: ae3d96ee43cf35a4aa64b3588631f95e, type: 3}
+  - name: 2StageBoss_MatchBurning
+    clip:
+    - {fileID: 8300000, guid: b26716c7a01f759419e7981ea57a3b7b, type: 3}
+    - {fileID: 8300000, guid: b28b851cb6a530e4ea0e194a194b1dee, type: 3}
+    - {fileID: 0}
+  - name: 2StageBoss_MatchBurnOut
+    clip:
+    - {fileID: 8300000, guid: 2ef29626c7316394c81a48f425aa0887, type: 3}
+  - name: 2StageBoss_MatchSmash
+    clip:
+    - {fileID: 8300000, guid: 1d0dd52bf18642449beab086273453f9, type: 3}
+    - {fileID: 8300000, guid: d048e6e51dff9f04c93e3f4fc650a03a, type: 3}
+    - {fileID: 8300000, guid: 5b4fc757729b66543a76a00c09959b06, type: 3}
+    - {fileID: 8300000, guid: 6fd67d1b921ade543844386c06331628, type: 3}
+  - name: 2StageBoss_SnowHumanMatchDrop
+    clip:
+    - {fileID: 8300000, guid: 5eee9ba790d6be74182490dba2f67b75, type: 3}
+    - {fileID: 8300000, guid: ad1d14b2f94252c4a87ef919549b35e0, type: 3}
+    - {fileID: 8300000, guid: ab87b853e64b7e743a1e1115af623390, type: 3}
+    - {fileID: 8300000, guid: 27d02632d9b7a2e4bb5e5ca880531db3, type: 3}
+    - {fileID: 8300000, guid: 12c8bf602eaa0ac4cad1e4b1856a1d9c, type: 3}
+  - name: 1Stage_WaterSplash
+    clip:
+    - {fileID: 8300000, guid: df276f7a3ea3f6e4f87631c49519e60f, type: 3}
+    - {fileID: 8300000, guid: bb3f54ee5098ea34a903aee58dca6e98, type: 3}
+    - {fileID: 8300000, guid: 5c6fb953ffe49a043af7a5c8ae8306bf, type: 3}
+--- !u!82 &3519921704000853765
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3519921704000853768}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: 03a68fdd448c7074eae0677f15d876d1
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -746728661100174184
+    second: matchBoxSlicedRight|bodyInner|Take 001|BaseLayer
+  - first:
+      74: -3668849890021899818
+    second: matchBoxSlicedRight|body|Take 001|BaseLayer
+  - first:
+      74: -2746847168356568755
+    second: matchBoxSlicedRight|body|Take 001|BaseLayer.001
+  - first:
+      74: 3638107844941770018
+    second: matchBoxSlicedRight|body|Take 001|BaseLayer.002
+  - first:
+      74: 2052847174334251008
+    second: matchBoxSlicedMiddle|bodyInner|Take 001|BaseLayer
+  - first:
+      74: -5951929579527013796
+    second: matchBoxSlicedMiddle|body|Take 001|BaseLayer
+  - first:
+      74: 4933902578913439762
+    second: matchBoxSlicedMiddle|body|Take 001|BaseLayer.001
+  - first:
+      74: -4112468331398942473
+    second: matchBoxSlicedMiddle|body|Take 001|BaseLayer.002
+  - first:
+      74: -2018081890495093541
+    second: matchBoxSlicedLeft|bodyInner|Take 001|BaseLayer
+  - first:
+      74: -1129015334318336849
+    second: matchBoxSlicedLeft|body|Take 001|BaseLayer
+  - first:
+      74: -1648085611766728689
+    second: matchBoxSlicedLeft|body|Take 001|BaseLayer.001
+  - first:
+      74: 557502858809215583
+    second: matchBoxSlicedLeft|body|Take 001|BaseLayer.002
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7e974b4561dd5684784db0e7852307d5
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Granny_AlbedoOpacity: {fileID: 2800000, guid: 783b227465309c04e9fc1577328e98da, type: 3}
+  - _Granny_Normal: {fileID: 2800000, guid: 2aad6feac6b7d304bb8a5dc64125a6b6, type: 3}
+  - _Granny_Emissive: {fileID: 2800000, guid: a08ff722a26b4ae45bb28ba1063645e7, type: 3}
+  - _Granny_MetalRoughAO: {fileID: 2800000, guid: e60a3095381d2de4883c054422b78471, type: 3}
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

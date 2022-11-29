@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lecacy_CuttingTrail
+  m_Shader: {fileID: 4800000, guid: e2201cc150dd37e4c9a7c20a4b8e03c1, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _MAINTEXTILINGCUSTOMW_ON
+  - _MASKPANCUSTOMW_ON
+  - _MASK_ON
+  - _UVDISTORTION_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DissolveTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: fa3f4635746802647ac81ac2a60f1653, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 2800000, guid: 8952135109a4fdc4b9c2d7cb700323e9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _UVDistotionTex:
+        m_Texture: {fileID: 2800000, guid: 3b4dfdb085e66f04194300ac64f47c46, type: 3}
+        m_Scale: {x: -0.19, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _DissolveStr: 1
+    - _DissolveStrCustomCustomY: 0
+    - _DistortionStr: 0.3
+    - _IntenCustomCustomZ: 0
+    - _MainTexTIlingCustom2XY: 0
+    - _MainTexTIlingCustomW: 1
+    - _MainTex_inten: 1
+    - _Mask: 1
+    - _MaskPanCustom2zw: 0
+    - _MaskPanCustomW: 1
+    - _MaskStr: 1
+    - _MaskStrCustomW: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _UVDistortion: 1
+    - _depth: 0
+    - _dissolve: 0
+    - _inten: 30
+    m_Colors:
+    - _DissolveTexTilingOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainTexPanDirecCustomX: {r: 1, g: 0, b: 0, a: 0}
+    - _MainTexTilingOffset: {r: 0.74, g: 0.64, b: 0, a: 0}
+    - _MaskPan: {r: 0, g: 0, b: 0, a: 0}
+    - _UVDistortPanZtime: {r: 0, g: 0, b: 0, a: 0}
+    - _UVDistortTileOffset: {r: 0.19, g: 2, b: 0, a: 0}
+  m_BuildTextureStacks: []

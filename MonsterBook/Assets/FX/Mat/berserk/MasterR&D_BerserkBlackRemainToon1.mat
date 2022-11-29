@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MasterR&D_BerserkBlackRemainToon1
+  m_Shader: {fileID: 4800000, guid: 1e4afec77a8113f4f951e8d659308137, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _DISSOLVE_ON
+  - _DISSOLVE_PANNING_ON
+  - _DISSOVLESTRCUSTOMY_ON
+  - _MAIN_PANNING_ON
+  - _PANTIMECUSTOMX_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Dissolve_Tex:
+        m_Texture: {fileID: 2800000, guid: 20c0b0cb78525ae45af8eb078147784a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Distortion_Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Main_Tex:
+        m_Texture: {fileID: 2800000, guid: 842b4e52c53c2c949b37dfc762ff9d6a, type: 3}
+        m_Scale: {x: 1, y: 0.51}
+        m_Offset: {x: 0.61, y: 0.32}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _DepthFade: 0
+    - _Dissolve: 1
+    - _DissolveMaskDirection: 0
+    - _DissolveMaskPow: 6.21
+    - _DissolveMaskVer: 0
+    - _DissolvePolar: 0
+    - _DissolveStr: -0.64
+    - _Dissolve_Panning: 1
+    - _DissovleStrCustomY: 1
+    - _Distortion: 0
+    - _DistortionPolar: 0
+    - _DistortionStr: 0
+    - _Distortion_Panning: 0
+    - _MainStr: 1
+    - _Main_Panning: 1
+    - _MaskDirectionX: 0
+    - _MaskDirectionY: 0
+    - _MaskTexStr: 1
+    - _MaskTexture: 0
+    - _PanTimeCustomX: 1
+    - _Polar: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Toon: 0
+    - _ToonStr: 0.95
+    - _inten: 3
+    m_Colors:
+    - _Color0: {r: 437.90167, g: 0, b: 688.75946, a: 0}
+    - _DissolveMaskCtrlZ: {r: 0, g: 0, b: 0, a: 0}
+    - _DissolvePanCtrl: {r: -1, g: 0, b: 1, a: 0}
+    - _DistortionPanCtrl: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PanCtrl: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

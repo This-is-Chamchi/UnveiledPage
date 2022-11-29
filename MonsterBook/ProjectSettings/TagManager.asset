@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - BossBuff
+  - Gretel
+  - Boss
+  - WireObject
+  - UIController
+  - Wall
+  - Ground
+  - Monster
+  - UpperGround
+  - Anna
+  - AnnaTransform
+  - Wire_Start
+  - WireNode
+  - Grass
+  - Wood
+  - Rock
+  - Snow
+  - Ice
+  - FrozenScreen
+  - Macaron
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - DarkArea
+  - Water
+  - UI
+  - Anna
+  - Effect
+  - Door
+  - Player
+  - Monster
+  - Boss
+  - 
+  - PlayerAttack
+  - PlayerDash
+  - 
+  - Ground
+  - Wall
+  - CameraGround
+  - Wire
+  - Black
+  - NullGround
+  - Fragment
+  - 
+  - ImmediateObjects
+  - NearObjects
+  - MiddleObjets
+  - FarObjects
+  - 
+  - CameraView
+  - Platform
+  - NullPlatform
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Effect
+    uniqueID: 2098507063
+    locked: 0
+  - name: Monster
+    uniqueID: 600744661
+    locked: 0
+  - name: Boss
+    uniqueID: 2788495881
+    locked: 0

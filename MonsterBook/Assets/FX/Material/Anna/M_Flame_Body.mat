@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Flame_Body
+  m_Shader: {fileID: 4800000, guid: 68081a87e946f7e40b57b2831783fe47, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _DISSOLVE_SWITCH_ON
+  - _MAIN_DIS_POLAR_CONTROL_ON
+  - _MAIN_DIS_POLAR_ON_ON
+  - _MAIN_POLAR_CONTROL_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Dissolve_Tex:
+        m_Texture: {fileID: 2800000, guid: a27c1c84f85235640847eedf4a8d7ad9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Main_Dis_Tex:
+        m_Texture: {fileID: 2800000, guid: 4a9f4408994abdb44bcb77d8943d338c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Main_Tex:
+        m_Texture: {fileID: 2800000, guid: a27c1c84f85235640847eedf4a8d7ad9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Silhouette_Tex:
+        m_Texture: {fileID: 2800000, guid: 6ae08ea512cb5ac42a33d2dc1a9df060, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex_01:
+        m_Texture: {fileID: 2800000, guid: a27c1c84f85235640847eedf4a8d7ad9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex_02:
+        m_Texture: {fileID: 2800000, guid: 4a9f4408994abdb44bcb77d8943d338c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _Dissolve_Dis_Str: 0.35
+    - _Dissolve_Pan_X: 0
+    - _Dissolve_Pan_Y: -0.5
+    - _Dissolve_Polar_Control: 0
+    - _Dissolve_Switch: 1
+    - _Dissolve_UV_X: 0.5
+    - _Dissolve_UV_Y: 0.5
+    - _Dissolve_Value: 0
+    - _Highlight_Intensity: 1.7
+    - _Highlight_Scale: 3
+    - _Inner_Intensity: 1
+    - _Inner_Scale: 10
+    - _Inner_Value: 0.9639504
+    - _Intensity: 2
+    - _Line_Inten: 2
+    - _Line_Scale: 0
+    - _Main_Dis_Pan_X: -0.3
+    - _Main_Dis_Pan_Y: 0
+    - _Main_Dis_Polar_Control: 1
+    - _Main_Dis_Polar_On: 1
+    - _Main_Dis_Str: 0.473
+    - _Main_Dis_UV_X: 0.4
+    - _Main_Dis_UV_Y: 1
+    - _Main_Pan_X: 0
+    - _Main_Pan_Y: -0.7
+    - _Main_Polar_Control: 1
+    - _Main_Tex_UV_X: 0.6
+    - _Main_Tex_UV_Y: 2
+    - _Main_UV_X: 1
+    - _Main_UV_Y: 1
+    - _Middle_Intensity: 4.22
+    - _Middle_Scale: 2.6
+    - _Middle_Value: 0.66529465
+    - _Outer_Scale: 0.85
+    - _Outer_Value: 0.05
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Silhouette_Inten: 2
+    - _Silhouette_Power: 1.13
+    m_Colors:
+    - _Color_01: {r: 1, g: 0.14508255, b: 0, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Highlight_Color: {r: 1, g: 0.40792727, b: 0.2028302, a: 0}
+    - _Inner_Color: {r: 1, g: 0.40792727, b: 0.2028302, a: 0}
+    - _Line_Color: {r: 1, g: 0.386084, b: 0.1273585, a: 0}
+    - _Outer_Color: {r: 1, g: 0.14508255, b: 0, a: 0}
+  m_BuildTextureStacks: []
