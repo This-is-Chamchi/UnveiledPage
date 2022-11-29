@@ -59,7 +59,7 @@ Material:
     - _Dissolve_Pan_Y: -0.5
     - _Dissolve_UV_X: 1
     - _Dissolve_UV_Y: 2
-    - _Dissolve_Value: -1.012568
+    - _Dissolve_Value: -1.0076151
     - _Distance: 1
     - _Fre01_Power: 5
     - _Fre01_Scale: 1
@@ -68,10 +68,10 @@ Material:
     - _Fre_Intensity: 2
     - _Fre_Power: 1.09
     - _Fre_Scale: 1.9
-    - _InnerFre_Power: 5
+    - _InnerFre_Power: 4
     - _Inner_Opacity: 0.25
     - _OuterFre_Intensity: 3.5
-    - _OuterFre_Power: 0.85
+    - _OuterFre_Power: 3.5
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
@@ -80,5 +80,5 @@ Material:
     - _Fre02_Color: {r: 0.98443884, g: 1, b: 0.042452745, a: 0}
     - _Fre_Color: {r: 0.97543573, g: 1, b: 0.5330188, a: 0}
     - _InnerFre_Color: {r: 1, g: 0.99607843, b: 0, a: 0}
-    - _OuterFre_Color: {r: 1, g: 0.27796596, b: 0, a: 0}
+    - _OuterFre_Color: {r: 1, g: 0.27796593, b: 0, a: 0}
   m_BuildTextureStacks: []

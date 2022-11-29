@@ -24,15 +24,13 @@ public class Anna_WorldEvent : MonoBehaviour
     public GameObject HumanMatch_finish;
 
     private GameObject Player;
+    private bool LastMatchtrigger;
+    private int MatchCount;
     
 
     public void LastMatch()
     {
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[0].transform);
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[1].transform);
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[2].transform);
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[3].transform);
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[4].transform);
+        LastMatchtrigger = true;
     }
 
     public void CreateGranny()
@@ -72,7 +70,9 @@ public class Anna_WorldEvent : MonoBehaviour
         ComfortZoneRenderer = ComfortZone.GetComponent<Renderer>();
         FrozenScreen = GameObject.FindWithTag("FrozenScreen");
         Player = GameObject.FindWithTag("Player");
+        LastMatchtrigger = false;
         GrannyAble = false;
+        MatchCount = 0;
     }
 
 
@@ -91,7 +91,21 @@ public class Anna_WorldEvent : MonoBehaviour
             }
         }
 
+        if(LastMatchtrigger == true)
+        {
+            time += Time.deltaTime;
+            if(time > 1.0f )
+            {
+                Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[MatchCount].transform);
+                time = 0;
+                MatchCount++;
+                if(MatchCount == 5)
+                {
+                    LastMatchtrigger = false;
+                }
 
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.I))
         {

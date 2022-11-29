@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4093095299773059833}
   - component: {fileID: 5062814340529489405}
   - component: {fileID: 1083554757900665441}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: BossFX_ComfortZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 4093095299773059838}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -23.74, y: -8.43, z: 2.26}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -4884,6 +4884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00661aa154e7014cba66fe8e2a7a57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deleteOn: 0
 --- !u!65 &1083554757900665441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4895,5 +4896,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.2931633, y: 7.4381914, z: 4.18161}
-  m_Center: {x: 0.01679802, y: 0.09772742, z: 2.0495248}
+  m_Size: {x: 7.3473926, y: 7.4381914, z: 5.40181}
+  m_Center: {x: 0.0076243454, y: 0.097727485, z: 2.6596227}

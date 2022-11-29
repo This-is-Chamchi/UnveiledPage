@@ -9,8 +9,8 @@ public class FlyDamageMatch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        Debug.Log("π∫∞° ¥Í¿Ω" + other.name);
+        if (other.tag == "Player")
         {
             if (gameObject.GetComponent<Match_Anna>().lookPoint == -1)   //∆‰¿Ã¡Ó 1 ∞¯∞›1
             {
