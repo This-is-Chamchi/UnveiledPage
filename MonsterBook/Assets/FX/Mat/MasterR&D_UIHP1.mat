@@ -75,7 +75,7 @@ Material:
     - _DissovleStrCustomY: 0
     - _Distortion: 1
     - _DistortionPolar: 0
-    - _DistortionStr: 0.1
+    - _DistortionStr: 0.14
     - _Distortion_Panning: 1
     - _MainStr: 1
     - _Main_Panning: 0
@@ -101,7 +101,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveMaskCtrlZ: {r: 0, g: 0, b: 0, a: 0}
     - _DissolvePanCtrl: {r: -1, g: 1, b: 0.02, a: 0}
-    - _DistortionPanCtrl: {r: 1, g: 0, b: 0.3, a: 0}
+    - _DistortionPanCtrl: {r: 0.3, g: 0, b: 0.3, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _PanCtrl: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

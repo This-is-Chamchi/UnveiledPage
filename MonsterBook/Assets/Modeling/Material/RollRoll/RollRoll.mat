@@ -21,13 +21,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RollRoll
-  m_Shader: {fileID: -6465566751694194690, guid: 8129c3e29bf6c1c4d9d8a8387021ad1b, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: eff0c4e2d417e154aa860253b34339d9, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -91,7 +91,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
         m_Texture: {fileID: 2800000, guid: 09e4af3d0564df04da9c67cfda959911, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _Normal:
         m_Texture: {fileID: 2800000, guid: ac3db69edc74b474782e45779bdcd608, type: 3}
@@ -135,6 +135,8 @@ Material:
     - _DepthShadingInten: 0.9
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DissolveScale: 21.7
+    - _DissolveValue: 0
     - _DstBlend: 0
     - _EmissiveInten: 0
     - _EnvironmentReflections: 1
@@ -146,8 +148,8 @@ Material:
     - _HightlightSmoothness: 0.066
     - _Metallic: 0
     - _MidtoneSmoothness: 0.027
-    - _MidtoneThreshold: 0.466
-    - _NoiseInten: 0.604
+    - _MidtoneThreshold: 0.527
+    - _NoiseInten: 0.381
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 1

@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Match
-  m_Shader: {fileID: -6465566751694194690, guid: 8129c3e29bf6c1c4d9d8a8387021ad1b, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: eff0c4e2d417e154aa860253b34339d9, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -111,22 +111,24 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DissolveScale: 33.6
+    - _DissolveValue: 0
     - _DstBlend: 0
     - _EMISSION_WEIGHT: 1
-    - _EmissiveInten: 8
+    - _EmissiveInten: 1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HasNormal: 1
-    - _HighlightThreshold: 0.7
+    - _HighlightThreshold: 0.9
     - _HightlightSmoothness: 0.05
     - _METALNESS: 0
     - _Metallic: 0
-    - _MidtoneSmoothness: 0.03
-    - _MidtoneThreshold: 0.5
+    - _MidtoneSmoothness: 0.116
+    - _MidtoneThreshold: 0.736
     - _Mode: 0
-    - _NoiseInten: 0.4
+    - _NoiseInten: 0.231
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
@@ -136,7 +138,7 @@ Material:
     - _REFLECTIONS_WEIGHT: 1
     - _ReceiveShadows: 1
     - _ShadowSmoothness: 0.5
-    - _ShadowThreshold: 0
+    - _ShadowThreshold: 0.377
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -152,10 +154,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HighlightColor: {r: 1, g: 1, b: 1, a: 0}
+    - _EmissiveColor: {r: 1, g: 1, b: 1, a: 0}
+    - _HighlightColor: {r: 4, g: 4, b: 4, a: 0}
     - _MidtoneColor: {r: 1, g: 1, b: 1, a: 0}
     - _REFLECTIONS_COLOR: {r: 1, g: 1, b: 1, a: 1}
-    - _ReflectColor: {r: 0.74509805, g: 0.7176471, b: 0.5921569, a: 1}
-    - _ShadowColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0}
+    - _ReflectColor: {r: 0, g: 0.7438965, b: 0.8962264, a: 1}
+    - _ShadowColor: {r: 1, g: 0.4292453, b: 0.4292453, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
