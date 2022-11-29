@@ -416,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5535591928529077911, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
       propertyPath: Player_Intro
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5535591928529077911, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
       propertyPath: isSecondEnable

@@ -577,7 +577,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
             if (Gamepad.current == null)    {
                 PlayerAimMouse.z = Camera.main.farClipPlane * 100;
                 Vector2 WorldPosition = Camera.main.ScreenToWorldPoint(PlayerAimMouse);
-                var m_MouseRotation = -Mathf.Atan2(WorldPosition.x, WorldPosition.y) * Mathf.Rad2Deg;
+                var m_MouseRotation = -Mathf.Atan2( WorldPosition.x - transform.position.x , WorldPosition.y - transform.position.y) * Mathf.Rad2Deg;
                 PlayerLookat.transform.rotation = Quaternion.Euler(0, 0, m_MouseRotation);
             }
             else    {
