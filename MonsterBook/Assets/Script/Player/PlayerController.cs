@@ -104,8 +104,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
 
     private GameObject m_Delete_Scissors;       //Player Production Weapon
     private GameObject m_Scissors;              //Player Weapon
-    private float m_SaveHighSpeed;              //Save Player Speed
-    private float m_SaveLowSpeed;               //Save Player Speed
 
     [Space(10)]
 
@@ -206,7 +204,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         ani = GetComponent<Animator>();
 
         m_WeaponIK = GameObject.Find("RayDown_Weapon");
-        m_Scissors = GameObject.Find("Scissors");
+        m_Scissors = GameObject.Find("Scissors_Player");
         PlayerLookat = GameObject.Find("Lookat");
         Arrow_Lookat = GameObject.Find("Arrow");
 
@@ -223,7 +221,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         attackWeapon[2] = GameObject.Find("Cutting").GetComponent<Weapon>();
         m_PlayerRig = GameObject.Find("Player_Rig").GetComponent<Rig>();
         try{m_Delete_Scissors = GameObject.Find("Scissors_Prop");}
-        catch{return;}
+        catch{}
         
         m_PlayerRig.weight = .0f;
     }
@@ -354,12 +352,18 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         if(value == 1){
             Player_Intro = false;
             m_Scissors.SetActive(true);
-            m_Delete_Scissors.SetActive(false);
-            m_OneHandWalkSpeed = m_SaveHighSpeed;
+            m_OneHandWalkSpeed = 9.6f;
+            try{m_Delete_Scissors.SetActive(false);}
+            catch{}
             }
-        else 
-            return;
         }
+
+    public void SetSPBefore_2Stage(){
+        if(isSecondEnable){
+            ui.SP_Using = true;
+            MaxSP = 100;
+        }
+    }
 
     #endregion
 
@@ -506,13 +510,13 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     private void IntroSection() {       //Introl Part player Setter
         if (Player_Intro)    {
             ani.SetBool("isIntro" , true);
-            m_OneHandWalkSpeed = m_SaveLowSpeed;
+            m_OneHandWalkSpeed = 4.8f;
             m_Scissors.SetActive(false);
             ui.SP_Using = true;
         }
         else    {
             ani.SetBool("isIntro" , false);
-            m_OneHandWalkSpeed = m_SaveHighSpeed;
+            m_OneHandWalkSpeed = 9.6f;
             m_PlayerRig.weight = 1.0f;
         }
     }
@@ -555,12 +559,10 @@ protected void FixedUpdate()  {
 
         //=================Debug . ing=================//
         if (Input.GetKeyDown(KeyCode.F11))  {
-            Cursor.visible = false;
-            //IntroProduction();
-            //ChangeState(PlayerState.PatrolState);
+            //Cursor.visible = false;
+            IntroProduction();
         }
-        else if(Input.GetKeyDown(KeyCode.F10)) Cursor.visible = true;
-        
+        if(Input.GetKeyDown(KeyCode.F5)) input.SetInputAction(true);
         //=============================================//
     }
 
@@ -582,21 +584,18 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
                 var m_ControllRot = -Mathf.Atan2(PlayerAimObj.x, PlayerAimObj.y) * Mathf.Rad2Deg;
                 PlayerLookat.transform.rotation = Quaternion.Euler(0, 0, m_ControllRot);
             }
-
             Arrow_Lookat.SetActive(true);
 
 #region  Check Bool With Ray
             //Check Wire Obj
             if(Physics.SphereCast(PlayerLookat.transform.position, PlayerLookat.transform.lossyScale.x * 1.5f,PlayerLookat.transform.up, out m_Lookat_hit, m_WireDistance , wireBlock)){   
-                Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.red );
+                Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.blue );
                 if(m_Lookat_hit.collider.CompareTag("Monster")  || (m_Lookat_hit.collider.CompareTag("WireNode")) || (m_Lookat_hit.collider.CompareTag("Boss"))) isLookDir = true;
                 else    isLookDir = false;
             }
             else{   
-                Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.blue ) ; 
+                Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.red ) ; 
                 isLookDir = false;
-                return;
-                
             }
 
             //Check Monster Obj
@@ -744,11 +743,6 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
 
         line.SetPosition(0, Vector3.zero);
         line.SetPosition(1, Vector3.zero);
-
-        m_SaveLowSpeed = m_OneHandWalkSpeed/2;
-        m_SaveHighSpeed = m_OneHandWalkSpeed;
-
-        ui.SP_Using = false;
 
         //CameraController.SetCameraView();
         if (curAxis == Axis.XAxis) rigid.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;

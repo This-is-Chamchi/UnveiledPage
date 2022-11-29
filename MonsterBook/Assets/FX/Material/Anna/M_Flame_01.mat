@@ -78,7 +78,7 @@ Material:
     - _Dissolve_Switch: 0
     - _Dissolve_UV_X: 1
     - _Dissolve_UV_Y: 1
-    - _Dissolve_Value: 0
+    - _Dissolve_Value: 1
     - _Highlight_Intensity: 1.7
     - _Highlight_Scale: 3
     - _Inner_Intensity: 1

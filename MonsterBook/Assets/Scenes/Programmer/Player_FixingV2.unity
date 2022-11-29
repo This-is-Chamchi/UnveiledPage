@@ -372,11 +372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159312263576722476, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.65
+      value: -26.84
       objectReference: {fileID: 0}
     - target: {fileID: 5159312263576722476, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 8.31
       objectReference: {fileID: 0}
     - target: {fileID: 5159312263576722476, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
       propertyPath: m_LocalPosition.z
@@ -413,6 +413,14 @@ PrefabInstance:
     - target: {fileID: 5535591928529077910, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
       propertyPath: m_Name
       value: Player_FixingV3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535591928529077911, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
+      propertyPath: Player_Intro
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5535591928529077911, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
+      propertyPath: isSecondEnable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
