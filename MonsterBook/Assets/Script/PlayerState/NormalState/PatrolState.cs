@@ -15,7 +15,7 @@ public class PatrolState : IState   {
                 var m_PlayerMovePos = new UnityEngine.Vector3(player.playerPatrolLocaiton[m_CountPointer].transform.position.x , player.transform.position.y , player.playerPatrolLocaiton[m_CountPointer].transform.position.z);
                 player.transform.position = UnityEngine.Vector3.MoveTowards(
                 player.transform.position, m_PlayerMovePos,
-                player.walkSpeed/2 * UnityEngine.Time.fixedDeltaTime);
+                player.m_OneHandWalkSpeed/2 * UnityEngine.Time.fixedDeltaTime);
                 player.ani.SetFloat("WalkSpeed", .5f);
                 #endregion
 

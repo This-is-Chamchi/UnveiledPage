@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897160691026da54f98e870d8615dc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StopJump: 0
   MonsterID: 
   HP: 30
   WalkSpeed: 3
@@ -241,10 +240,6 @@ MonoBehaviour:
   - {fileID: 5825317624948044204}
   - {fileID: 5825317624622095389}
   MoveDistance: 5
-  AttackDamage: 10
-  AttackDistance: 2
-  AttackDelay: 6
-  MaxJumpForce: 0
   Dead_Object: {fileID: 6635709172194009056}
   Alive_Object: {fileID: 6635709171545558869}
   Effects:
@@ -255,6 +250,8 @@ MonoBehaviour:
   AnimationTrigger: {fileID: 5825317626222178843}
   AttackChecer: {fileID: 306540354}
   FindMonsterScript: {fileID: 8765955373959696924}
+  AttackDamage: 10
+  AttackDelay: 6
   MacarongModle: {fileID: 2228881251344405289}
 --- !u!1 &5825317626407016007
 GameObject:
@@ -265,13 +262,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5825317626407016004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Macaron
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5825317626407016004
 Transform:
   m_ObjectHideFlags: 0
@@ -382,6 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Monster: {fileID: 1296242085}
+  IsFollowMonster: 1
 --- !u!1001 &5825317625795830449
 PrefabInstance:
   m_ObjectHideFlags: 0

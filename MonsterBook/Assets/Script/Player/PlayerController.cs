@@ -75,10 +75,8 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [HideInInspector]public bool prevInput;
     [Tooltip("init HP")]private int m_maxHP = 90;  
     [ReadOnly][SerializeField] private int m_curHP;
-    [Tooltip("init Sp , max 100")][SerializeField] private int m_maxSP;
-    [Tooltip("몬스터 충돌시 밀어낼 힘")] public float m_PlayerPushForceForUpper = 10.0f;
+    [Tooltip("init Sp , max 100")] public int MaxSP;
 
-   
     [HideInInspector] public int attackCount;                   //attck counter . max 3.
     [HideInInspector] public bool CheckDamage = false;          //Check player get hit or something. same m_CheckDamage. this thing is for other script.
     [HideInInspector] public bool CheckJumpAttack = false;      //Check player Attack with jump
@@ -104,8 +102,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
 
     private GameObject m_Delete_Scissors;       //Player Production Weapon
     private GameObject m_Scissors;              //Player Weapon
-    private float m_SaveHighSpeed;              //Save Player Speed
-    private float m_SaveLowSpeed;               //Save Player Speed
 
     [Space(10)]
 
@@ -113,7 +109,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [Tooltip("한손검 2타 진행시간")] public float OneHandAttack_2 = 0.33f;
     [Tooltip("한손검 3타 진행시간")] public float OneHandAttack_3 = 0.56f;
 
-    [HideInInspector] public float walkSpeed => m_OneHandWalkSpeed;                     //player walk speed
     [HideInInspector] public float jumpForce => m_OneHandJumpForce;                     //player jump foce(animator)
     [HideInInspector] public float dashForce => m_OneHandDashForce;                     //player dash force (animator)
     [HideInInspector] public float dashRunningTime => m_OneHandDashRunTime;             //player dash running time
@@ -127,22 +122,22 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [Header("=====[Move Value]=====")] 
     public LayerMask wallLayer;
     public LayerMask groundLayer;
-    public LayerMask wireBlock;
+    public LayerMask wireBlock;                                                         //made Wire Lay cant Thru the ground
+    public bool checkJump { get; set; }
     [SerializeField] private LayerMask monsterLayer;
-    [SerializeField] CURRENT_TERRAIN currentTranin;                                      //Check Ground For Sound
+    [SerializeField] CURRENT_TERRAIN currentTranin;                                     //Check Ground For Sound
 
-    [HideInInspector][ReadOnly] public Vector3 lookVector;                              //check player look dir,
-    [HideInInspector][ReadOnly] public float walkVector;                                //Check player Walk dir,
+    [HideInInspector] public Vector3 lookVector;                                        //check player look dir,
+    [HideInInspector] public float walkVector;                                          //Check player Walk dir,
     [HideInInspector] public bool Falling = false;                                      //check player is falling,
     [HideInInspector] public bool isGround;                                             //check player is Grounded,
-    [Tooltip("캐릭터 회전 배속")][SerializeField] protected float RotationSpeed = 6.0f;
-    [Tooltip("경사 체크 길이")][SerializeField]private float m_SlopeDistance = 2.0f;
-    [Tooltip("경사 체크할 각도")][SerializeField]private float m_MaxAngle = 30.0f;
-
-    public bool checkJump { get; set; }
-    private AxisRotateObject m_axisRotate;
     [HideInInspector] public int isJump = 0;
-
+    [Tooltip("캐릭터 회전 배속")] protected float RotationSpeed = 6.0f;
+    [Tooltip("경사 체크 길이")][SerializeField] private float m_SlopeDistance = 2.0f;
+    [Tooltip("경사 체크할 각도")][SerializeField] private float m_MaxAngle = 30.0f;
+  
+    private AxisRotateObject m_axisRotate;
+    
     #endregion
 
     #region LookatTartget(Wire)
@@ -179,7 +174,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     [HideInInspector]public Weapon[] attackWeapon;
 
     private MultiAimConstraint m_HeadAim_Const;
-    private GameObject m_WeaponIK;
+    private PlayerWeapon_Rigging m_WeaponIK;
     private Rig m_PlayerRig;
     [HideInInspector]public LineRenderer line;
     [HideInInspector]public Transform effectEuler;
@@ -206,8 +201,8 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         rigid = GetComponent<Rigidbody>();
         ani = GetComponent<Animator>();
 
-        m_WeaponIK = GameObject.Find("RayDown_Weapon");
-        m_Scissors = GameObject.Find("Scissors");
+        m_WeaponIK = GameObject.Find("RayDown_Weapon").GetComponent<PlayerWeapon_Rigging>();
+        m_Scissors = GameObject.Find("Scissors_Player");
         PlayerLookat = GameObject.Find("Lookat");
         Arrow_Lookat = GameObject.Find("Arrow");
 
@@ -224,9 +219,8 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         attackWeapon[2] = GameObject.Find("Cutting").GetComponent<Weapon>();
         m_PlayerRig = GameObject.Find("Player_Rig").GetComponent<Rig>();
         try{m_Delete_Scissors = GameObject.Find("Scissors_Prop");}
-        catch{return;}
+        catch{}
         
-        m_PlayerRig.weight = .0f;
     }
 
     private void Start(){
@@ -249,6 +243,8 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     protected void AttackBoxOn(int i)   {attackWeapon[i].Collider(true);}
 
     public void AttackBoxOff(int i) {attackWeapon[i].Collider(false);}
+
+    protected void AttackForce (int i ){ rigid.AddForce(lookVector * i ,  ForceMode.Impulse);}
 
     protected void DashForce()  {
         if(Falling)
@@ -355,12 +351,18 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         if(value == 1){
             Player_Intro = false;
             m_Scissors.SetActive(true);
-            m_OneHandWalkSpeed = m_SaveHighSpeed;
-            //m_Delete_Scissors.SetActive(false);
+            m_OneHandWalkSpeed = 9.6f;
+            try{m_Delete_Scissors.SetActive(false);}
+            catch{}
             }
-        else 
-            return;
         }
+
+    public void SetSPBefore_2Stage(){
+        if(isSecondEnable){
+            ui.SP_Using = true;
+            MaxSP = 100;
+        }
+    }
 
     #endregion
 
@@ -381,22 +383,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     }
 
     public void ChangePatrol(){ChangeState(PlayerState.PatrolState);}
-
-    private Collider m_Locate;
-    protected void OnCollisionStay(Collision col)   {
-        if (col.gameObject.CompareTag("Monster") && !isGround)  {
-            m_Locate = col.gameObject.GetComponentInChildren<Collider>();
-            var Yeet = col.contacts[0].point;
-            if (Yeet.x >= m_Locate.transform.position.x){
-                rigid.AddForce(Vector3.right * m_PlayerPushForceForUpper, ForceMode.Impulse);
-            }
-            else{
-                rigid.AddForce(Vector3.left * m_PlayerPushForceForUpper, ForceMode.Impulse);
-            }
-        }
-        else
-            return;
-    }
 
     private float m_HeadUpWeight = .0f;
     private void LookUpHead()   {
@@ -420,7 +406,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         if (CheckMonster() || CheckWall())  rigid.velocity = new Vector3(0, rigid.velocity.y);
         else if (!CheckWall())  {
             var vector = Mathf.Abs(walkVector);
-            var move = new Vector3(lookVector.x * vector * walkSpeed, rigid.velocity.y, 0);
+            var move = new Vector3(lookVector.x * vector * m_OneHandWalkSpeed, rigid.velocity.y, 0);
             rigid.velocity = move;
         }
         else    return;
@@ -476,23 +462,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         m_maxHP = val;
     }
 
-    public void SetState(string Yeet)   {
-        switch (Yeet)   {
-            case "DeadState":
-                ChangeState(PlayerState.DeadState);
-                break;
-            case "IdleState":
-                ChangeState(PlayerState.AttackState);
-                break;
-            case "PatrolState":
-                ChangeState(PlayerState.PatrolState);
-                break;
-            default:
-            Debug.Log("Out of CMD");
-                break;
-        }
-    }
-
     #endregion
 
     #region Getter
@@ -507,12 +476,13 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     private void IntroSection() {       //Introl Part player Setter
         if (Player_Intro)    {
             ani.SetBool("isIntro" , true);
-            m_OneHandWalkSpeed = m_SaveLowSpeed;
+            m_OneHandWalkSpeed = 4.8f;
             m_Scissors.SetActive(false);
+            ui.SP_Using = true;
         }
         else    {
             ani.SetBool("isIntro" , false);
-            m_OneHandWalkSpeed = m_SaveHighSpeed;
+            m_OneHandWalkSpeed = 9.6f;
             m_PlayerRig.weight = 1.0f;
         }
     }
@@ -531,14 +501,12 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         }
 
         if (isLookTarget)   {
-            // if (isLookDir)  {
-            //     Gizmos.color = Color.green;
-            //     Gizmos.DrawWireSphere(PlayerLookat.transform.position + PlayerLookat.transform.up * m_Lookat_hit.distance, PlayerLookat.transform.lossyScale.x *1.5f);
-            // }
-            Gizmos.color = Color.green;
+            if (isLookDir)  {
+                Gizmos.color = Color.green;
                 Gizmos.DrawWireSphere(PlayerLookat.transform.position + PlayerLookat.transform.up * m_Lookat_hit.distance, PlayerLookat.transform.lossyScale.x *1.5f);
-            // else
-            //     return;
+            }
+            else
+                return;
         }
     }
 
@@ -555,12 +523,10 @@ protected void FixedUpdate()  {
 
         //=================Debug . ing=================//
         if (Input.GetKeyDown(KeyCode.F11))  {
-            Cursor.visible = false;
-            //IntroProduction();
-            //ChangeState(PlayerState.PatrolState);
+            //Cursor.visible = false;
+            IntroProduction();
         }
-        else if(Input.GetKeyDown(KeyCode.F10)) Cursor.visible = true;
-        
+        if(Input.GetKeyDown(KeyCode.F5)) input.SetInputAction(true);
         //=============================================//
     }
 
@@ -570,39 +536,30 @@ protected void Update() {
         SetVibrationXbox(LeftMoter, RightMoter, ConRunningTime, isInfinityVib);
     }
 
-void OnApplicationQuit()    {
-#if !UNITY_EDITOR
-        System.Diagnostics.Process.GetCurrentProcess().Kill();
-#endif
-    }
-
 protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts.
         if (isLookTarget)   {
             if (Gamepad.current == null)    {
                 PlayerAimMouse.z = Camera.main.farClipPlane * 100;
                 Vector2 WorldPosition = Camera.main.ScreenToWorldPoint(PlayerAimMouse);
-                var m_MouseRotation = -Mathf.Atan2(WorldPosition.x, WorldPosition.y) * Mathf.Rad2Deg;
+                var m_MouseRotation = -Mathf.Atan2( WorldPosition.x - transform.position.x , WorldPosition.y - transform.position.y) * Mathf.Rad2Deg;
                 PlayerLookat.transform.rotation = Quaternion.Euler(0, 0, m_MouseRotation);
             }
             else    {
                 var m_ControllRot = -Mathf.Atan2(PlayerAimObj.x, PlayerAimObj.y) * Mathf.Rad2Deg;
                 PlayerLookat.transform.rotation = Quaternion.Euler(0, 0, m_ControllRot);
             }
-
             Arrow_Lookat.SetActive(true);
 
 #region  Check Bool With Ray
             //Check Wire Obj
-            if(Physics.SphereCast(PlayerLookat.transform.position, PlayerLookat.transform.lossyScale.x * 1.5f,PlayerLookat.transform.up, out m_Lookat_hit, m_WireDistance , ~wireBlock)){   
-                Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.red );
-                if(m_Lookat_hit.collider.CompareTag("Monster")  || (m_Lookat_hit.collider.CompareTag("WireNode")) || (m_Lookat_hit.collider.CompareTag("Boss")) &&  !(m_Lookat_hit.collider.CompareTag("Ground"))) isLookDir = true;
+            if(Physics.SphereCast(PlayerLookat.transform.position, PlayerLookat.transform.lossyScale.x * 1.5f,PlayerLookat.transform.up, out m_Lookat_hit, m_WireDistance , wireBlock)){   
+                Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.blue );
+                if(m_Lookat_hit.collider.CompareTag("Monster")  || (m_Lookat_hit.collider.CompareTag("WireNode")) || (m_Lookat_hit.collider.CompareTag("Boss"))) isLookDir = true;
                 else    isLookDir = false;
             }
             else{   
-                Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.blue ) ; 
+                Debug.DrawRay(PlayerLookat.transform.position ,PlayerLookat.transform.up * m_WireDistance , Color.red ) ; 
                 isLookDir = false;
-                return;
-                
             }
 
             //Check Monster Obj
@@ -665,7 +622,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
 
     public void SetMaxHP(int hp) { m_maxHP = hp; }
 
-    public void SetMaxSp(int sp) { m_maxSP = sp; }
+    public void SetMaxSp(int sp) { MaxSP = sp; }
 
     public void SetThrowState(bool value)   {
         input.SetInputAction(!value);
@@ -692,7 +649,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
 
         if (m_curHP <= 0)   {
             m_curHP = 0;
-            m_WeaponIK.GetComponent<PlayerWeapon_Rigging>().m_WeaponIKSet.weight = 0;
+            m_WeaponIK.m_WeaponIKSet.weight = 0;
 
             SoundShot("Player_Dead");
             SoundShot("Player_Dead_Voice");
@@ -729,32 +686,28 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
     }
 
     private void PlayerInitialize() {
-        m_curHP = 90;
-        ui.SetHP(m_curHP);
-        ui.SetSp(m_maxSP);
-
-        CheckJumpAttack = false;
-        m_SaveColSize = collid.center;
-        attackCount = 1;
-        CheckDamage = false;
-        rigid.velocity = Vector3.zero;
-        lookVector = Vector2.right;
-        isJump = 1;
-        SaveMonDetect = false;
-
         curState = stateDic[PlayerState.IdleState];
 
+        m_curHP = 90;
+        ui.SetHP(m_curHP);
+        ui.SetSp(MaxSP);
+
+        rigid.velocity = Vector3.zero;
+        m_SaveColSize = collid.center;
+        lookVector = Vector2.right;
+        m_PlayerRig.weight = .0f;
+        CheckJumpAttack = false;
+        SaveMonDetect = false;
+        CheckDamage = false;
+        attackCount = 1;
+        isJump = 1;
+        
         attackWeapon[0].SetDamage(isDamage);
         attackWeapon[1].SetDamage(isDamage * 3);
         attackWeapon[3].SetDamage(Special_Damage);
 
         line.SetPosition(0, Vector3.zero);
         line.SetPosition(1, Vector3.zero);
-
-        m_SaveLowSpeed = m_OneHandWalkSpeed/2;
-        m_SaveHighSpeed = m_OneHandWalkSpeed;
-
-        ui.SP_Using = false;
 
         //CameraController.SetCameraView();
         if (curAxis == Axis.XAxis) rigid.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
@@ -783,7 +736,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
         if (!isGround && !LockLookTartget &&
          state != PlayerState.AttackState && state != PlayerState.DashState)    {
 
-                m_WeaponIK.GetComponent<PlayerWeapon_Rigging>().m_WeaponIKSet.weight = 0;
+                m_WeaponIK.m_WeaponIKSet.weight = 0;
                 ParticleStopPlay("Run");
 
                 if(!CheckJumpAttack)    {
