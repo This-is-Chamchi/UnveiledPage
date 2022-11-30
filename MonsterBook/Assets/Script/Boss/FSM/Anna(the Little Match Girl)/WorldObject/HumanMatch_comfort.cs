@@ -70,7 +70,7 @@ public class HumanMatch_comfort : MonoBehaviour
     }
     private void OnTriggerEnter(Collider col)
     {
-
+        Debug.Log("보호구역 들어감" + col.name);
         if (col.tag == "Player")
         {
             Debug.Log("보호구역 들어감");

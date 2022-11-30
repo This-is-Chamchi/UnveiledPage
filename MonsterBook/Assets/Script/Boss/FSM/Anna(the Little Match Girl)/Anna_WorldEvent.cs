@@ -40,13 +40,6 @@ public class Anna_WorldEvent : MonoBehaviour
         FrozenScreen.GetComponent<FlozenScreen>().Phasetwo = true;
     }
 
-    public void CreateProtectedArea()
-    {
-        Instantiate(HumanMatch_Blizzard, HumanMaych_Blizzard_SpawnPoint.transform.position, new Quaternion(0, 180, 180, 0));
-        Instantiate(ComfortZone, HumanMaych_Blizzard_SpawnPoint.transform.position, new Quaternion(0, 180, 180, 0));
-        ComfortZone.GetComponent<ParticleSystem>().Play();
-        ComfortZoneRenderer.sharedMaterial.SetFloat("_Dissolve_Value", -1);
-    }
     public void BlizzardStart()
     {
         FrozenScreen.GetComponent<FlozenScreen>().FlozenStart = true;
@@ -55,7 +48,6 @@ public class Anna_WorldEvent : MonoBehaviour
         ComfortZone.GetComponent<ParticleSystem>().Play();
         ComfortZoneRenderer.sharedMaterial.SetFloat("_Dissolve_Value", -1);
         Blizzard.Play();  //´«º¸¶ó ½ÇÇà
-        CreateProtectedArea();
 
     }
 

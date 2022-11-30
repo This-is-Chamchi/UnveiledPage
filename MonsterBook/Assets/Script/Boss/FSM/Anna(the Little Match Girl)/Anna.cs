@@ -85,6 +85,7 @@ public class Anna : MonoBehaviour , IEntity
     public int Matches_Attack06_Damage;
     public int LastMatchClear;
     public bool Anna_Frozen_Die;
+    public int GroggySoundID;
     [SerializeField] public UnityEvent AnnaHitEvent;
 
 
@@ -158,13 +159,13 @@ public class Anna : MonoBehaviour , IEntity
 
 
     }
-    public void AnnaSoundLoop(string name)
+    public int AnnaSoundLoop(string name)
     {
-        SoundManager.PlayVFXLoopSound(name,gameObject.transform);
+        return SoundManager.PlayVFXLoopSound(name,gameObject.transform);
     }
-    public void AnnaSoundLoopEnd(string name)
+    public void AnnaSoundLoopEnd(int ID)
     {
-        //SoundManager.StopVFXLoopSound();
+        SoundManager.StopVFXLoopSound(ID);
         
     }
     public void AnnaSound(string name)
@@ -314,6 +315,7 @@ public class Anna : MonoBehaviour , IEntity
 
         if (finishAttackAble == true)
         {
+            AnnaSoundLoopEnd(GroggySoundID);
             Anna_Ani.SetTrigger("Anna_Death");
             Anna_Frozen_Die = true;
             Isinvincibility = true;

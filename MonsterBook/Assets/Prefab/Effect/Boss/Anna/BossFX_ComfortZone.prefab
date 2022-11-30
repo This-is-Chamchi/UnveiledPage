@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4093095299773059833}
   - component: {fileID: 5062814340529489405}
   - component: {fileID: 1083554757900665441}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: BossFX_ComfortZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
