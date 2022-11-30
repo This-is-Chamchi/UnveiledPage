@@ -81,6 +81,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 3
         messageOptions: 0
+      - time: 0.51869154
+        functionName: AttackForce
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 6
+        messageOptions: 0
       - time: 0.6135985
         functionName: AttackBoxOn
         data: 

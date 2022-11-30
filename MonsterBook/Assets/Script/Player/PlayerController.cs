@@ -221,7 +221,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         try{m_Delete_Scissors = GameObject.Find("Scissors_Prop");}
         catch{}
         
-        m_PlayerRig.weight = .0f;
     }
 
     private void Start(){
@@ -244,6 +243,8 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
     protected void AttackBoxOn(int i)   {attackWeapon[i].Collider(true);}
 
     public void AttackBoxOff(int i) {attackWeapon[i].Collider(false);}
+
+    protected void AttackForce (int i ){ rigid.AddForce(lookVector * i ,  ForceMode.Impulse);}
 
     protected void DashForce()  {
         if(Falling)
@@ -461,23 +462,6 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         m_maxHP = val;
     }
 
-    public void SetState(string Yeet)   {
-        switch (Yeet)   {
-            case "DeadState":
-                ChangeState(PlayerState.DeadState);
-                break;
-            case "IdleState":
-                ChangeState(PlayerState.AttackState);
-                break;
-            case "PatrolState":
-                ChangeState(PlayerState.PatrolState);
-                break;
-            default:
-            Debug.Log("Out of CMD");
-                break;
-        }
-    }
-
     #endregion
 
     #region Getter
@@ -539,10 +523,10 @@ protected void FixedUpdate()  {
 
         //=================Debug . ing=================//
         if (Input.GetKeyDown(KeyCode.F11))  {
-            Cursor.visible = false;
-            //IntroProduction();
+            //Cursor.visible = false;
+            IntroProduction();
         }
-        //if(Input.GetKeyDown(KeyCode.F5)) input.SetInputAction(true);
+        if(Input.GetKeyDown(KeyCode.F5)) input.SetInputAction(true);
         //=============================================//
     }
 
@@ -702,21 +686,22 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
     }
 
     private void PlayerInitialize() {
+        curState = stateDic[PlayerState.IdleState];
+
         m_curHP = 90;
         ui.SetHP(m_curHP);
         ui.SetSp(MaxSP);
 
-        CheckJumpAttack = false;
-        m_SaveColSize = collid.center;
-        attackCount = 1;
-        CheckDamage = false;
         rigid.velocity = Vector3.zero;
+        m_SaveColSize = collid.center;
         lookVector = Vector2.right;
-        isJump = 1;
+        m_PlayerRig.weight = .0f;
+        CheckJumpAttack = false;
         SaveMonDetect = false;
-
-        curState = stateDic[PlayerState.IdleState];
-
+        CheckDamage = false;
+        attackCount = 1;
+        isJump = 1;
+        
         attackWeapon[0].SetDamage(isDamage);
         attackWeapon[1].SetDamage(isDamage * 3);
         attackWeapon[3].SetDamage(Special_Damage);
