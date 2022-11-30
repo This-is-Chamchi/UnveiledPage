@@ -131,11 +131,12 @@ public class Anna : MonoBehaviour , IEntity
         Anna_CurrentHP = AnnaHP_Phase1;
         LastMatchClear = 0;
         finishAttackAble = false;
+        AnnaPhase = 1;
+        Isinvincibility = false;
         state.Initial_Setting(this, Anna_Wait_State.Instance);
 
 
-
-    }
+}
 
     protected void FixedUpdate()
     {
