@@ -9,7 +9,7 @@ public class Anna_Grogy_State : FSM_State<Anna>
     private bool OneTimeSoundPlay = false;
     private float circleSizeTimer;
     private float circle_IntensityTimer;
-    private int fallSoundID;
+    //private int fallSoundID;
 
     static readonly Anna_Grogy_State instance = new Anna_Grogy_State();
     public static Anna_Grogy_State Instance
@@ -69,7 +69,7 @@ public class Anna_Grogy_State : FSM_State<Anna>
         {
             if(OneTimeSoundPlay == false)
             {
-                fallSoundID = _Anna.AnnaSoundLoop("2StageAnna_GroggyScream");
+                //fallSoundID = _Anna.AnnaSoundLoop("2StageAnna_GroggyScream");
                 OneTimeSoundPlay = true;
             }
             _Anna.transform.position = new Vector3(_Anna.transform.position.x, _Anna.transform.position.y - _Anna.DownSpeed, _Anna.transform.position.z);
@@ -86,7 +86,7 @@ public class Anna_Grogy_State : FSM_State<Anna>
             if(onetime == false)
             {
                 _Anna.Anna_Ani.SetTrigger("Landing_Ground");
-                _Anna.AnnaSoundLoopEnd(fallSoundID);
+                //_Anna.AnnaSoundLoopEnd(fallSoundID);
                 _Anna.GroggySoundID = _Anna.AnnaSoundLoop("2StageAnna_Groggy");
                 _Anna.finishAttackAble = true;
                 _Anna.AnnaFalling = false;
