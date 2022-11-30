@@ -55,6 +55,11 @@ public class HumanMatch_Finish : MonoBehaviour ,IEntity
 
     public void OnDamage(int damage, Vector3 pos)
     {
+        if(damage != 10)
+        {
+            return;
+        }
+
         curHp -= damage;
         HitEffect.Play();
         if (curHp < 0)

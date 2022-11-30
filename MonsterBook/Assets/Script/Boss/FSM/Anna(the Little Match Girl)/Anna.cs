@@ -141,6 +141,10 @@ public class Anna : MonoBehaviour , IEntity
 
     protected void FixedUpdate()
     {
+        if(Anna_CurrentHP < 0)
+        {
+            Anna_CurrentHP = 0;
+        }
 
         if(Anna_Frozen_Die == true)
         {
