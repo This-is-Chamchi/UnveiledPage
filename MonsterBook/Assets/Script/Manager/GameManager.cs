@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         OutputConsole("Scene Loaded : " + SceneManager.GetActiveScene().buildIndex, ConsoleType.System);
-        if (player == null) player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
         SceneStartEvent();
     }
 

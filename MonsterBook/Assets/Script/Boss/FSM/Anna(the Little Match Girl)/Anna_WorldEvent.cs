@@ -21,6 +21,15 @@ public class Anna_WorldEvent : MonoBehaviour
     private Renderer ComfortZoneRenderer;
 
     public GameObject[] HumanMatch_finish_SpawnPoint;
+
+    public GameObject HumanMatch_finish_SpawnPoint0;
+    public GameObject HumanMatch_finish_SpawnPoint1;
+    public GameObject HumanMatch_finish_SpawnPoint2;
+    public GameObject HumanMatch_finish_SpawnPoint3;
+    public GameObject HumanMatch_finish_SpawnPoint4;
+
+
+
     public GameObject HumanMatch_finish;
 
     private GameObject Player;
@@ -86,9 +95,30 @@ public class Anna_WorldEvent : MonoBehaviour
         if(LastMatchtrigger == true)
         {
             time += Time.deltaTime;
-            if(time > 1.0f )
+            if( time > 1.0f )
             {
-                Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[MatchCount].transform);
+                if(MatchCount == 0)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint0.transform);
+                }
+                else if (MatchCount == 1)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint1.transform);
+                }
+                else if (MatchCount == 2)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint2.transform);
+                }
+                else if (MatchCount == 3)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint3.transform);
+                }
+                else if (MatchCount == 4)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint4.transform);
+                }
+
+                //Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[MatchCount].transform);
                 time = 0;
                 MatchCount++;
                 if(MatchCount == 5)
@@ -96,12 +126,13 @@ public class Anna_WorldEvent : MonoBehaviour
                     LastMatchtrigger = false;
                 }
 
-            }
-        }
+                if(MatchCount > 6 || MatchCount < -1)
+                {
+                    Debug.LogError(MatchCount + " : MatchCount");
+                }
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            LastMatch();
+            }
+
         }
 
 
