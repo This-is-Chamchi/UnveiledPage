@@ -46655,6 +46655,11 @@ MonoBehaviour:
   - {fileID: 6323956631936049247}
   - {fileID: 6323956632593828913}
   - {fileID: 6323956631934900314}
+  HumanMatch_finish_SpawnPoint0: {fileID: 6323956633666181413}
+  HumanMatch_finish_SpawnPoint1: {fileID: 6323956632382438334}
+  HumanMatch_finish_SpawnPoint2: {fileID: 6323956631936049247}
+  HumanMatch_finish_SpawnPoint3: {fileID: 6323956632593828913}
+  HumanMatch_finish_SpawnPoint4: {fileID: 6323956631934900314}
   HumanMatch_finish: {fileID: 4700587259297741378, guid: 9c08f5a70a719a94dae7ad4a7fc816cf, type: 3}
 --- !u!4 &6323956633689730253
 Transform:
@@ -47060,7 +47065,7 @@ GameObject:
   - component: {fileID: 6323956633815498224}
   - component: {fileID: 6323956633815498127}
   - component: {fileID: 6323956633815498225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Anna_StandArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
