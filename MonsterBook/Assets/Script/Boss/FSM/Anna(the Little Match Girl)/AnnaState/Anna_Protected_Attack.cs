@@ -21,20 +21,19 @@ public class Anna_Protected_Attack : FSM_State<Anna>
     private Vector3 NextPosition2;
 
     private Vector3 velocity = Vector3.zero;
+    private int LoopSoundID; 
     private float time = 0;
 
     public override void EnterState(Anna _Anna)
     {
         _Anna.AnnaSound("2StageAnna_MatchSummon");
-        _Anna.AnnaSoundLoop("2StageAnna_Pattern2MatchRunning");
+        LoopSoundID = _Anna.AnnaSoundLoop("2StageAnna_Pattern2MatchRunning");
         _Anna.ProtectArea.gameObject.SetActive(true);
         _Anna.ProtectAreaActive = true;
         time = 0f;
         oneTime = false;
 
         _Anna.Anna_Ani.SetTrigger("Attack03_Start");
-
-        //_Anna.Anna_Ani.SetTrigger("Move_Start");
         while (true)
         {
             _Anna.NextPosition1 = Random.Range(0, 5);
@@ -107,7 +106,7 @@ public class Anna_Protected_Attack : FSM_State<Anna>
     {
         time = 0f;
         _Anna.ProtectArea.SetActive(false);
-        _Anna.AnnaSoundLoopEnd("2StageAnna_Pattern2MatchRunning");
+        _Anna.AnnaSoundLoopEnd(LoopSoundID);
         _Anna.CurrentPosiiton = _Anna.NextPosition2;
         _Anna.ProtectedMoveAble = false;
 

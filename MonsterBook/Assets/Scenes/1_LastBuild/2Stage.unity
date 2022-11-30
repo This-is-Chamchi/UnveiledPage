@@ -47763,6 +47763,7 @@ MonoBehaviour:
   Matches_Attack06_Damage: 10
   LastMatchClear: 0
   Anna_Frozen_Die: 0
+  GroggySoundID: 0
   AnnaHitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -47799,9 +47800,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.290891
-  m_Height: 1.4987755
+  m_Height: 1.653071
   m_Direction: 1
-  m_Center: {x: -0.60840285, y: 0.7262082, z: -0.030429304}
+  m_Center: {x: -0.60840285, y: 0.6490604, z: -0.030429304}
 --- !u!54 &6323956633853880103
 Rigidbody:
   m_ObjectHideFlags: 0
