@@ -50,7 +50,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
         m_Texture: {fileID: 2800000, guid: 09e4af3d0564df04da9c67cfda959911, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _Normal:
         m_Texture: {fileID: 2800000, guid: fbd6a9af8c57c96438dc3c558ef1e562, type: 3}
@@ -106,14 +106,14 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HasNormal: 1
-    - _HighlightThreshold: 0.7
-    - _HightlightSmoothness: 0.05
+    - _HighlightThreshold: 0.886
+    - _HightlightSmoothness: 0.105
     - _METALNESS: 0
     - _Metallic: 0
-    - _MidtoneSmoothness: 0.03
-    - _MidtoneThreshold: 0.5
+    - _MidtoneSmoothness: 0.117
+    - _MidtoneThreshold: 0.782
     - _Mode: 0
-    - _NoiseInten: 0.5
+    - _NoiseInten: 0.208
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
@@ -122,7 +122,7 @@ Material:
     - _REFLECTIONS_ROUGHNESS: 0
     - _REFLECTIONS_WEIGHT: 1
     - _ReceiveShadows: 1
-    - _ShadowSmoothness: 0.6
+    - _ShadowSmoothness: 0.195
     - _ShadowThreshold: 0
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
@@ -139,11 +139,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HighlightColor: {r: 1, g: 1, b: 1, a: 0}
-    - _MidtoneColor: {r: 1, g: 1, b: 1, a: 0}
+    - _HighlightColor: {r: 4, g: 4, b: 4, a: 0}
+    - _MidtoneColor: {r: 1, g: 0, b: 0, a: 0}
     - _REFLECTIONS_COLOR: {r: 1, g: 1, b: 1, a: 1}
-    - _ReflectColor: {r: 0.990566, g: 0, b: 0, a: 0}
-    - _ShadowColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0}
+    - _ReflectColor: {r: 0, g: 0.32026148, b: 1, a: 0}
+    - _ShadowColor: {r: 0.6603774, g: 0.49528304, b: 0.49528304, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4024972313189726178

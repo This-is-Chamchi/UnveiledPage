@@ -75,7 +75,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
         m_Texture: {fileID: 2800000, guid: 09e4af3d0564df04da9c67cfda959911, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _Normal:
         m_Texture: {fileID: 2800000, guid: 192404b3ec3780a41b228cd3895999ba, type: 3}
@@ -129,7 +129,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EMISSION_WEIGHT: 1
-    - _EmissiveInten: 50
+    - _EmissiveInten: 3
     - _EnvironmentReflections: 1
     - _Foot_Ice_Boundary: 2.5
     - _Fre_Intensity: 0
@@ -138,17 +138,17 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HasNormal: 1
-    - _HighlightThreshold: 0
+    - _HighlightThreshold: 0.754
     - _Highlight_Boundary: 5
     - _Highlight_Intensity: 35
-    - _HightlightSmoothness: 0
+    - _HightlightSmoothness: 0.031
     - _Ice_Boundary: -1
     - _METALNESS: 0
     - _Metallic: 0
-    - _MidtoneSmoothness: 0
-    - _MidtoneThreshold: 0
+    - _MidtoneSmoothness: 0.09
+    - _MidtoneThreshold: 0.531
     - _Mode: 0
-    - _NoiseInten: 0.5
+    - _NoiseInten: 0.245
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
@@ -157,8 +157,8 @@ Material:
     - _REFLECTIONS_ROUGHNESS: 0
     - _REFLECTIONS_WEIGHT: 1
     - _ReceiveShadows: 1
-    - _ShadowSmoothness: 0
-    - _ShadowThreshold: 0
+    - _ShadowSmoothness: 0.199
+    - _ShadowThreshold: 0.253
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -174,12 +174,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EMISSION_COLOR: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HighlightColor: {r: 1, g: 1, b: 1, a: 0}
+    - _EmissiveColor: {r: 1, g: 0, b: 0, a: 0}
+    - _HighlightColor: {r: 3.9999995, g: 3.9999995, b: 3.9999995, a: 0}
     - _Ice_Color: {r: 0.54245275, g: 0.8149296, b: 1, a: 0}
     - _In_Min_Max: {r: -1, g: 1, b: 0, a: 0}
-    - _MidtoneColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MidtoneColor: {r: 1, g: 0.6179246, b: 0.6179246, a: 0}
     - _REFLECTIONS_COLOR: {r: 1, g: 1, b: 1, a: 1}
-    - _ReflectColor: {r: 1, g: 1, b: 1, a: 0}
-    - _ShadowColor: {r: 1, g: 1, b: 1, a: 0}
+    - _ReflectColor: {r: 1, g: 0, b: 0.0745101, a: 0}
+    - _ShadowColor: {r: 0.38817194, g: 0.45161217, b: 0.5754717, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

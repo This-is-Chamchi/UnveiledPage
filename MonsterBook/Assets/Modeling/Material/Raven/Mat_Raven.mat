@@ -127,13 +127,13 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HasNormal: 1
-    - _HighlightThreshold: 0.724
-    - _HightlightSmoothness: 0.09
+    - _HasNormal: 0
+    - _HighlightThreshold: 0.909
+    - _HightlightSmoothness: 0.035
     - _Metallic: 0
     - _MidtoneSmoothness: 0.056
-    - _MidtoneThreshold: 0.519
-    - _NoiseInten: 0.304
+    - _MidtoneThreshold: 0.518
+    - _NoiseInten: 0.176
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -152,9 +152,9 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HighlightColor: {r: 15.999998, g: 15.999998, b: 15.999998, a: 0}
-    - _MidtoneColor: {r: 2, g: 0.91764706, b: 0.91764706, a: 0}
+    - _HighlightColor: {r: 21.361254, g: 0, b: 0, a: 0}
+    - _MidtoneColor: {r: 0.7490196, g: 0.34509805, b: 0.34509805, a: 0}
     - _ReflectColor: {r: 1, g: 0, b: 0, a: 0}
-    - _ShadowColor: {r: 0.15205587, g: 0.4651119, b: 0.6320754, a: 0}
+    - _ShadowColor: {r: 0, g: 0.6557379, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
