@@ -45,7 +45,7 @@ Material:
     - _AlphaCutoff: 0.5
     - _Boundary: 5
     - _Frozen_Boundary: 0.5
-    - _Frozen_Control: -1.0033537
+    - _Frozen_Control: -1.0052888
     - _Hightlight_Boundary: 5
     - _Hightlight_Inten: 5
     - _Noise_Scale: 0

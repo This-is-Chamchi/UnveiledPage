@@ -51,10 +51,12 @@ public class Anna_Halo_Attack : FSM_State<Anna>
         if (timer > 0.5f && AttackEnd == false)
         {
             _Anna.AnnaSound("2StageAnna_MatchSummon");
+            _Anna.GetComponent<Anna>().AnnaSound("2StageAnna_Pattern3MultiShooting");
 
             for (int i = 0; i < 8; i++)
             {
                 _Anna.MatchObjectPool.GetComponent<Match_Object_Pool>().RespownHaloMatch(_Anna.HaloSpawnPoint[i].transform.position,i);
+                
             }
             timer = 0f;
             CurHaloCount++;
