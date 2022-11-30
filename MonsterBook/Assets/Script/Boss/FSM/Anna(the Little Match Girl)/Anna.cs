@@ -222,8 +222,6 @@ public class Anna : MonoBehaviour , IEntity
                 break;
 
             case 2:
-                Anna_CurrentHP = AnnaHP_Phase2;
-                Debug.Log("안나 페이즈2 HP : "+AnnaHP_Phase2);
                 AnnaPhase = 2;
                 //NumMat = AnnaBody.GetComponent<SkinnedMeshRenderer>().material;
                 //AnnaBody.GetComponent<SkinnedMeshRenderer>().materials = NumMat;
