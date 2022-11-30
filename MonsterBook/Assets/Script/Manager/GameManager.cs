@@ -464,7 +464,7 @@ public class GameManager : MonoBehaviour
         yield return YieldInstructionCache.waitForSeconds(3);
         if (i == 1)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
             FadeEffect(false, 1);
         }
     }
