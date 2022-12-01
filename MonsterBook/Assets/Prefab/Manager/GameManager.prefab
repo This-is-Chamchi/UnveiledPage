@@ -274,8 +274,8 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 03c9c15e62d3f964da9fcf50eff9fa42, type: 3}
   - {fileID: 32900000, guid: 215b6d8ce57260d468df89d4d29dfaf0, type: 3}
   scenarioData:
-  - {fileID: 11400000, guid: 32e2c2bddd1246943a0fd6a0bc4c13c3, type: 2}
-  - {fileID: 11400000, guid: 251ce107c428b2e48b60396ea09d923b, type: 2}
+  - {fileID: 11400000, guid: b3e1ef9d39aa5dc4f8ad990b25c24763, type: 2}
+  - {fileID: 11400000, guid: e0d48d40e19a5f0478cbb14da55ed496, type: 2}
 --- !u!1 &5871727626193082406
 GameObject:
   m_ObjectHideFlags: 0

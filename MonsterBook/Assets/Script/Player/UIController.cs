@@ -88,7 +88,11 @@ public class UIController : MonoBehaviour
 
     protected void OnPause()
     {
-        GameManager.SetVideoPlay(false);
+        if (GameManager.Instance.isPlayVideo) {
+            GameManager.SkipCutScene();
+            return;
+        }
+
         Game.UI.UIController.Instance.OpenPopup(new UIPausePopupData()
         {
             endCloseAction = () =>

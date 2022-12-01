@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5719269547919210473, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: scenarioData
+      value: 
+      objectReference: {fileID: 11400000, guid: b3e1ef9d39aa5dc4f8ad990b25c24763, type: 2}
     - target: {fileID: 5719269547919210476, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_Name
       value: TalkSimulator
@@ -732,7 +736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5719269548221269362, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_text
@@ -781,7 +785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5719269549665530716, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5927429092417950118, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_SizeDelta.y
