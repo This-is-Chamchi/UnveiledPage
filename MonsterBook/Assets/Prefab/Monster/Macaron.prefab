@@ -252,7 +252,7 @@ MonoBehaviour:
   AttackChecer: {fileID: 306540354}
   FindMonsterScript: {fileID: 8765955373959696924}
   AttackDamage: 10
-  AttackDelay: 6
+  AttackDelay: 3
   MacarongModle: {fileID: 2228881251344405289}
 --- !u!1 &5825317626407016007
 GameObject:

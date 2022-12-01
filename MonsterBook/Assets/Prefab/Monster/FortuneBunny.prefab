@@ -1104,7 +1104,7 @@ MonoBehaviour:
   maxHp: 20
   curHp: 0
   attackDamage: 10
-  attackDelay: 1
+  attackDelay: 2
   walkSpeed: 2
   runSpeed: 9
   knockBackForce: 10
