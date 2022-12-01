@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 991002030232774970}
+  - component: {fileID: 8333769872373898112}
   m_Layer: 0
   m_Name: Macaron_BossBuff
   m_TagString: Untagged
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8333769872373898112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991002030232774969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea5e168031c8a64b97f43a25b3beb08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Macaron: {fileID: 991002031021946241}
 --- !u!1 &991002031021946241
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,7 +60,6 @@ GameObject:
   - component: {fileID: 991002031021946252}
   - component: {fileID: 2644173093580327155}
   - component: {fileID: 6707848435199634139}
-  - component: {fileID: 5288549922140361921}
   m_Layer: 10
   m_Name: Macaron
   m_TagString: BossBuff
@@ -135,18 +148,6 @@ MonoBehaviour:
   AttackDamage: 10
   AttackDelay: 6
   MacarongModle: {fileID: 4898090297404271703}
---- !u!114 &5288549922140361921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991002031021946241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea5e168031c8a64b97f43a25b3beb08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &991002031657406161
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +348,6 @@ GameObject:
   - component: {fileID: 6707848436156043326}
   - component: {fileID: 6707848436156043327}
   - component: {fileID: 6707848436156043324}
-  - component: {fileID: 7678600117190548002}
   m_Layer: 0
   m_Name: AttackColider
   m_TagString: Untagged
@@ -393,18 +393,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f17eaa3a11f6e1d4889eb814eff6d8aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7678600117190548002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6707848436156043329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea5e168031c8a64b97f43a25b3beb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &991002030353450425

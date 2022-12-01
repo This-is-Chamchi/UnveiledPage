@@ -87,9 +87,7 @@ public class Soup_Attack_State : FSM_State<Gretel>
 
 
                 if (SpownCounter == SoupCount)   //생성한 스프와 랜덤 스프갯수가 같아지면 스테이트 종료
-                {
-
-                    //Debug.LogError("스프 공격 종료조건");
+                {            
                     if(_Gretel.Hansel.GetComponent<Hansel>().CurrentHP <= 0 && _Gretel.Hansel.GetComponent<Hansel>()._isStuned == true)
                     {
                         _Gretel.ChangeState(Protected_State.Instance);
@@ -97,7 +95,6 @@ public class Soup_Attack_State : FSM_State<Gretel>
                     }
                     else
                     {
-
                         Lookcount = 2;
                         _Gretel.ChangeState(Knife_Attack_State.Instance);
                     }
