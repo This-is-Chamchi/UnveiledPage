@@ -8,7 +8,7 @@ public class DirectCameraObject : MonoBehaviour
     [SerializeField] private float speed = 4;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("PlayerDash"))
         {
