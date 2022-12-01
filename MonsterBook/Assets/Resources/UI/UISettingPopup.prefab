@@ -165,8 +165,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PRESS <sprite name="icon_inputkeys_back"> TO RETURN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f105510683454fd458fd590346b07a8c, type: 2}
-  m_sharedMaterial: {fileID: -3444865736167840195, guid: f105510683454fd458fd590346b07a8c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cf16b8c78887c534da4416c6b0fe15be, type: 2}
+  m_sharedMaterial: {fileID: 9170773369988422483, guid: cf16b8c78887c534da4416c6b0fe15be, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
