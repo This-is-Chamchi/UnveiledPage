@@ -1994,14 +1994,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
-    - target: {fileID: 335757429096813822, guid: 16a5aae7c87c1cc4f8c6666acd6bda4e, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 335757429096813822, guid: 16a5aae7c87c1cc4f8c6666acd6bda4e, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16a5aae7c87c1cc4f8c6666acd6bda4e, type: 3}
 --- !u!1001 &626535193
@@ -13667,7 +13659,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8622231856638578679, guid: 4ee60f579a24780428161abb9d21b090, type: 3}
+  - {fileID: 2100000, guid: ca5a3a825121ba0459004ded701d96c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -67,6 +67,20 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.08947369
+        functionName: SoundShot
+        data: Player_Dead
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.10526316
+        functionName: SoundShot
+        data: Player_Dead_Voice
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.5300354
         functionName: ParticlePlay
         data: Dead
