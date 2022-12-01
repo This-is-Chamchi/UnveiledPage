@@ -133,12 +133,7 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        }
-        else if (SceneManager.GetActiveScene().buildIndex != 0)
-        {
-            Instantiate(playerPrefab, Vector3.zero, playerPrefab.transform.rotation);
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        }
+        }        
         Screen.SetResolution(1920, 1080, true);
 
         inputCmd.onSubmit.AddListener(delegate { Command(); });
