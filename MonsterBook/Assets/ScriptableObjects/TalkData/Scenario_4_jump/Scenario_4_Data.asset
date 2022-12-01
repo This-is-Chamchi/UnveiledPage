@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93328a0ca968af94484c14b40ca95b9f, type: 3}
   m_Name: Scenario_4_Data
   m_EditorClassIdentifier: 
-  talkElementDataList: []
+  talkElementDataList:
+  - {fileID: 11400000, guid: fa2aba61b35efd546bfe8ac304969f5e, type: 2}

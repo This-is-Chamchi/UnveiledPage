@@ -82,7 +82,7 @@ public class TalkSimulator : Singleton<TalkSimulator>
         GameManager.SetInGameInput(false);
         dialogueRect.SetActive(true);
         skipRect.SetActive(true);
-        this.scenarioData = scenarioData;        
+        this.scenarioData = scenarioData;
         //NextTalk���� ++�ϰ� �����ϱ� ������, -1���� ���� ���ּ���.
         currentIndex = -1;
         isAllowNextTalk = true;
@@ -233,8 +233,33 @@ public class TalkSimulator : Singleton<TalkSimulator>
 
         StringBuilder stBuilder = new StringBuilder();
 
+        var isSkipCharacter = false;
+
         while (currentTalkData.Talk.Length != currentTextIndex)
         {
+            if (currentTalkData.Talk[currentTextIndex] == '<')
+            {
+                stBuilder.Append(currentTalkData.Talk[currentTextIndex]);
+                isSkipCharacter = true;
+                ++currentTextIndex;
+                continue;
+            }
+
+            if (currentTalkData.Talk[currentTextIndex] == '>')
+            {
+                stBuilder.Append(currentTalkData.Talk[currentTextIndex]);
+                isSkipCharacter = false;
+                ++currentTextIndex;
+                continue;
+            }
+
+            if (isSkipCharacter)
+            {
+                stBuilder.Append(currentTalkData.Talk[currentTextIndex]);
+                ++currentTextIndex;
+                continue;
+            }
+
             stBuilder.Append(currentTalkData.Talk[currentTextIndex]);
             ++currentTextIndex;
 
