@@ -397,7 +397,7 @@ public class Hansel : MonoBehaviour, IEntity
             if (collision.collider.CompareTag("BossBuff"))
             {
                 ChangeState(RollingAttack_State.Instance);
-                Destroy(collision.gameObject);
+                Destroy(GameObject.FindWithTag("Macaron"));
             }
 
         }
