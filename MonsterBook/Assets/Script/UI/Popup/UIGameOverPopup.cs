@@ -96,13 +96,16 @@ public class UIGameOverPopup : UIBasePopup
     public void OnRetry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        action.UI.Disable();
+        return;
     }
 
     public void OnExit()
     {
-        try{SceneManager.LoadScene(0);}
-        catch{return;}
-        
+
+        SceneManager.LoadScene(0);
+        action.UI.Disable();
+        return;
     }
 
 }
