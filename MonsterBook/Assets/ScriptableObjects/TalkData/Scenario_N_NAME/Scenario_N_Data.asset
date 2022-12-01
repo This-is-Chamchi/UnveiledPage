@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2375ed6934bd71e4b890bad9d42c984d, type: 3}
-  m_Name: TalkElementData
+  m_Script: {fileID: 11500000, guid: 93328a0ca968af94484c14b40ca95b9f, type: 3}
+  m_Name: Scenario_N_Data
   m_EditorClassIdentifier: 
-  index: 0
-  type: 0
-  characterName: ???
-  talk: "\uC624! \uB2F9\uC2E0\uC740!"
-  character: {fileID: 21300000, guid: a88181c2206b32848855ef9c7bec623f, type: 3}
-  characterStandAnchor: 1
+  talkElementDataList: []
