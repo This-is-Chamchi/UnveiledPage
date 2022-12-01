@@ -147,6 +147,7 @@ public class GameManager : MonoBehaviour
             //commadList.Add(command[i].objectCommand, command[i].typeCommand, command[i].sendCommand);
             commandList.Add(command[i].objectCommand, command[i].typeCommand, command[i]);
         }
+        Cursor.visible = false;
     }
 
     private void Start()
