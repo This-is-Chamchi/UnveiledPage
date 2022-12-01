@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   type: 0
-  characterName: 
-  talk: 
-  character: {fileID: 0}
-  characterStandAnchor: 0
+  characterName: Messess
+  talk: "\uB2E4\uC74C\uC740 \uB300\uC26C\uC785\uB2C8\uB2E4."
+  character: {fileID: 21300000, guid: a88181c2206b32848855ef9c7bec623f, type: 3}
+  characterStandAnchor: 1

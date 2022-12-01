@@ -9,7 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93328a0ca968af94484c14b40ca95b9f, type: 3}
-  m_Name: Scenario_N_Data
+  m_Script: {fileID: 11500000, guid: 2375ed6934bd71e4b890bad9d42c984d, type: 3}
+  m_Name: TalkElementData4
   m_EditorClassIdentifier: 
-  talkElementDataList: []
+  index: 0
+  type: 0
+  characterName: Serros
+  talk: "\uC81C\uAC00\uC694..?"
+  character: {fileID: 21300000, guid: f07a84e8c513940449decddd0bf0e00e, type: 3}
+  characterStandAnchor: 0

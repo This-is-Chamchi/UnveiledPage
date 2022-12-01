@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   type: 0
-  characterName: 
-  talk: 
-  character: {fileID: 0}
-  characterStandAnchor: 0
+  characterName: Messess
+  talk: "<sprite name=\"icon_inputkeys_jump\">\uBC84\uD2BC\uC744 \uD1B5\uD574 \uC810\uD504\uB97C
+    \uD558\uC2E4\uC218\uC788\uC73C\uC138\uC694 \uC6A9\uC0AC\uB2D8!"
+  character: {fileID: 21300000, guid: a88181c2206b32848855ef9c7bec623f, type: 3}
+  characterStandAnchor: 1
