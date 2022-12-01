@@ -15,6 +15,6 @@ MonoBehaviour:
   index: 0
   type: 0
   characterName: Serros
-  talk: "\uBB50\uC9C0?\r\n\uC5EC\uAE34 \uC5B4\uB514\uC9C0?"
+  talk: "\uBB50\uC9C0?\r \uC5EC\uAE34 \uC5B4\uB514\uC9C0?"
   character: {fileID: 21300000, guid: f07a84e8c513940449decddd0bf0e00e, type: 3}
   characterStandAnchor: 0

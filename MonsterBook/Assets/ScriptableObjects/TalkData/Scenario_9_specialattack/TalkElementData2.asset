@@ -15,6 +15,6 @@ MonoBehaviour:
   index: 0
   type: 0
   characterName: Messess
-  talk: "\uC815\uB9D0 \uB300\uB2E8\uD569\uB2C8\uB2E4, \uC138\uB85C\uC2A4\uB2D8."
+  talk: "\uC815\uB9D0 \uB300\uB2E8\uD569\uB2C8\uB2E4. \uC138\uB85C\uC2A4\uB2D8."
   character: {fileID: 21300000, guid: a88181c2206b32848855ef9c7bec623f, type: 3}
   characterStandAnchor: 1

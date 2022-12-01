@@ -15,6 +15,6 @@ MonoBehaviour:
   index: 0
   type: 0
   characterName: Serros
-  talk: "<sprite name=\"icon_inputkeys_move\">\uC744 \uC0AC\uC6A9\uD558\uC5EC \uC774\uB3D9\uD558\uC790."
+  talk: "\uC800 \uC55E\uC5D0 \uBC18\uC9DD\uC774\uB294 \uAC74 \uBB50\uC9C0?\r"
   character: {fileID: 21300000, guid: f07a84e8c513940449decddd0bf0e00e, type: 3}
   characterStandAnchor: 0
