@@ -35331,7 +35331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9e950c0cc68ee4f869051559cf2cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  speed: 250
 --- !u!1 &6323956632993187078
 GameObject:
   m_ObjectHideFlags: 0
@@ -49368,10 +49368,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c495079ecc30f4ab872e5c42284aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnnaHP_Phase1: 50
-  AnnaHP_Phase2: 50
+  AnnaHP_Phase1: 200
+  AnnaHP_Phase2: 150
   AnnaHP_Phase3: 100
-  Anna_CurrentHP: 100
+  Anna_CurrentHP: 200
   AnnaPhase: 1
   Matches: {fileID: 0}
   MoveSpeed: 1
@@ -49388,8 +49388,8 @@ MonoBehaviour:
   Anna_IdleTime: 2
   Anna_IdleTime_Cur: 0
   Anna_MatchAttack_Probability: 50
-  Anna_Halo_Probability: 15
-  Anna_ProtectionofGod_Probability: 35
+  Anna_Halo_Probability: 20
+  Anna_ProtectionofGod_Probability: 30
   AnnaBody: {fileID: 6323956632717885873}
   AnnaFace: {fileID: 6323956632423929569}
   HitMotionAble: 0
@@ -49403,17 +49403,17 @@ MonoBehaviour:
   HitEffect: {fileID: 646951396}
   WorldEvent: {fileID: 6323956633689730251}
   Halo: {fileID: 6323956633845408309}
-  MatchesSpeed_1: 1
+  MatchesSpeed_1: 2
   MatchesSpeed_2: 1
   MatchesSpeed_Halo_1: 0.5
   Matches_Attack01_Damage: 10
   Matches_Attack02_Damage: 10
   Matches_Attack03_Damage: 10
-  Match_distance: 1
+  Match_distance: 1.2
   MatchObjectPool: {fileID: 6323956632318658558}
   MatchSpawnPoint: {fileID: 6323956632520678251}
-  MatchCount: 3
-  HaloCount: 5
+  MatchCount: 6
+  HaloCount: 4
   ProtectArea: {fileID: 6323956633250910460}
   ProtectAreaActive: 0
   HaloPoint:
@@ -49444,14 +49444,14 @@ MonoBehaviour:
   - {fileID: 6323956633329397171}
   - {fileID: 6323956633161598431}
   ProtectedMoveAble: 0
-  BlizzardTriggerHP: 70
+  BlizzardTriggerHP: 100
   GrannyTriggerHP: 100
   Circle: {fileID: 864542134}
   circleSizeSpeed: 1
-  circleIntensitySpeed: 100
+  circleIntensitySpeed: 150
   ProtectAreaRoundSpeed: 1
-  AutoFollowTime: 0.9
-  DownSpeed: 0.2
+  AutoFollowTime: 0.7
+  DownSpeed: 0.15
   GroundLanding: 0
   finishAttackAble: 0
   AnnaFalling: 0
