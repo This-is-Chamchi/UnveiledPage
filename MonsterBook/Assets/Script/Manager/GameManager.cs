@@ -429,7 +429,7 @@ public class GameManager : MonoBehaviour
 
     public static void SkipCutScene()
     {
-        Instance.EndCutScene(Instance.vidoePlayer);
+        if (Instance.vidoePlayer.isPlaying) Instance.EndCutScene(Instance.vidoePlayer);
     }
 
     float cutSceneTime = 0f;
