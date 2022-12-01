@@ -432,7 +432,7 @@ public class GameManager : MonoBehaviour
 
     public static void SkipCutScene()
     {
-        Instance.cutSceneTime = 100;
+        Instance.EndCutScene(Instance.vidoePlayer);
     }
 
     float cutSceneTime = 0f;
@@ -460,6 +460,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CutSceneEndRoutine(int i)
     {
+        vidoePlayer.Stop();
         yield return YieldInstructionCache.waitForSeconds(2.5f);
         if (i == 0) SoundManager.PlayBackGroundSound("1Stage_Nomal_BGM");
         else SoundManager.PlayBackGroundSound("2Stage_Nomal_BGM");
