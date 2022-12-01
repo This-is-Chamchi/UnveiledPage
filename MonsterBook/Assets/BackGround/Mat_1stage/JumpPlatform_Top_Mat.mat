@@ -111,7 +111,7 @@ Material:
     - _Horizontal: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OverlayInten: 1
+    - _OverlayInten: 7.04
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
