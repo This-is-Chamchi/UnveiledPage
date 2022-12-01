@@ -524,7 +524,8 @@ protected void FixedUpdate()  {
         //=================Debug . ing=================//
         if (Input.GetKeyDown(KeyCode.F11))  {
             //Cursor.visible = false;
-            IntroProduction();
+            //IntroProduction();
+            OnDamage(90 , transform.position);
         }
         if(Input.GetKeyDown(KeyCode.F5)) input.SetInputAction(true);
         //=============================================//
@@ -730,12 +731,13 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
     #region Check Func
 
     public void CheckGround()   {
+        if(CheckDamage || m_curHP <= 0) return;
         
         isGround = Physics.BoxCast(collid.bounds.center, new Vector3(0.35f, 0.5f, 0.5f),
             -transform.up, Quaternion.identity, collid.height/2, groundLayer);
         //N sec after jump , play the falling animation (if Jump attacking, then dosent work.)
         if (!isGround && !LockLookTartget &&
-         state != PlayerState.AttackState && state != PlayerState.DashState)    {
+         state != PlayerState.AttackState && state != PlayerState.DashState )    {
 
                 m_WeaponIK.m_WeaponIKSet.weight = 0;
                 ParticleStopPlay("Run");
