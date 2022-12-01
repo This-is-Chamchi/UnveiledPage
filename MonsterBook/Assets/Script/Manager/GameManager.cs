@@ -9,6 +9,7 @@ using System.Linq;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using UnityEngine.InputSystem;
 using static UnityEngine.Rendering.DebugUI;
 
 public class DualKeyDictionary<TKey1, TKey2, TValue> : Dictionary<TKey1, Dictionary<TKey2, TValue>>
@@ -69,9 +70,19 @@ public enum ConsoleType
     Error,
 }
 
+
+[System.Serializable]
+public enum GameInputType
+{
+    Keyboard,
+    Controller,
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    public GameInputType gameInputType;
 
     [Header("[Prefab]")]
     [SerializeField] private GameObject playerPrefab;
@@ -133,7 +144,7 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        }        
+        }
         Screen.SetResolution(1920, 1080, true);
 
         inputCmd.onSubmit.AddListener(delegate { Command(); });
@@ -148,6 +159,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (Gamepad.current != null)
+        {
+            gameInputType = GameInputType.Controller;
+        }
+        else
+        {
+            gameInputType = GameInputType.Keyboard;
+        }
+
         SceneStartEvent();
     }
 
