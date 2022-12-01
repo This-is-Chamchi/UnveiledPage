@@ -25,7 +25,6 @@ public class HanselStunMoveState_return : FSM_State<Hansel>
     public override void ExitState(Hansel _Hansel)
     {
         _Hansel.Ani.SetFloat("H_Walk", 0);
-        Debug.Log("con 다시 복구");
         _Hansel.rb.constraints = _Hansel.Constraints;
     }
 

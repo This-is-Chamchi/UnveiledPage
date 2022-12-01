@@ -60,8 +60,6 @@ public class Knife_Attack_State : FSM_State<Gretel>
                 CutCount = 0;
                 
                 _Gretel.KnifeCollider.GetComponent<BoxCollider>().enabled = false;
-                Debug.Log(_Gretel.Hansel.GetComponent<Hansel>().CurrentHP);
-                Debug.Log(_Gretel.Hansel.GetComponent<Hansel>()._isStuned);
 
                 if (_Gretel.Hansel.GetComponent<Hansel>().CurrentHP <= 0 && _Gretel.Hansel.GetComponent<Hansel>()._isStuned == true)
                 {
@@ -110,7 +108,6 @@ public class Knife_Attack_State : FSM_State<Gretel>
             {
                 CutCount++;
                 _Gretel.KnifeCollider.SetActive(false);
-                Debug.Log("cutCount : "+CutCount + _Gretel.KnifeAttackCount);
                 CutCountOneTimeTrigger = true;
             }
             

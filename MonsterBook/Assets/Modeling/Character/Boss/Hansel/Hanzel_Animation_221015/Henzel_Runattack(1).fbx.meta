@@ -60,7 +60,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.9662162
+      - time: 0.9474896
         functionName: RushColOn
         data: 
         objectReferenceParameter: {instanceID: 0}

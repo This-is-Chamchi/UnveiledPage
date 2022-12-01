@@ -677,12 +677,10 @@ public class Hansel : MonoBehaviour, IEntity
            
             if(gameObject.transform.rotation.eulerAngles.y >= 89 && gameObject.transform.rotation.eulerAngles.y <= 91) //enlerAngles 소수점 오차 보간 
             {
-                Debug.Log(name + "_R");
                 m_Particle[name + "_R"].Play();
             }
             else
             {
-                Debug.Log(name + "_L");
                 m_Particle[name + "_L"].Play();
             }
         }
