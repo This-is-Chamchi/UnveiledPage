@@ -64,6 +64,7 @@ MonoBehaviour:
   ExplosionForce: 10
   AnimatorCtrl: {fileID: 581199286243660947}
   AnimationTrigger: {fileID: 581199286243660948}
+  KnockbackForce: 10
   AttackChecer: {fileID: 6935629620840759572}
   FindMonsterScript: {fileID: 581199285338288419}
   AttackDamage: 10

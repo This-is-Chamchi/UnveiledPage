@@ -248,6 +248,7 @@ MonoBehaviour:
   ExplosionForce: 10
   AnimatorCtrl: {fileID: 5825317626222178840}
   AnimationTrigger: {fileID: 5825317626222178843}
+  KnockbackForce: 10
   AttackChecer: {fileID: 306540354}
   FindMonsterScript: {fileID: 8765955373959696924}
   AttackDamage: 10
@@ -268,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5825317626407016004
 Transform:
   m_ObjectHideFlags: 0

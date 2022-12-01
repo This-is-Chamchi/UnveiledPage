@@ -17,13 +17,14 @@ public abstract class UIBasePopup : UIBaseView
     [Button("Open")]
     public override void Open()
     {
-        base.Open();
+        base.Open();        
     }
 
     [Button("Close")]
     public override void Close()
     {
         Game.UI.UIController.Instance.ClosePopup(this);
+        GameManager.SetVideoPlay(true);
     }
 
     public override void EndClose()

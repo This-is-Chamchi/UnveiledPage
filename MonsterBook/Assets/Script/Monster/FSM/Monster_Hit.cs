@@ -11,7 +11,7 @@ namespace MonsterFSM
 
         public override void Init(MonsterBase _Monster)
         {
-            base.Init(_Monster);            
+            base.Init(_Monster);
             Monster.gAnimator.SetTrigger("Hit");
             Monster.gAnimationTrigger.gisAnimationEnd = false;
             InitCheck = true;
@@ -21,14 +21,14 @@ namespace MonsterFSM
         {
             if (InitCheck)
             {
-                rigid.velocity = new Vector3(0.0f , 0.0f , 0.0f);
+                //rigid.velocity = new Vector3(0.0f , 0.0f , 0.0f);
                 InitCheck = false;
-            }            
+            }
         }
 
         public override void UpdateExecute()
         {
-            
+
         }
     }
 }

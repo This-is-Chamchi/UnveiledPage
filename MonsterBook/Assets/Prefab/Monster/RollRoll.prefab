@@ -191,6 +191,7 @@ MonoBehaviour:
   ExplosionForce: 10
   AnimatorCtrl: {fileID: 6394491786955078507}
   AnimationTrigger: {fileID: 6394491786955078516}
+  KnockbackForce: 11
   ObstacleObj: {fileID: 4187821221266013322, guid: 3415d079d73646d48b38cb484f781783, type: 3}
   CreateObstacleTime: 0.3
   DestoryObstacleTime: 1
