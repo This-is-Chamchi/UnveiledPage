@@ -29,7 +29,6 @@ public class Gretel : MonoBehaviour, IEntity
     public GameObject KnifeEffect2;
     public GameObject KnifeEffect3;
     public GameObject KnifeEffectPosition;
-    [HideInInspector] public bool ResetPosition = false;
     public bool KnifeAnimation;
     #endregion
 
@@ -109,6 +108,10 @@ public class Gretel : MonoBehaviour, IEntity
     public void OnDamage(int PlayerDamage, Vector3 pos)
     {
         CurrentHP -= PlayerDamage;
+        if(CurrentHP < 0)
+        {
+            CurrentHP = 0;
+        }
     }
 
     public void OnRecovery(int heal)
@@ -181,9 +184,16 @@ public class Gretel : MonoBehaviour, IEntity
 
     void HancelReset()
     {
-        StartCoroutine(CountTimer());
+        if(Hansel == null)
+        {
+            return;
+        }
+        else
+        {
+            StartCoroutine(CountTimer());
+        }
     }
-    public IEnumerator CountTimer()                //일정 시간 공격 받는지 체크
+    public IEnumerator CountTimer()              
     {
         yield return new WaitForSeconds(2.0f);
         Hansel.GetComponent<Hansel>().inPhaseTwo();
