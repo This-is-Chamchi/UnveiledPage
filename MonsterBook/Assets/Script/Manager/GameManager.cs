@@ -91,17 +91,18 @@ public class GameManager : MonoBehaviour
 
     [Header("[Video]")]
     [SerializeField] private VideoPlayer vidoePlayer;
+    public bool isPlayVideo { get { return vidoePlayer.isPlaying; } }
     [SerializeField] private GameObject videoImage;
     [SerializeField] private VideoClip[] clip;
     [SerializeField]
     private ScenarioData[] scenarioData;
 
     //private Dictionary<string, string> commandList = new Dictionary<string, string>();    
-    private DualKeyDictionary<string, string, CommandData> commandList = new DualKeyDictionary<string, string, CommandData>();    
+    private DualKeyDictionary<string, string, CommandData> commandList = new DualKeyDictionary<string, string, CommandData>();
 
-    
+
     private void OnEnable()
-    {        
+    {
         OutputConsole("GameManager Loaded", ConsoleType.System);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -170,16 +171,16 @@ public class GameManager : MonoBehaviour
                     FadeEffect(false, 4);
                 }
                 break;
-            case 2:                
+            case 2:
                 GameObject.Find("BossSceneDirector").GetComponent<BossSceneDirector>().StartStage(1);
                 FadeEffect(false, 5);
                 break;
             case 3:
                 if (!MoveSavePoint())
                 {
-                    TalkSimulator.Instance.StartScenario(scenarioData[1]);                    
+                    TalkSimulator.Instance.StartScenario(scenarioData[1]);
                 }
-                player.isSecondEnable = true;                
+                player.isSecondEnable = true;
                 FadeEffect(false, 4);
                 SoundManager.PlayBackGroundSound("2Stage_Normal_BGM");
                 break;
@@ -211,9 +212,9 @@ public class GameManager : MonoBehaviour
     #region Console Function
     public static void CallCommandWindow(bool value)
     {
-       Instance.commandWindow.SetActive(value);
-       Instance.inputCmd.text = "";       
-       Instance.inputCmd.ActivateInputField();        
+        Instance.commandWindow.SetActive(value);
+        Instance.inputCmd.text = "";
+        Instance.inputCmd.ActivateInputField();
     }
 
     public void Command()
@@ -329,7 +330,7 @@ public class GameManager : MonoBehaviour
             case ConsoleType.System:
                 Instance.consoleText.text += "<color=green><System>: " + cmd + "</color>\n" + result;
                 break;
-            case ConsoleType.Error:                
+            case ConsoleType.Error:
                 Instance.consoleText.text += "<color=red><System>: " + cmd + "</color>\n" + result;
                 break;
         }
@@ -427,7 +428,7 @@ public class GameManager : MonoBehaviour
     }
 
     public static void PlayCutScene(int i, float delay = 0)
-    {        
+    {
         Instance.StartCoroutine(Instance.CutSceneRoutine(i, delay));
     }
 
@@ -443,12 +444,12 @@ public class GameManager : MonoBehaviour
     {
         SetInGameInput(false);
         Instance.blackImage.color = new Color32(0, 0, 0, 255);
-        yield return YieldInstructionCache.waitForSeconds(delay);        
+        yield return YieldInstructionCache.waitForSeconds(delay);
         VideoImage(true, 0);
         Instance.vidoePlayer.clip = Instance.clip[i];
         Instance.vidoePlayer.Play();
         SoundManager.PlayBackGroundSound("Lobby_BGM");
-        cutSceneTime = 0f;        
+        cutSceneTime = 0f;
         float videoTime = ((float)Instance.clip[i].length);
         cutScene = i;
         vidoePlayer.loopPointReached += EndCutScene;
@@ -504,7 +505,7 @@ public class GameManager : MonoBehaviour
 
     public static void FadeEffect(bool value, float speed, float delay = 0)
     {
-        Instance.StartCoroutine(Instance.FadeRoutine(value, speed, delay));        
+        Instance.StartCoroutine(Instance.FadeRoutine(value, speed, delay));
     }
 
     private IEnumerator FadeRoutine(bool value, float speed, float delay = 0)
