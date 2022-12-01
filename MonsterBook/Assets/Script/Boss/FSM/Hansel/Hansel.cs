@@ -453,7 +453,7 @@ public class Hansel : MonoBehaviour, IEntity
         Lamp.SetActive(false);
         PhaseChecker++;
         Ani.Play("Cry_End");
-        //WorldSound.GetComponent<WorldSound>().WorldSoundStop("1StageBoss_LightElectricity");
+        WorldSound.GetComponent<WorldSound>().WorldSoundStop("1StageBoss_LightElectricity");
         WorldSound.GetComponent<WorldSound>().WorldSoundPlay("1StageBoss_BurningFire", 1);
         WorldSound.GetComponent<WorldSound>().WorldSoundPlay("1StageBoss_PotBoilling", 2);
         WorldSound.GetComponent<WorldSound>().WorldSoundPlay("1StageBoss_Cooking", 3);

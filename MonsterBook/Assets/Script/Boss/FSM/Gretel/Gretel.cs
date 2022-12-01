@@ -184,14 +184,9 @@ public class Gretel : MonoBehaviour, IEntity
 
     void HancelReset()
     {
-        if(Hansel == null)
-        {
-            return;
-        }
-        else
-        {
+        
             StartCoroutine(CountTimer());
-        }
+        
     }
     public IEnumerator CountTimer()              
     {

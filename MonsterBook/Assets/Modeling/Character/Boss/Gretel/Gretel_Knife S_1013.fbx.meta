@@ -81,6 +81,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.5542029
+        functionName: KnifeDamageEnd
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.5750224
         functionName: GretelKnifeSound
         data: 1StageGretel_KnifeTwisting
@@ -90,13 +97,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.6470969
         functionName: KnifeTraceEnd
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.6815437
-        functionName: KnifeDamageEnd
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
