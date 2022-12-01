@@ -185,14 +185,11 @@ public class InputManager : MonoBehaviour   {
     private void isLookTargetEnd()  {
         //Stop searching target
         if(m_player.state != PlayerState.WireState && m_player.state != PlayerState.WireThrowState){    
-            m_player.PlayerAimMouse = Vector3.zero;
-            m_player.PlayerAimObj = Vector2.zero;
             m_player.PlayerLookat.transform.rotation = Quaternion.identity;
+            m_player.ui.SetWireAim(default, false);
+            m_player.Arrow_Lookat.SetActive(false);
         }
-            
         m_player.isLookTarget = false;
-        m_player.ui.SetWireAim(default, false);
-        m_player.Arrow_Lookat.SetActive(false);
     }
 
     #endregion

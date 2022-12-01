@@ -575,15 +575,16 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
                 wirePos.SetParent(null , true);
                 wirePos.rotation = Quaternion.identity;
                 isLockDistance = true;
-                LookUpHead(); 
-                ui.SetWireAim(wirePos.position, true);
-                
+                   
                 if(isMonsterCheck)     {
                     SaveBouceYPos = m_Lookat_hit.collider.bounds.size.y / 2;        //Save contect Col half of size.
                     var yMiddle = new Vector3(m_Lookat_hit.transform.position.x  , m_Lookat_hit.transform.position.y + SaveBouceYPos, 0 );
                     wirePos.position = yMiddle;
                 }
                 else    wirePos.position = m_Lookat_hit.transform.position;
+
+                ui.SetWireAim(wirePos.position, true);
+                LookUpHead(); 
             }
             else    {   
                 isLockDistance = false;

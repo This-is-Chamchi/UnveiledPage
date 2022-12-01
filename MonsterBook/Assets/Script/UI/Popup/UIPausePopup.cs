@@ -97,6 +97,8 @@ public class UIPausePopup : UIBasePopup
                 gameObject.SetActive(false);
                 break;
             case State.Exit:
+                Time.timeScale = 1f;
+                action.UI.Disable();
                 SceneManager.LoadScene(0);
                 break;
             case State.Close:
@@ -107,7 +109,7 @@ public class UIPausePopup : UIBasePopup
     public override void BeginClose()
     {
         Time.timeScale = 1f;
-        action.Disable();
+        action.UI.Disable();
         base.BeginClose();
     }
 

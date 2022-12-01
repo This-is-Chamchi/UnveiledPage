@@ -38,6 +38,7 @@ namespace LDS
         {
             base.Initialize();
             curEuler = rotationValue[0];
+            boomarang.SetDamage(attackDamage);
         }
 
         public override void OnDamage(int damage, Vector3 pos)

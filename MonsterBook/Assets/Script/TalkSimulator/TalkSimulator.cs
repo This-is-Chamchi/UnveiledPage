@@ -75,7 +75,7 @@ public class TalkSimulator : Singleton<TalkSimulator>
         //action.Enable();
     }
 
-    [Button("½Ã³ª¸®¿À ½ÃÀÛ")]
+    [Button("ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public void StartScenario(ScenarioData scenarioData)
     {
         action.Enable();
@@ -83,7 +83,7 @@ public class TalkSimulator : Singleton<TalkSimulator>
         dialogueRect.SetActive(true);
         skipRect.SetActive(true);
         this.scenarioData = scenarioData;        
-        //NextTalk¿¡¼­ ++ÇÏ°í ½ÃÀÛÇÏ±â ¶§¹®¿¡, -1ºÎÅÍ ÁøÇà ÇØÁÖ¼¼¿ä.
+        //NextTalkï¿½ï¿½ï¿½ï¿½ ++ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, -1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.
         currentIndex = -1;
         isAllowNextTalk = true;
         startScenarioEvnet?.Invoke();
@@ -101,12 +101,12 @@ public class TalkSimulator : Singleton<TalkSimulator>
 
     public void NextTalk()
     {
-        if (!isAllowNextTalk)
+        if (!isAllowNextTalk || Time.timeScale == 0f)
             return;
 
         nextTalkEvent?.Invoke();
 
-        // ¸¸¾à, ÀÜ¿© ´ëÈ­°¡ Á¸ÀçÇÏ¸é, ÀÚµ¿À¸·Î ´ÙÀ½ ´ëÈ­¸¦ ½ÃÀÛÇÕ´Ï´Ù.
+        // ï¿½ï¿½ï¿½ï¿½, ï¿½Ü¿ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½, ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
         if (currentIndex < scenarioData.TalkElementDataList.Count - 1)
         {
             ++currentIndex;
@@ -134,8 +134,8 @@ public class TalkSimulator : Singleton<TalkSimulator>
         AddCharacter(currentTalkData);
         characterNameText.SetText(currentTalkData.CharacterName);
 
-        //´ëÈ­ ÇÏ´Â Ä£±¸¸é, È­ÀÌÆ®, 1¹è·Î
-        //´ëÈ­ ¾ÈÇÏ°í ÀÖÀ¸¸é °ËÁ¤ Æ¾Æ®, Å©±â 0.9¹è·Î
+        //ï¿½ï¿½È­ ï¿½Ï´ï¿½ Ä£ï¿½ï¿½ï¿½ï¿½, È­ï¿½ï¿½Æ®, 1ï¿½ï¿½ï¿½
+        //ï¿½ï¿½È­ ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Æ¾Æ®, Å©ï¿½ï¿½ 0.9ï¿½ï¿½ï¿½
         AutoHighlight(currentTalkData.CharacterName);
 
         textDisplayAnimation = StartCoroutine(CoTextDisplayAnimation());
@@ -148,7 +148,7 @@ public class TalkSimulator : Singleton<TalkSimulator>
         endTalkEvent?.Invoke();
     }
 
-    //°áÁ¤¹öÆ° ´©¸£¸é, Å¸ÀÚ±â ¿¬Ãâ ½ºÅµÇÏ°í ´Ù ¶ß°Ô ¸¸µé±â
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, Å¸ï¿½Ú±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Åµï¿½Ï°ï¿½ ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
     public void SkipTextDisplayAnimation()
     {
         if (textDisplayAnimation != null)
@@ -159,7 +159,7 @@ public class TalkSimulator : Singleton<TalkSimulator>
         talkText.SetText(currentTalkData.Talk);
     }
 
-    //½ºÅä¸® ½ºÅµ ±â´É
+    //ï¿½ï¿½ï¿½ä¸® ï¿½ï¿½Åµ ï¿½ï¿½ï¿½
     public void SkipScenario()
     {
         EndScenario();
@@ -213,7 +213,7 @@ public class TalkSimulator : Singleton<TalkSimulator>
     {
         for (var i = 0; i < talkCharacterSlots.Length; ++i)
         {
-            if (talkCharacterSlots[i].GetCharacterName().Equals(name) && !talkCharacterSlots[i].IsShow)
+            if (talkCharacterSlots[i].GetCharacterName().Equals(name))
             {
                 talkCharacterSlots[i].Show();
             }
@@ -225,7 +225,7 @@ public class TalkSimulator : Singleton<TalkSimulator>
     }
 
 
-    //ÅØ½ºÆ®´Â Å¸ÀÚ±â ¿¬Ãâ¿¡ ¼Óµµ nÃÊ
+    //ï¿½Ø½ï¿½Æ®ï¿½ï¿½ Å¸ï¿½Ú±ï¿½ ï¿½ï¿½ï¿½â¿¡ ï¿½Óµï¿½ nï¿½ï¿½
     IEnumerator CoTextDisplayAnimation()
     {
         var waitForTime = new WaitForSeconds(textDisplayTimePerCharacter);

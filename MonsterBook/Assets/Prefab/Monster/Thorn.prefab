@@ -251,10 +251,11 @@ MonoBehaviour:
   ExplosionForce: 10
   AnimatorCtrl: {fileID: 316128931318605081}
   AnimationTrigger: {fileID: 316128931318605082}
+  KnockbackForce: 10
   AttackChecer: {fileID: 620202639}
   FindMonsterScript: {fileID: 1005417574}
   AttackDamage: 10
-  AttackDelay: 6
+  AttackDelay: 3
 --- !u!54 &7677504408859519538
 Rigidbody:
   m_ObjectHideFlags: 0
