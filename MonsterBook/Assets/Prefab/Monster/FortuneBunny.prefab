@@ -1107,6 +1107,7 @@ MonoBehaviour:
   attackDelay: 1
   walkSpeed: 2
   runSpeed: 9
+  knockBackForce: 10
   aliveObj: {fileID: 2092748109704520295}
   sliceObj: {fileID: 919132149228042494}
   targetLayer:

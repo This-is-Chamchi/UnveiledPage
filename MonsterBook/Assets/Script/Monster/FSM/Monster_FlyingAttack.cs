@@ -10,38 +10,38 @@ namespace MonsterFSM
         //땅에 닫기까지 걸리는 시간
         private float timer;
         private float timeToFloor;
-        
+
         private GameObject Player;
-        
+
 
 
         public override void Init(MonsterBase _Monster)
         {
-            base.Init(_Monster);            
+            base.Init(_Monster);
             if (timeToFloor == 0)
             {
                 timeToFloor = 1;
-            }                
+            }
             if (Player == null)
             {
                 Player = GameObject.FindWithTag("Player");
             }
-                
-            AttackEnd  = false;
-            startPos = transform.position;                        
+
+            AttackEnd = false;
+            startPos = transform.position;
             endPos = startPos + new Vector3((Player.transform.position.x - startPos.x) * 2, 0, 0);
             _Monster.transform.LookAt(endPos);
             _Monster.gAnimator.SetTrigger("FlyAttack");
-            StartCoroutine(BulletMove());            
+            StartCoroutine(BulletMove());
         }
-        
+
         public override void FixedExecute(Rigidbody rigid)
         {
-            
+
         }
 
         public override void UpdateExecute()
-        {            
+        {
         }
 
         protected Vector3 Parabola(Vector3 start, Vector3 end, float height, float t)
@@ -53,15 +53,15 @@ namespace MonsterFSM
 
         protected IEnumerator BulletMove()
         {
-            
-            timer = 0;            
+
+            timer = 0;
             yield return new WaitForSeconds(0.1f);
 
             SoundManager.PlayVFXSound("2Stage_Crow_Woosh", transform.position);
 
             while (transform.position.y <= startPos.y)
-            {                
-                if (Monster.gFSM is Monster_FlyingAttack == false)
+            {
+                if (Monster.gFSM is Monster_FlyingAttack == false || Monster.BoxCastCheck(true))
                 {
                     AttackEnd = true;
                     yield break;

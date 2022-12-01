@@ -88,6 +88,7 @@ public class UIController : MonoBehaviour
 
     protected void OnPause()
     {
+        GameManager.SetVideoPlay(false);
         Game.UI.UIController.Instance.OpenPopup(new UIPausePopupData()
         {
             endCloseAction = () =>
