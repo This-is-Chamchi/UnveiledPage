@@ -129,6 +129,7 @@ MonoBehaviour:
   ExplosionForce: 10
   AnimatorCtrl: {fileID: 991002030383533414}
   AnimationTrigger: {fileID: 991002030383533413}
+  KnockbackForce: 0
   AttackChecer: {fileID: 6707848436156043324}
   FindMonsterScript: {fileID: 2644173092442844514}
   AttackDamage: 10
@@ -346,6 +347,7 @@ GameObject:
   - component: {fileID: 6707848436156043326}
   - component: {fileID: 6707848436156043327}
   - component: {fileID: 6707848436156043324}
+  - component: {fileID: 7678600117190548002}
   m_Layer: 0
   m_Name: AttackColider
   m_TagString: Untagged
@@ -391,6 +393,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f17eaa3a11f6e1d4889eb814eff6d8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7678600117190548002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707848436156043329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea5e168031c8a64b97f43a25b3beb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &991002030353450425

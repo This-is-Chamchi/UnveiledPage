@@ -453,7 +453,7 @@ public class Hansel : MonoBehaviour, IEntity
         Lamp.SetActive(false);
         PhaseChecker++;
         Ani.Play("Cry_End");
-        //WorldSound.GetComponent<WorldSound>().WorldSoundStop("1StageBoss_LightElectricity");
+        WorldSound.GetComponent<WorldSound>().WorldSoundStop("1StageBoss_LightElectricity");
         WorldSound.GetComponent<WorldSound>().WorldSoundPlay("1StageBoss_BurningFire", 1);
         WorldSound.GetComponent<WorldSound>().WorldSoundPlay("1StageBoss_PotBoilling", 2);
         WorldSound.GetComponent<WorldSound>().WorldSoundPlay("1StageBoss_Cooking", 3);
@@ -677,12 +677,10 @@ public class Hansel : MonoBehaviour, IEntity
            
             if(gameObject.transform.rotation.eulerAngles.y >= 89 && gameObject.transform.rotation.eulerAngles.y <= 91) //enlerAngles 소수점 오차 보간 
             {
-                Debug.Log(name + "_R");
                 m_Particle[name + "_R"].Play();
             }
             else
             {
-                Debug.Log(name + "_L");
                 m_Particle[name + "_L"].Play();
             }
         }
