@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 [Serializable]
 public struct DrawGiz
@@ -49,6 +48,7 @@ namespace LDS
         [SerializeField] protected float attackDelay;
         public float walkSpeed;
         public float runSpeed;
+        [SerializeField] private float knockBackForce;
 
         public GameObject aliveObj;
         public GameObject sliceObj;
@@ -340,6 +340,8 @@ namespace LDS
         {
             curHp -= damage;
             damagePos = pos;
+            Vector3 dir = (Vector3.Scale(transform.position - pos, new Vector3(1, 1, 0))).normalized * knockBackForce;
+
             if (curHp <= 0) curHp = 0;
             ChangeState(Hit);
         }

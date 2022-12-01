@@ -6,6 +6,8 @@ public class UIController : MonoBehaviour
     public bool SP_Using = false;
     private float SP_UpSpeed = 15.0f;
 
+    private PlayerController m_Player;
+
     private PlayerAction action;
 
     #region notouch
@@ -18,7 +20,7 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
-
+        m_Player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         action = new PlayerAction();
         action.UI.Esc.started += val => OnPause();
         action.Enable();
@@ -34,7 +36,7 @@ public class UIController : MonoBehaviour
 
     protected void Update()
     {
-        if (!SP_Using)
+        if (!SP_Using && m_Player.isSecondEnable)
         {
             if (SP_Cur < 100.0f)
             {
@@ -86,6 +88,7 @@ public class UIController : MonoBehaviour
 
     protected void OnPause()
     {
+        GameManager.SetVideoPlay(false);
         Game.UI.UIController.Instance.OpenPopup(new UIPausePopupData()
         {
             endCloseAction = () =>

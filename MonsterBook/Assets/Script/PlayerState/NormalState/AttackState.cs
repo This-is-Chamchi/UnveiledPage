@@ -25,7 +25,7 @@ public class AttackState : IState   {
         m_AttackdeltaTime += UnityEngine.Time.deltaTime;
         if(m_AttackdeltaTime >= m_AttackTimer)  { 
 
-            m_AttackdeltaTime = 0.0f;
+            m_AttackdeltaTime = .0f;
             player.ChangeState(PlayerState.WalkState);
         }    
     }
@@ -35,7 +35,6 @@ public class AttackState : IState   {
         if (player.attackCount > 3) player.attackCount = 1;
                
         player.AttackBoxOff(0);
-        player.Walk();
     }
 }
 

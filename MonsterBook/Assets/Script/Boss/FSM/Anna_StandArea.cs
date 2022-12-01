@@ -21,7 +21,6 @@ public class Anna_StandArea : MonoBehaviour
             AnnaUI.SetActive(true);
             Anna.GetComponent<Anna>().AnnaStand();
             boss.StartStage(2);
-            //CameraController.ZoomCamera(new Vector3(0, 2.35f, -50.6f));
             Destroy(this);
         }
     }

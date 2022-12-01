@@ -8,7 +8,7 @@ using static UnityEngine.Rendering.DebugUI;
 public abstract class MonsterBase : MonoBehaviour, IEntity, ICutOff
 {
 
-       
+
 
 
 
@@ -32,10 +32,10 @@ public abstract class MonsterBase : MonoBehaviour, IEntity, ICutOff
     [SerializeField] private GameObject[] Effects;
     [SerializeField] private float IdleTime;
     [SerializeField] private float ExplosionForce;
-    
+
     [SerializeField] private Animator AnimatorCtrl;
     [SerializeField] private MonsterAnimationTrigger AnimationTrigger;
-    
+    [SerializeField] protected float KnockbackForce;
 
 
 
@@ -56,16 +56,16 @@ public abstract class MonsterBase : MonoBehaviour, IEntity, ICutOff
     public Transform[] gPatrolPoint { get { return PatrolPoint; } protected set { PatrolPoint = value; } }
     public float gMoveDistance { get { return MoveDistance; } protected set { MoveDistance = value; } }
 
-    public Vector3 gExplosionVector { get { return ExplosionVector; } protected set{ ExplosionVector = value; } }
+    public Vector3 gExplosionVector { get { return ExplosionVector; } protected set { ExplosionVector = value; } }
     public int CurrentPatrol { get; set; }
     public MonsterFSMBase gFSM => FSM;
-    public GameObject[] gEffects => Effects;    
+    public GameObject[] gEffects => Effects;
     public GameObject gAlive_Object => Alive_Object;
     public GameObject gDead_Object => Dead_Object;
     public float gExplosionForce => ExplosionForce;
     public MonsterAnimationTrigger gAnimationTrigger => AnimationTrigger;
     public Animator gAnimator => AnimatorCtrl;
-    
+
 
     public Collider gPlayerColloder
     {
@@ -77,7 +77,7 @@ public abstract class MonsterBase : MonoBehaviour, IEntity, ICutOff
             return PlayerColloder;
         }
     }
-    
+
     public Bounds gBounds
     {
         get
@@ -95,17 +95,21 @@ public abstract class MonsterBase : MonoBehaviour, IEntity, ICutOff
 
 
 
-    public bool BoxCastCheck()
-    {        
+    public bool BoxCastCheck(bool isPlayerTrigger = false)
+    {
         float capsuleScale = Mathf.Max(transform.lossyScale.x, transform.lossyScale.z);
         RaycastHit hitinfo;
         var Hitoffset = new Vector3(0.0f, transform.localScale.y * 0.5f, 0.0f);
         if (Physics.BoxCast(transform.position + Hitoffset, transform.lossyScale * 0.4f, transform.forward, out hitinfo, Quaternion.identity, 1f))
         {
+            if (isPlayerTrigger && hitinfo.transform.CompareTag("Player"))
+            {
+                return false;
+            }
             if (hitinfo.transform.CompareTag("Monster") || hitinfo.transform.name == "ViewCollider")
-                return false;            
-            else                         
-                return true;            
+                return false;
+            else
+                return true;
         }
         return false;
     }
@@ -161,14 +165,19 @@ public abstract class MonsterBase : MonoBehaviour, IEntity, ICutOff
     {
         EffectPoolManager.gInstance.LoadEffect("FX_Hit_Enemy", transform);
 
-        if (gHP >= 0)
-            gExplosionVector = pos;
+        gExplosionVector = pos;
+        Vector3 dir = (Vector3.Scale(transform.position - gExplosionVector, new Vector3(1, 1, 0))).normalized * KnockbackForce;
 
-        gHP -= damage;
-        
         if (gHP >= 0)
         {
-            AnimationTrigger.init();            
+            rigd.velocity = dir;            
+        }
+
+        gHP -= damage;
+
+        if (gHP >= 0)
+        {
+            AnimationTrigger.init();
             FSM = MonsterFSMCreator.MonsterHitFSM(this);
             HitSound();
         }
@@ -178,7 +187,7 @@ public abstract class MonsterBase : MonoBehaviour, IEntity, ICutOff
     {
         gHP += heal;
     }
-    
+
     public virtual bool CheckCutOff()
     {
         return gHP <= 0.0f;
@@ -186,7 +195,7 @@ public abstract class MonsterBase : MonoBehaviour, IEntity, ICutOff
 
     public virtual void CutDamage()
     {
-        IsDead();
+        IsDead();        
     }
 
     protected abstract MonsterFSMBase Transition();

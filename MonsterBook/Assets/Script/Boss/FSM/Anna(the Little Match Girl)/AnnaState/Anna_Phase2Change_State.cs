@@ -92,6 +92,7 @@ public class Anna_Phase2Change_State : FSM_State<Anna>     //Anna2PhaseEvent
 
     public override void ExitState(Anna _Anna)
     {
+        _Anna.Anna_CurrentHP = _Anna.AnnaHP_Phase2;
         GameManager.SetInGameInput(true);
         _Anna.Isinvincibility = false;
     }

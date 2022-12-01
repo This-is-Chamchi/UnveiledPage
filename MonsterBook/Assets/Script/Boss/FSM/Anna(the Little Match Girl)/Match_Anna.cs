@@ -169,7 +169,7 @@ public class Match_Anna : MonoBehaviour
                 {
                     if (OneTimeSoundPlay == false)
                     {
-                        Target_Anna.GetComponent<Anna>().AnnaSound("2StageAnna_Pattern3MultiShooting");
+                        //Target_Anna.GetComponent<Anna>().AnnaSound("2StageAnna_Pattern3MultiShooting");
                         OneTimeSoundPlay = true;
                     }
                     _Match_Rigid.AddForce(dir);
@@ -178,7 +178,6 @@ public class Match_Anna : MonoBehaviour
             }
             else if (Target_Anna.GetComponent<Anna>().AnnaPhase == 2)
             {
-                //MatchObject.GetComponent<MeshFilter>().mesh = MatchMesh_None;
                 if (timer < 0.2f)
                 {
                     transform.LookAt(Target_Anna.GetComponent<Anna>().HaloPoint[lookPoint].transform.position);
@@ -190,7 +189,7 @@ public class Match_Anna : MonoBehaviour
                 {
                     if (OneTimeSoundPlay == false)
                     {
-                        Target_Anna.GetComponent<Anna>().AnnaSound("2StageAnna_Pattern3MultiShooting");
+                        //Target_Anna.GetComponent<Anna>().AnnaSound("2StageAnna_Pattern3MultiShooting");
                         OneTimeSoundPlay = true;
                     }
 
@@ -230,7 +229,7 @@ public class Match_Anna : MonoBehaviour
 
                         if(time >= 1.0f)
                         {
-                            return;
+                            Destroy(this);
                         }
                     }
 

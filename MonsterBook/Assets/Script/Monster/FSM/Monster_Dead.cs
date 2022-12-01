@@ -37,8 +37,7 @@ namespace MonsterFSM
                 var ChildRigid = Monster.gDead_Object.GetComponentsInChildren<Rigidbody>(false);
                 foreach(var item in ChildRigid)
                 {                    
-                    item.AddExplosionForce(Monster.gExplosionForce , Monster.transform.position + Vector3.Normalize(Monster.gExplosionVector - Monster.transform.position) , 360.0f , 0.0f , ForceMode.VelocityChange );
-                    Debug.Log(item);
+                    item.AddExplosionForce(Monster.gExplosionForce , Monster.transform.position + Vector3.Normalize(Monster.gExplosionVector - Monster.transform.position) , 360.0f , 0.0f , ForceMode.VelocityChange );                    
                 }
                 isExplosion = true;
             }            

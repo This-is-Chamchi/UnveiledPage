@@ -94,7 +94,8 @@ public class BossSceneDirector : MonoBehaviour
     }
 
     private IEnumerator Stage1EndRoutine()
-    {        
+    {
+        CameraController.CameraShaking(1.4f);
         GameManager.SetInGameInput(false);
         ground.SetActive(false);
         while (leftHinge.localRotation != Quaternion.Euler(0, 74f, 0))

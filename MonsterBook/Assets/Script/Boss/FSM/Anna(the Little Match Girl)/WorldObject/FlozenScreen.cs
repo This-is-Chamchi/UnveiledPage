@@ -8,7 +8,7 @@ public class FlozenScreen : MonoBehaviour
     public bool Phasetwo;
     public bool FlozenStart;
     private GameObject Player;
-    private bool ClearScreen;
+    public bool ClearScreen;
 
     // Start is called before the first frame update
 
@@ -41,7 +41,7 @@ public class FlozenScreen : MonoBehaviour
 
             else
             {
-                gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Boundary", 0f);
+                gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Boundary", 0.5f);
             }
 
         }
@@ -57,8 +57,10 @@ public class FlozenScreen : MonoBehaviour
 
             else
             {
-                gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Control", 1);
+                //gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Control", 1);
                 var mat = gameObject.GetComponent<Renderer>().sharedMaterial.GetFloat("_Frozen_Boundary");
+                if (gameObject.GetComponent<Renderer>().sharedMaterial.GetFloat("_Frozen_Boundary") == 1)
+                    return;
                 gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Boundary", mat + Time.deltaTime);
 
                 if (mat > 2.5f)

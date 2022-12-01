@@ -21,18 +21,25 @@ public class Anna_WorldEvent : MonoBehaviour
     private Renderer ComfortZoneRenderer;
 
     public GameObject[] HumanMatch_finish_SpawnPoint;
+
+    public GameObject HumanMatch_finish_SpawnPoint0;
+    public GameObject HumanMatch_finish_SpawnPoint1;
+    public GameObject HumanMatch_finish_SpawnPoint2;
+    public GameObject HumanMatch_finish_SpawnPoint3;
+    public GameObject HumanMatch_finish_SpawnPoint4;
+
+
+
     public GameObject HumanMatch_finish;
 
     private GameObject Player;
+    private bool LastMatchtrigger;
+    private int MatchCount;
     
 
     public void LastMatch()
     {
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[0].transform);
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[1].transform);
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[2].transform);
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[3].transform);
-        Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[4].transform);
+        LastMatchtrigger = true;
     }
 
     public void CreateGranny()
@@ -42,13 +49,6 @@ public class Anna_WorldEvent : MonoBehaviour
         FrozenScreen.GetComponent<FlozenScreen>().Phasetwo = true;
     }
 
-    public void CreateProtectedArea()
-    {
-        Instantiate(HumanMatch_Blizzard, HumanMaych_Blizzard_SpawnPoint.transform.position, new Quaternion(0, 180, 180, 0));
-        Instantiate(ComfortZone, HumanMaych_Blizzard_SpawnPoint.transform.position, new Quaternion(0, 180, 180, 0));
-        ComfortZone.GetComponent<ParticleSystem>().Play();
-        ComfortZoneRenderer.sharedMaterial.SetFloat("_Dissolve_Value", -1);
-    }
     public void BlizzardStart()
     {
         FrozenScreen.GetComponent<FlozenScreen>().FlozenStart = true;
@@ -57,7 +57,6 @@ public class Anna_WorldEvent : MonoBehaviour
         ComfortZone.GetComponent<ParticleSystem>().Play();
         ComfortZoneRenderer.sharedMaterial.SetFloat("_Dissolve_Value", -1);
         Blizzard.Play();  //´«º¸¶ó ½ÇÇà
-        CreateProtectedArea();
 
     }
 
@@ -72,7 +71,9 @@ public class Anna_WorldEvent : MonoBehaviour
         ComfortZoneRenderer = ComfortZone.GetComponent<Renderer>();
         FrozenScreen = GameObject.FindWithTag("FrozenScreen");
         Player = GameObject.FindWithTag("Player");
+        LastMatchtrigger = false;
         GrannyAble = false;
+        MatchCount = 0;
     }
 
 
@@ -91,11 +92,47 @@ public class Anna_WorldEvent : MonoBehaviour
             }
         }
 
-
-
-        if (Input.GetKeyDown(KeyCode.I))
+        if(LastMatchtrigger == true)
         {
-            LastMatch();
+            time += Time.deltaTime;
+            if( time > 1.0f )
+            {
+                if(MatchCount == 0)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint0.transform);
+                }
+                else if (MatchCount == 1)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint1.transform);
+                }
+                else if (MatchCount == 2)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint2.transform);
+                }
+                else if (MatchCount == 3)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint3.transform);
+                }
+                else if (MatchCount == 4)
+                {
+                    Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint4.transform);
+                }
+
+                //Instantiate(HumanMatch_finish, HumanMatch_finish_SpawnPoint[MatchCount].transform);
+                time = 0;
+                MatchCount++;
+                if(MatchCount == 5)
+                {
+                    LastMatchtrigger = false;
+                }
+
+                if(MatchCount > 6 || MatchCount < -1)
+                {
+                    Debug.LogError(MatchCount + " : MatchCount");
+                }
+
+            }
+
         }
 
 

@@ -355,8 +355,8 @@ GameObject:
   - component: {fileID: 543450652758484706}
   - component: {fileID: 919132149023505500}
   - component: {fileID: 919132149023505499}
-  - component: {fileID: 919132149023505498}
   - component: {fileID: 919132149023505497}
+  - component: {fileID: 1986222563}
   m_Layer: 10
   m_Name: GomJelly
   m_TagString: Monster
@@ -420,20 +420,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!136 &919132149023505498
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149023505496}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.6
-  m_Height: 1.6
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8, z: 0.1}
 --- !u!114 &919132149023505497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,9 +436,10 @@ MonoBehaviour:
   maxHp: 40
   curHp: 0
   attackDamage: 10
-  attackDelay: 0.7
+  attackDelay: 3
   walkSpeed: 3
   runSpeed: 12
+  knockBackForce: 0
   aliveObj: {fileID: 6811584227885769384}
   sliceObj: {fileID: 2564841605496854316}
   targetLayer:
@@ -491,6 +478,19 @@ MonoBehaviour:
   runBox: {fileID: 121969831}
   attackBox: {fileID: 1236256712}
   attackEffectPos: {fileID: 1776744618}
+--- !u!65 &1986222563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149023505496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.6405994, z: 1.4198098}
+  m_Center: {x: 0.0000000038588617, y: 0.8101701, z: 0.42514858}
 --- !u!1 &1000448557964295005
 GameObject:
   m_ObjectHideFlags: 0
