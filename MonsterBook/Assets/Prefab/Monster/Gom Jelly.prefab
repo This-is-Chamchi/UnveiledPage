@@ -436,9 +436,10 @@ MonoBehaviour:
   maxHp: 40
   curHp: 0
   attackDamage: 10
-  attackDelay: 0.7
+  attackDelay: 3
   walkSpeed: 3
   runSpeed: 12
+  knockBackForce: 0
   aliveObj: {fileID: 6811584227885769384}
   sliceObj: {fileID: 2564841605496854316}
   targetLayer:
