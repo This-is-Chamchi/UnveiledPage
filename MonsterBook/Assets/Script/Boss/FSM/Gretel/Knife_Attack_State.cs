@@ -44,10 +44,8 @@ public class Knife_Attack_State : FSM_State<Gretel>
         {
             _Gretel.m_AttackTimer += Time.deltaTime;   //어택타이머
         }
-        if (_Gretel.m_AttackTimer <= _Gretel.KnifeFollowTime && _Gretel.m_AttackTimer > 0) 
+        if (_Gretel.m_AttackTimer >= _Gretel.KnifeFollowTime) 
         {
-            if (_Gretel.ResetPosition == false)
-            {
                 if (_Gretel.GretelTransform.position.z >= 16.6)
                 {
                     _Gretel.GretelTransform.position = new Vector3(GretelTransform.position.x, GretelTransform.position.y, GretelTransform.position.z - 0.05f);
@@ -56,7 +54,7 @@ public class Knife_Attack_State : FSM_State<Gretel>
                 {
                     _Gretel.GretelTransform.position = new Vector3(GretelTransform.position.x + 0.05f, GretelTransform.position.y, GretelTransform.position.z);
                 }
-            }
+            
             if (CutCount == _Gretel.KnifeAttackCount)
             {
 
@@ -119,7 +117,6 @@ public class Knife_Attack_State : FSM_State<Gretel>
     }
     public override void ExitState(Gretel _Gretel)
     {
-        _Gretel.ResetPosition = true;
         _Gretel._Ani.SetBool("KnifeAttackRoop", false);
         //_Gretel._Ani.SetBool("KnifeAttackEnd", false);
         _Gretel._Ani.SetBool("KnifeAttackStart", false);
