@@ -15,8 +15,12 @@ public class StartTalkTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TalkSimulator.Instance.StartScenario(scenarioData);        
-        gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            TalkSimulator.Instance.StartScenario(scenarioData);
+            gameObject.SetActive(false);
+        }
     }
 
 }
