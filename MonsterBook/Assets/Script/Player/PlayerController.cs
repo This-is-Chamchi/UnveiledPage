@@ -533,8 +533,7 @@ protected void FixedUpdate()  {
 
 protected void Update() {
         CheckSlop();
-        CheckIntro();
-        Debug.Log(input.m_action.InGame.Walk.ReadValue<float>());
+        CheckIntro();        
         SetVibrationXbox(LeftMoter, RightMoter, ConRunningTime, isInfinityVib);
     }
 
