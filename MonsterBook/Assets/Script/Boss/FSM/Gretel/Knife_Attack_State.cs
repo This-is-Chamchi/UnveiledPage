@@ -59,7 +59,7 @@ public class Knife_Attack_State : FSM_State<Gretel>
             {
                 CutCount = 0;
                 
-                _Gretel.KnifeCollider.GetComponent<BoxCollider>().enabled = false;
+                
 
                 if (_Gretel.Hansel.GetComponent<Hansel>().CurrentHP <= 0 && _Gretel.Hansel.GetComponent<Hansel>()._isStuned == true)
                 {
@@ -78,7 +78,7 @@ public class Knife_Attack_State : FSM_State<Gretel>
                 Dist_NoJump = Vector3.Distance(_Gretel.GetComponent<Gretel>().PlayerNoJumpPosition.transform.position, _Gretel.transform.position);
                 Dist_NoJump = (Dist_NoJump-40)/10+0.4f; //플레이어와 그레텔의 거리 범위 40~50   계산법 (x - 40) = 0 ~ 10 -> x/10 => 0 ~ 1 (Blend)로 넣음
                 _Gretel._Ani.SetFloat("Blend", Dist_NoJump);
-                _Gretel.KnifeCollider.GetComponent<BoxCollider>().enabled = false;
+                
 
                 //나이프 추격
                 _Gretel.Rigobject.GetComponent<Rig>().weight = 0.5f;
@@ -93,7 +93,7 @@ public class Knife_Attack_State : FSM_State<Gretel>
 
             if (_Gretel.FollowTrigger)
             {
-                _Gretel.KnifeCollider.GetComponent<BoxCollider>().enabled = true;
+                
                 LookTarget(_Gretel.playerAimPoint.transform, GretelTransform);
                 _Gretel.Rigobject.GetComponent<Rig>().weight = 0f;
             }
@@ -107,7 +107,7 @@ public class Knife_Attack_State : FSM_State<Gretel>
             if (CutCountOneTimeTrigger == false)
             {
                 CutCount++;
-                _Gretel.KnifeCollider.SetActive(false);
+                
                 CutCountOneTimeTrigger = true;
             }
             
@@ -115,7 +115,7 @@ public class Knife_Attack_State : FSM_State<Gretel>
     }
     public override void ExitState(Gretel _Gretel)
     {
-        _Gretel.KnifeCollider.SetActive(false);
+        
         _Gretel._Ani.SetBool("KnifeAttackRoop", false);
         //_Gretel._Ani.SetBool("KnifeAttackEnd", false);
         _Gretel._Ani.SetBool("KnifeAttackStart", false);
