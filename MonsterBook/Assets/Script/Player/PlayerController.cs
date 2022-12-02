@@ -244,7 +244,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
 
     public void AttackBoxOff(int i) {attackWeapon[i].Collider(false);}
 
-    protected void AttackForce (int i ){ if(!CheckWall()) rigid.AddForce(lookVector * i ,  ForceMode.Impulse);}
+    protected void AttackForce (int i ){/* if(!CheckWall()) rigid.AddForce(lookVector * i ,  ForceMode.Impulse);*/}
 
     protected void DashForce()  {
         if(Falling)
@@ -534,6 +534,7 @@ protected void FixedUpdate()  {
 protected void Update() {
         CheckSlop();
         CheckIntro();
+        Debug.Log(input.m_action.InGame.Walk.ReadValue<float>());
         SetVibrationXbox(LeftMoter, RightMoter, ConRunningTime, isInfinityVib);
     }
 
