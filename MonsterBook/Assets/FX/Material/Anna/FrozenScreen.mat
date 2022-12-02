@@ -49,7 +49,7 @@ Material:
     - _Hightlight_Boundary: 5
     - _Hightlight_Inten: 5
     - _Noise_Scale: 0
-    - _Opacity: 2.01
+    - _Opacity: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

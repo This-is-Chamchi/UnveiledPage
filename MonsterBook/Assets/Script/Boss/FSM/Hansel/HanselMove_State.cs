@@ -30,7 +30,6 @@ public class HanselMove_State : FSM_State<Hansel>
         _Hansel.RollingCollider.SetActive(false);
         _Hansel.ThrowUpCollider.SetActive(false);
 
-
         _Hansel.rb.velocity = Vector3.zero;
         m_OldPosition = _Hansel.transform.position;
         m_SpeedBoi = 0;

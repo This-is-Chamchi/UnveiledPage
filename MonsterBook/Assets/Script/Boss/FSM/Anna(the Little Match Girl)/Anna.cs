@@ -230,6 +230,7 @@ public class Anna : MonoBehaviour , IEntity
 
             case 2:
                 AnnaPhase = 2;
+
                 //NumMat = AnnaBody.GetComponent<SkinnedMeshRenderer>().material;
                 //AnnaBody.GetComponent<SkinnedMeshRenderer>().materials = NumMat;
                 break;
@@ -333,7 +334,7 @@ public class Anna : MonoBehaviour , IEntity
         }
 
 
-        if (AnnaPhase == 2 && Anna_CurrentHP <= 0 && finishAttackAble == false && LastMatchClear != 5)
+        if (AnnaPhase == 2 && Anna_CurrentHP <= 0 && finishAttackAble == false && LastMatchClear != 5 && Isinvincibility == false)
         {
             ChangeState(Anna_LastAttack_State.Instance);
             Circle.SetActive(true);

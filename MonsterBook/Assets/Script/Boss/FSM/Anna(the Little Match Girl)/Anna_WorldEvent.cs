@@ -61,8 +61,7 @@ public class Anna_WorldEvent : MonoBehaviour
     }
 
     public void BlizzardEnd()
-    {
-
+    { 
         FrozenScreen.GetComponent<FlozenScreen>().Clear(true);
         Blizzard.Stop();  //´«º¸¶ó ½ÇÇà
     }

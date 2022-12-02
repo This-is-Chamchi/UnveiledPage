@@ -15,7 +15,6 @@ public class FlozenScreen : MonoBehaviour
     public void Clear(bool type)
     {
         ClearScreen = type;
-
     }
     void Start()
     {
@@ -50,7 +49,7 @@ public class FlozenScreen : MonoBehaviour
         if (FlozenStart == true && ClearScreen == false)
         {
             var mat2 = gameObject.GetComponent<Renderer>().sharedMaterial.GetFloat("_Frozen_Control");
-            if (mat2 < 1.0f)
+            if (mat2 < 0.5f)
             {
                 gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Control", mat2 + Time.deltaTime);
             }
@@ -76,31 +75,13 @@ public class FlozenScreen : MonoBehaviour
                     }
                 }
             }
-
-
         }
 
 
         if (Phasetwo == true)
         {
-            time += Time.deltaTime;
-
-            var mat = gameObject.GetComponent<Renderer>().sharedMaterial.GetFloat("_Frozen_Boundary");
-            var con = gameObject.GetComponent<Renderer>().sharedMaterial.GetFloat("_Frozen_Control");
-
-
-            if (mat <= 1)
-            {
-                gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Control", con-Time.deltaTime);
-            }
-            else
-            {
-                gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Control", 1);
-                gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Frozen_Boundary", mat - Time.deltaTime);
-            }
+            ClearScreen = true;
         }
-
-
 
     }
 }

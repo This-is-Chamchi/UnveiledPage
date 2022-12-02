@@ -21,6 +21,7 @@ public class Anna_Phase2Change_State : FSM_State<Anna>     //Anna2PhaseEvent
     {
         GameManager.SetInGameInput(false);
         _Anna.Isinvincibility = true;
+        _Anna.AnnaPhase = 2;
         CurrentPosition = _Anna.transform.position;
         OnSPMovePoint = false;
         OffHpEffect = false;
