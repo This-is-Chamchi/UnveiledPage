@@ -46,7 +46,7 @@ public class ZoneDivideController : MonoBehaviour
         {
             if (monsterPack.childCount <= 0) break;
 
-            yield return YieldInstructionCache.waitForFixedUpdate;
+            yield return YieldInstructionCache.waitForEndOfFrame;
         }
         GameManager.SetInGameInput(false);
         OpenZone();

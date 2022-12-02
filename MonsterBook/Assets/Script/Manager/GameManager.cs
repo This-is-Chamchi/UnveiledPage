@@ -144,8 +144,7 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        }
-        Screen.SetResolution(1920, 1080, true);
+        }        
 
         inputCmd.onSubmit.AddListener(delegate { Command(); });
 
