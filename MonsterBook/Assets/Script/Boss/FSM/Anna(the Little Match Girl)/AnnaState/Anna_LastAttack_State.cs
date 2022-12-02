@@ -68,7 +68,7 @@ public class Anna_LastAttack_State : FSM_State<Anna>
             _Anna.Circle.transform.localScale = new Vector3(circleSizeTimer, circleSizeTimer, circleSizeTimer);
 
 
-            if (circle_IntensityTimer > 200)
+            if (circle_IntensityTimer > 500)
             {
 
             }

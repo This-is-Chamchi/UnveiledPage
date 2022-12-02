@@ -4,7 +4,7 @@ public class UIController : MonoBehaviour
 {
     public float SP_Cur = 0.0f;
     public bool SP_Using = false;
-    private float SP_UpSpeed = 15.0f;
+    private float SP_UpSpeed = 7.5f;
 
     private PlayerController m_Player;
 
@@ -88,7 +88,11 @@ public class UIController : MonoBehaviour
 
     protected void OnPause()
     {
-        GameManager.SetVideoPlay(false);
+        if (GameManager.Instance.isPlayVideo) {
+            GameManager.SkipCutScene();
+            return;
+        }
+
         Game.UI.UIController.Instance.OpenPopup(new UIPausePopupData()
         {
             endCloseAction = () =>

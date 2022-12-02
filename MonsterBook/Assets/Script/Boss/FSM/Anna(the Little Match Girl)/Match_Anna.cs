@@ -18,7 +18,6 @@ public class Match_Anna : MonoBehaviour
     private float time_2;
     public GameObject MatchObject;
     public Mesh MatchMesh;
-    public Mesh MatchMesh_None;
 
     private int randompoint1; 
     private int randompoint2;
@@ -229,7 +228,7 @@ public class Match_Anna : MonoBehaviour
 
                         if(time >= 1.0f)
                         {
-                            Destroy(this);
+                            Destroy(gameObject);
                         }
                     }
 
@@ -265,7 +264,7 @@ public class Match_Anna : MonoBehaviour
 
                         if (time >= 1.0f)
                         {
-                            return;
+                            Destroy(gameObject);
                         }
                     }
                 

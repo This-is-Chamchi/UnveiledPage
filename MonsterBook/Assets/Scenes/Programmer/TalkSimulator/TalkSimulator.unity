@@ -618,6 +618,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 895352257108031435, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_text
+      value: Press <sprite name="icon_inputkeys_move">
+      objectReference: {fileID: 0}
+    - target: {fileID: 895352257108031435, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_isRichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 895352257108031435, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_spriteAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ba9faa54fe7d88442864624a718676de, type: 2}
+    - target: {fileID: 895352257108031435, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 895352257108031435, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5719269547919210472, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -702,6 +722,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5719269547919210473, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: scenarioData
+      value: 
+      objectReference: {fileID: 11400000, guid: b3e1ef9d39aa5dc4f8ad990b25c24763, type: 2}
     - target: {fileID: 5719269547919210476, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_Name
       value: TalkSimulator
@@ -710,9 +734,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5719269548221269362, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_text
-      value: "\uB300\uD654\uB97C \uACC4\uC18D \uD558\uB824\uBA74 <sprite name=\"icon_inputkeys_ok\">\uC744
+      value: "\uB300\uD654\uB97C \uACC4\uC18D \uD558\uB824\uBA74 <sprite name=\"icon_inputkeys_attack\">\uC744
         \uB204\uB974\uC138\uC694."
       objectReference: {fileID: 0}
     - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
@@ -722,22 +750,62 @@ PrefabInstance:
     - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_spriteAsset
       value: 
-      objectReference: {fileID: 11400000, guid: cb54224978297774196047d16f4c2c9c, type: 2}
+      objectReference: {fileID: 11400000, guid: 3071e90d00fbf65469671d811eed6160, type: 2}
     - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_fontSizeBase
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3444865736167840195, guid: f105510683454fd458fd590346b07a8c, type: 2}
+    - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_VerticalAlignment
-      value: 512
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5719269548235249193, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719269548235249199, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5719269549622002385, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5719269549665530691, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5719269549665530716, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927429092417950118, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073870586547795289, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073870586547795289, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6073870586547795289, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609572734951665681, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: m_spriteAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3071e90d00fbf65469671d811eed6160, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 351da02d3b18562458de52106c481b21, type: 3}

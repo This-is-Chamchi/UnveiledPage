@@ -180,6 +180,7 @@ public class Anna : MonoBehaviour , IEntity
     
     public void AnnaStand()
     {
+        AnnaPhase = 1;
         Anna_Ani.SetTrigger("Anna_Stand");
     }
 

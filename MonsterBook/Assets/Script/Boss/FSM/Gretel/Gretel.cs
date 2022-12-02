@@ -29,7 +29,6 @@ public class Gretel : MonoBehaviour, IEntity
     public GameObject KnifeEffect2;
     public GameObject KnifeEffect3;
     public GameObject KnifeEffectPosition;
-    [HideInInspector] public bool ResetPosition = false;
     public bool KnifeAnimation;
     #endregion
 
@@ -109,6 +108,10 @@ public class Gretel : MonoBehaviour, IEntity
     public void OnDamage(int PlayerDamage, Vector3 pos)
     {
         CurrentHP -= PlayerDamage;
+        if(CurrentHP < 0)
+        {
+            CurrentHP = 0;
+        }
     }
 
     public void OnRecovery(int heal)
@@ -181,9 +184,11 @@ public class Gretel : MonoBehaviour, IEntity
 
     void HancelReset()
     {
-        StartCoroutine(CountTimer());
+        
+            StartCoroutine(CountTimer());
+        
     }
-    public IEnumerator CountTimer()                //일정 시간 공격 받는지 체크
+    public IEnumerator CountTimer()              
     {
         yield return new WaitForSeconds(2.0f);
         Hansel.GetComponent<Hansel>().inPhaseTwo();
@@ -208,6 +213,7 @@ public class Gretel : MonoBehaviour, IEntity
         KnifeEffect1.SetActive(true);
         KnifeEffect2.SetActive(true);
         KnifeEffect3.SetActive(true);
+        KnifeCollider.GetComponent<BoxCollider>().enabled = true;
         KnifeEffect1.GetComponent<ParticleSystem>().Play();
         KnifeEffect2.GetComponent<ParticleSystem>().Play();
         KnifeEffect3.GetComponent<ParticleSystem>().Play();
@@ -226,6 +232,12 @@ public class Gretel : MonoBehaviour, IEntity
         KnifeEffect1.SetActive(false);
         KnifeEffect2.SetActive(false);
         KnifeEffect3.SetActive(false);
+    }
+
+
+    void KnifeColliderOff()
+    {
+         KnifeCollider.GetComponent<BoxCollider>().enabled = true;
     }
 
 }

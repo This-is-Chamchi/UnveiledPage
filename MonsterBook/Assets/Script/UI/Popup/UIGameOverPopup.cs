@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIGameOverPopup : UIBasePopup
 {
@@ -26,7 +25,7 @@ public class UIGameOverPopup : UIBasePopup
 
     private PlayerAction action;
 
-    //ÆË¾÷ »ý¼ºÇÏ´Â ¹ý
+    //ï¿½Ë¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½
     /*
     Game.UI.UIController.Instance.OpenPopup(new UIGameOverPopupData()                
                 {
@@ -96,14 +95,17 @@ public class UIGameOverPopup : UIBasePopup
 
     public void OnRetry()
     {
-        //TODO :: Go to Retry
-        Debug.LogError("UIGameOverPopup :: ¸®Æ®¶óÀÌ µÇµµ·Ï ±¸Çö ÇØÁÖ¼¼¿ä.");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        action.UI.Disable();
+        return;
     }
 
     public void OnExit()
     {
-        //TODO :: Move to Title
-        Debug.LogError("UIGameOverPopup :: Å¸ÀÌÆ²·Î °¡µµ·Ï ±¸Çö ÇØÁÖ¼¼¿ä.");
+
+        SceneManager.LoadScene(0);
+        action.UI.Disable();
+        return;
     }
 
 }

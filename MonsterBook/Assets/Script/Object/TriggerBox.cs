@@ -13,6 +13,7 @@ public class TriggerBox : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("PlayerDash"))
         {
+            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             enterTrigger.Invoke();
             if (playOnece) gameObject.SetActive(false);
         }

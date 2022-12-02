@@ -39,7 +39,6 @@ public class UIBossStick : MonoBehaviour
         {
             StopCoroutine(faceChangeAnimation);
         }
-        Debug.Log("Hit Event Start");
         faceChangeAnimation = StartCoroutine(CoChangeAnimation());
     }
 

@@ -5,18 +5,27 @@ using UnityEngine;
 public class Macaron_Die : MonoBehaviour
 {
     private int hp;
+    private GameObject Hansel;
+    public GameObject Macaron;
     // Start is called before the first frame update
     void Start()
     {
-       hp = this.GetComponent<Macaron>().gHP;
+        hp = Macaron.GetComponent<Macaron>().gHP;
+        Hansel = GameObject.FindWithTag("Boss");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(hp == 0)
+        if (hp == 0)
         {
-            this.GetComponent<Macaron>().CutDamage();
+            Macaron.GetComponent<Macaron>().CutDamage();
         }
+
+        if(Hansel.GetComponent<Hansel>().CurrentHP == 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 }
