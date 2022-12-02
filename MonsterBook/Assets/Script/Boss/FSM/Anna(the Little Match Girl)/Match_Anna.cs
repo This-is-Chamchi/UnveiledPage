@@ -19,6 +19,7 @@ public class Match_Anna : MonoBehaviour
     public GameObject MatchObject;
     public Mesh MatchMesh;
 
+    private bool onetimeRotate;
     private int randompoint1; 
     private int randompoint2;
 
@@ -32,7 +33,7 @@ public class Match_Anna : MonoBehaviour
     {
         MatchMesh = MatchObject.GetComponent<MeshFilter>().mesh;
         OneTimeSoundPlay = false;
-
+        onetimeRotate = false;
         randompoint1 = Random.Range(0, 8);
         randompoint2 = Random.Range(0, 8);
         
@@ -91,13 +92,30 @@ public class Match_Anna : MonoBehaviour
 
             if (timer < 0.5f)
             {
-                transform.LookAt(new Vector3(Target_Player.transform.position.x, Target_Player.transform.position.y, Target_Player.transform.position.z-4));
+                transform.LookAt(new Vector3(Target_Player.transform.position.x, Target_Player.transform.position.y, Target_Player.transform.position.z+4));
                 dir = (Target_Player.transform.position + new Vector3(0,2,0)) - transform.position;
                 dir *= Target_Anna.GetComponent<Anna>().MatchesSpeed_1;
             }
             else
             {
-                if(OneTimeSoundPlay == false)
+                if (Target_Player.transform.position.x - Target_Anna.transform.position.x < 3.0f && onetimeRotate == false && Target_Player.transform.position.y > Target_Anna.transform.position.y)
+                {
+                    transform.rotation = Quaternion.identity;
+                    Debug.Log("회전초기화");
+                    transform.Rotate(90, 0, 90);
+                    onetimeRotate = true;
+                }
+
+                if (Target_Player.transform.position.x - Target_Anna.transform.position.x < 3.0f && onetimeRotate == false && Target_Player.transform.position.y < Target_Anna.transform.position.y)
+                {
+                    Debug.Log("회전초기화");
+                    transform.rotation = Quaternion.identity;
+                    transform.Rotate(-90, 0, 90);
+                    onetimeRotate = true;
+                }
+
+
+                if (OneTimeSoundPlay == false)
                 {
                     Target_Anna.GetComponent<Anna>().AnnaSound("2StageAnna_Pattern1MatchShooting");
                     OneTimeSoundPlay = true;
@@ -139,6 +157,7 @@ public class Match_Anna : MonoBehaviour
                         if (time >= 1.0f)
                         {
                             Destroy(gameObject);
+                            onetimeRotate = true;
                         }
 
                     }
@@ -166,11 +185,27 @@ public class Match_Anna : MonoBehaviour
                 if (timer < 0.2f)
                 {
                     transform.LookAt(Target_Anna.GetComponent<Anna>().HaloPoint[lookPoint].transform.position);
+
                     dir = Target_Anna.GetComponent<Anna>().HaloPoint[lookPoint].transform.position - transform.position;
                     dir *= Target_Anna.GetComponent<Anna>().MatchesSpeed_Halo_1;
                 }
                 else
                 {
+                    if (lookPoint == 3 && onetimeRotate == false)
+                    {
+                        transform.rotation = Quaternion.identity;
+                        Debug.Log("회전초기화");
+                        transform.Rotate(90, 0, 90);
+                        onetimeRotate = true;
+                    }
+
+                    if (lookPoint == 7 && onetimeRotate == false)
+                    {
+                        transform.rotation = Quaternion.identity;
+                        transform.Rotate(-90, 0, 90);
+                        onetimeRotate = true;
+                    }
+
                     if (OneTimeSoundPlay == false)
                     {
                         //Target_Anna.GetComponent<Anna>().AnnaSound("2StageAnna_Pattern3MultiShooting");
@@ -185,12 +220,15 @@ public class Match_Anna : MonoBehaviour
                 if (timer < 0.2f)
                 {
                     transform.LookAt(Target_Anna.GetComponent<Anna>().HaloPoint[lookPoint].transform.position);
+
+
                     gameObject.transform.position = Target_Anna.GetComponent<Anna>().HaloSpawnPoint[lookPoint].transform.position;
                 }
 
 
                 else
                 {
+
                     if (OneTimeSoundPlay == false)
                     {
                         //Target_Anna.GetComponent<Anna>().AnnaSound("2StageAnna_Pattern3MultiShooting");
@@ -233,6 +271,7 @@ public class Match_Anna : MonoBehaviour
 
                         if(time >= 1.0f)
                         {
+                            onetimeRotate = false;
                             Destroy(gameObject);
                         }
                     }
@@ -269,6 +308,7 @@ public class Match_Anna : MonoBehaviour
 
                         if (time >= 1.0f)
                         {
+                            onetimeRotate = false;
                             Destroy(gameObject);
                         }
                     }
