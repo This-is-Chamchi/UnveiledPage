@@ -17,13 +17,15 @@ public class DashState : IState
     }
 
 
-    public override void OnStateExcute(PlayerController player) {    
+    public override void OnStateExcute(PlayerController player) {  
+
+        if ( player.CheckWall())  player.rigid.velocity = new Vector3(0, player.rigid.velocity.y);
+
         Dash_RunningTime += Time.fixedDeltaTime;
         if (Dash_RunningTime >= player.dashRunningTime) {
             player.invinBool = false;
             Dash_RunningTime = 0;         
             player.ChangeState(PlayerState.WalkState);
-            player.Walk();
         }
     }
 
