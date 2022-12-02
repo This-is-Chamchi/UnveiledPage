@@ -35,7 +35,7 @@ public class FlyDamageMatch : MonoBehaviour
 
                 IEntity entity = other.GetComponent<IEntity>();
             if (entity != null) entity.OnDamage(damage, transform.position);
-            Debug.Log("플레이어에게 대미지");
+            
         }
 
     }

@@ -228,7 +228,7 @@ public class Match_Anna : MonoBehaviour
 
                         if(time >= 1.0f)
                         {
-                            Destroy(this);
+                            Destroy(gameObject);
                         }
                     }
 
@@ -264,7 +264,7 @@ public class Match_Anna : MonoBehaviour
 
                         if (time >= 1.0f)
                         {
-                            Destroy(this);
+                            Destroy(gameObject);
                         }
                     }
                 

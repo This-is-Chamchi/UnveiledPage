@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   type: 0
-  characterName: Serros
-  talk: "\uC81C\uAC00 \uAC00\uB2A5\uD560\uAE4C\uC694...?"
-  character: {fileID: 21300000, guid: f07a84e8c513940449decddd0bf0e00e, type: 3}
-  characterStandAnchor: 0
+  characterName: Messess
+  talk: "\uC774\uAC70\uC57C\uB9D0\uB85C \uBC14\uB85C \uC6A9\uC0AC\uC774\uC790, \uC8FC\uC778\uACF5\uC774\uB77C\uB294
+    \uC99D\uAC70\uC785\uB2C8\uB2E4."
+  character: {fileID: 21300000, guid: a88181c2206b32848855ef9c7bec623f, type: 3}
+  characterStandAnchor: 1

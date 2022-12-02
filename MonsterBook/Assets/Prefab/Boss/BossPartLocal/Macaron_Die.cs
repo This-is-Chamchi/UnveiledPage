@@ -6,12 +6,11 @@ public class Macaron_Die : MonoBehaviour
 {
     private int hp;
     private GameObject Hansel;
-    private GameObject Macaron;
+    public GameObject Macaron;
     // Start is called before the first frame update
     void Start()
     {
-        Macaron = GameObject.FindWithTag("BossBuff");
-       hp = Macaron.GetComponent<Macaron>().gHP;
+        hp = Macaron.GetComponent<Macaron>().gHP;
         Hansel = GameObject.FindWithTag("Boss");
     }
 
@@ -25,7 +24,7 @@ public class Macaron_Die : MonoBehaviour
 
         if(Hansel.GetComponent<Hansel>().CurrentHP == 0)
         {
-            Destroy(Macaron);
+            Destroy(gameObject);
         }
 
     }
