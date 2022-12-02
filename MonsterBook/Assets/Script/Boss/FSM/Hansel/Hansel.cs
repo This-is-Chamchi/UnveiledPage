@@ -37,8 +37,6 @@ public class Hansel : MonoBehaviour, IEntity
     public bool StunMove = false;
     public GameObject WorldSound;
     private int crySoundID;
-    public GameObject HanselInPlayerSence;
-
 
     [Header("=====================Smash")]
     #region  SmashAttack var
