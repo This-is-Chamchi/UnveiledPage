@@ -15459,6 +15459,11 @@ Transform:
   m_Father: {fileID: 1950049979}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &643849271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5535591928529077910, guid: 81cdd1fbb9c46d84791243972ae9a839, type: 3}
+  m_PrefabInstance: {fileID: 210607334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &646675048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19051,7 +19056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381704710100591700, guid: 7491b0d0750c9a443847a0787747a444, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1381704710100591700, guid: 7491b0d0750c9a443847a0787747a444, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19059,7 +19064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381704710100591700, guid: 7491b0d0750c9a443847a0787747a444, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.772
       objectReference: {fileID: 0}
     - target: {fileID: 1381704710100591700, guid: 7491b0d0750c9a443847a0787747a444, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48822,6 +48827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 247924318}
   AnnaUI: {fileID: 3071781367327250926}
+  Player: {fileID: 643849271}
 --- !u!1 &6323956633829155404
 GameObject:
   m_ObjectHideFlags: 0

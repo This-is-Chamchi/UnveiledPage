@@ -136,6 +136,11 @@ public class Match_Anna : MonoBehaviour
                             Target_Anna.GetComponent<Anna>().HaloPoint[7].transform.position,
                             lastPlayerPosition, time);
 
+                        if (time >= 1.0f)
+                        {
+                            Destroy(gameObject);
+                        }
+
                     }
                 }
 
