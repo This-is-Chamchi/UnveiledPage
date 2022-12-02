@@ -29,7 +29,7 @@ public class HanselMove_State : FSM_State<Hansel>
         _Hansel.RushCollider.SetActive(false);
         _Hansel.RollingCollider.SetActive(false);
         _Hansel.ThrowUpCollider.SetActive(false);
-
+        _Hansel.HanselInPlayerSence.SetActive(true);
 
         _Hansel.rb.velocity = Vector3.zero;
         m_OldPosition = _Hansel.transform.position;
@@ -193,6 +193,7 @@ public class HanselMove_State : FSM_State<Hansel>
 
     public override void ExitState(Hansel _Hansel)
     {
+        _Hansel.HanselInPlayerSence.SetActive(false);
         _Hansel.Ani.SetFloat("H_Walk", 0);
 
         return;
