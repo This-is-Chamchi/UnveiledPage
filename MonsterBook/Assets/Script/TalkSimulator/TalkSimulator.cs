@@ -231,23 +231,24 @@ public class TalkSimulator : Singleton<TalkSimulator>
         var waitForTime = new WaitForSeconds(textDisplayTimePerCharacter);
         var currentTextIndex = 0;
 
+        var reaplaceTalk = currentTalkData.Talk.Replace("\r","");
         StringBuilder stBuilder = new StringBuilder();
 
         var isSkipCharacter = false;
 
-        while (currentTalkData.Talk.Length != currentTextIndex)
+        while (reaplaceTalk.Length != currentTextIndex)
         {
-            if (currentTalkData.Talk[currentTextIndex] == '<')
+            if (reaplaceTalk[currentTextIndex] == '<')
             {
-                stBuilder.Append(currentTalkData.Talk[currentTextIndex]);
+                stBuilder.Append(reaplaceTalk[currentTextIndex]);
                 isSkipCharacter = true;
                 ++currentTextIndex;
                 continue;
             }
 
-            if (currentTalkData.Talk[currentTextIndex] == '>')
+            if (reaplaceTalk[currentTextIndex] == '>')
             {
-                stBuilder.Append(currentTalkData.Talk[currentTextIndex]);
+                stBuilder.Append(reaplaceTalk[currentTextIndex]);
                 isSkipCharacter = false;
                 ++currentTextIndex;
                 continue;
@@ -255,12 +256,12 @@ public class TalkSimulator : Singleton<TalkSimulator>
 
             if (isSkipCharacter)
             {
-                stBuilder.Append(currentTalkData.Talk[currentTextIndex]);
+                stBuilder.Append(reaplaceTalk[currentTextIndex]);
                 ++currentTextIndex;
                 continue;
             }
 
-            stBuilder.Append(currentTalkData.Talk[currentTextIndex]);
+            stBuilder.Append(reaplaceTalk[currentTextIndex]);
             ++currentTextIndex;
 
             talkText.SetText(stBuilder.ToString());
