@@ -25176,7 +25176,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1706289168
 Transform:
@@ -50522,6 +50522,7 @@ MonoBehaviour:
   Anna_CapCol: {fileID: 0}
   Isinvincibility: 0
   Anna_: 1
+  scenarioData: {fileID: 0}
 --- !u!136 &6323956633853880102
 CapsuleCollider:
   m_ObjectHideFlags: 0

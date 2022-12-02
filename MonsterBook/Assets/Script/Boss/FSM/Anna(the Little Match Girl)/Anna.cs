@@ -204,6 +204,12 @@ public class Anna : MonoBehaviour , IEntity
         AnnaFalling = true;
     }
 
+    [SerializeField] private ScenarioData scenarioData;
+    public void AnnaLastAttackText()
+    {
+        TalkSimulator.Instance.StartScenario(scenarioData);
+    }
+
     protected void following_Matches(int MatchNum)
     {
 
