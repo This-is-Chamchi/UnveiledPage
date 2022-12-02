@@ -245,7 +245,7 @@ MonoBehaviour:
   Effects:
   - {fileID: 2612797571184276146}
   IdleTime: 2
-  ExplosionForce: 10
+  ExplosionForce: 15
   AnimatorCtrl: {fileID: 5825317626222178840}
   AnimationTrigger: {fileID: 5825317626222178843}
   KnockbackForce: 10
