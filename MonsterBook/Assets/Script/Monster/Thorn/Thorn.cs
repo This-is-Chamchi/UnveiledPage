@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MonsterFSM;
 using UnityEngine.Rendering;
+using UnityEngine.Animations.Rigging;
 
 public class Thorn : AttackMonster
 {
@@ -89,6 +90,12 @@ public class Thorn : AttackMonster
 
     public override void OnDamage(int damage, Vector3 pos)
     {
+        Vector3 dir = (Vector3.Scale(transform.position - gExplosionVector, new Vector3(1, 1, 0))).normalized * KnockbackForce;
+
+        if (gHP >= 0)
+        {
+            grigd.velocity = dir;            
+        }
         EffectPoolManager.gInstance.LoadEffect("FX_Hit_Enemy", transform);
 
 

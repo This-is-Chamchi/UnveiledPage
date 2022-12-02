@@ -78,13 +78,13 @@ Material:
     - _Dissolve_Switch: 0
     - _Dissolve_UV_X: 1
     - _Dissolve_UV_Y: 1
-    - _Dissolve_Value: 0
+    - _Dissolve_Value: 1
     - _Highlight_Intensity: 1.7
     - _Highlight_Scale: 3
     - _Inner_Intensity: 1
     - _Inner_Scale: 10
     - _Inner_Value: 0.9639504
-    - _Intensity: 2
+    - _Intensity: 7
     - _Line_Inten: 2
     - _Line_Scale: 0
     - _Main_Dis_Pan_X: -0.3

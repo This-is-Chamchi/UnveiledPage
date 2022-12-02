@@ -117,6 +117,7 @@ public class UITweenAnimator : MonoBehaviour
             tween.OnComplete(() =>
             {
                 playTweenList.Remove(tween);
+                 
                 if (playTweenList.Count <= 0)
                 {
                     completeAction?.Invoke();

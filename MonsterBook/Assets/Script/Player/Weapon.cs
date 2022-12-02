@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour{
         IEntity entity = other.GetComponent<IEntity>();
 
         if (entity != null){
-            entity.OnDamage(damage, transform.parent.position);
+            entity.OnDamage(damage, transform.parent.parent.position);            
             if (isCutting){
                 ICutOff cut = other.GetComponent<ICutOff>();
 

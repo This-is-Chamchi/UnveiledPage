@@ -85,6 +85,7 @@ public class Anna : MonoBehaviour , IEntity
     public int Matches_Attack06_Damage;
     public int LastMatchClear;
     public bool Anna_Frozen_Die;
+    public int GroggySoundID;
     [SerializeField] public UnityEvent AnnaHitEvent;
 
 
@@ -131,14 +132,19 @@ public class Anna : MonoBehaviour , IEntity
         Anna_CurrentHP = AnnaHP_Phase1;
         LastMatchClear = 0;
         finishAttackAble = false;
+        AnnaPhase = 1;
+        Isinvincibility = false;
         state.Initial_Setting(this, Anna_Wait_State.Instance);
 
 
-
-    }
+}
 
     protected void FixedUpdate()
     {
+        if(Anna_CurrentHP < 0)
+        {
+            Anna_CurrentHP = 0;
+        }
 
         if(Anna_Frozen_Die == true)
         {
@@ -157,13 +163,13 @@ public class Anna : MonoBehaviour , IEntity
 
 
     }
-    public void AnnaSoundLoop(string name)
+    public int AnnaSoundLoop(string name)
     {
-        SoundManager.PlayVFXLoopSound(name,gameObject.transform);
+        return SoundManager.PlayVFXLoopSound(name,gameObject.transform);
     }
-    public void AnnaSoundLoopEnd(string name)
+    public void AnnaSoundLoopEnd(int ID)
     {
-        //SoundManager.StopVFXLoopSound();
+        SoundManager.StopVFXLoopSound(ID);
         
     }
     public void AnnaSound(string name)
@@ -222,8 +228,6 @@ public class Anna : MonoBehaviour , IEntity
                 break;
 
             case 2:
-                Anna_CurrentHP = AnnaHP_Phase2;
-                Debug.Log("안나 페이즈2 HP : "+AnnaHP_Phase2);
                 AnnaPhase = 2;
                 //NumMat = AnnaBody.GetComponent<SkinnedMeshRenderer>().material;
                 //AnnaBody.GetComponent<SkinnedMeshRenderer>().materials = NumMat;
@@ -315,6 +319,7 @@ public class Anna : MonoBehaviour , IEntity
 
         if (finishAttackAble == true)
         {
+            AnnaSoundLoopEnd(GroggySoundID);
             Anna_Ani.SetTrigger("Anna_Death");
             Anna_Frozen_Die = true;
             Isinvincibility = true;

@@ -28,15 +28,23 @@ public class FadeController : Singleton<FadeController>
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void SetActive(bool isActive) { 
+    public void SetActive(bool isActive)
+    {
         gameObject.SetActive(isActive);
     }
 
     [Button("Fade In")]
     public void FadeIn(UnityAction fadeEndAction = null)
     {
-        if(isFadeRunning)
+
+
+        if (canvasGroup != null)
+            canvasGroup = GetComponent<CanvasGroup>();
+
+        if (isFadeRunning)
             return;
+
+        //Debug.Log("Fade In");
 
         canvasGroup.blocksRaycasts = true;
         isFadeRunning = true;
@@ -61,8 +69,14 @@ public class FadeController : Singleton<FadeController>
     [Button("Fade Out")]
     public void FadeOut(UnityAction fadeEndAction = null)
     {
+        if (canvasGroup != null)
+            canvasGroup = GetComponent<CanvasGroup>();
+
         if (isFadeRunning)
             return;
+
+
+        //Debug.Log("Fade Out");
 
         canvasGroup.blocksRaycasts = true;
         isFadeRunning = true;

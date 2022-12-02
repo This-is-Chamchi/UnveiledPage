@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         OutputConsole("Scene Loaded : " + SceneManager.GetActiveScene().buildIndex, ConsoleType.System);
-        if (player == null) player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerController>();
         SceneStartEvent();
     }
 
@@ -436,6 +436,7 @@ public class GameManager : MonoBehaviour
     }
 
     float cutSceneTime = 0f;
+    int cutScene;
 
     private IEnumerator CutSceneRoutine(int i, float delay)
     {
@@ -446,27 +447,46 @@ public class GameManager : MonoBehaviour
         Instance.vidoePlayer.clip = Instance.clip[i];
         Instance.vidoePlayer.Play();
         SoundManager.PlayBackGroundSound("Lobby_BGM");
-        cutSceneTime = 0f;
-        float videoTime = ((float)Instance.clip[i].length) + 2.5f;        
-        while (cutSceneTime < videoTime)
-        {
-            cutSceneTime += Time.deltaTime;
-            yield return YieldInstructionCache.waitForFixedUpdate;
-        }
-        vidoePlayer.Stop();
+        cutSceneTime = 0f;        
+        float videoTime = ((float)Instance.clip[i].length);
+        cutScene = i;
+        vidoePlayer.loopPointReached += EndCutScene;
+    }
+
+    private void EndCutScene(UnityEngine.Video.VideoPlayer vp)
+    {
+        StartCoroutine(CutSceneEndRoutine(cutScene));
+    }
+
+    private IEnumerator CutSceneEndRoutine(int i)
+    {
+        yield return YieldInstructionCache.waitForSeconds(2.5f);
         if (i == 0) SoundManager.PlayBackGroundSound("1Stage_Nomal_BGM");
         else SoundManager.PlayBackGroundSound("2Stage_Nomal_BGM");
         VideoImage(false, 0);
         if (i == 0) FadeEffect(false, 4);
-        SetInGameInput(true, 0.2f);        
+        SetInGameInput(true, 0.2f);
         yield return YieldInstructionCache.waitForSeconds(0.4f);
-        if (i==0) TalkSimulator.Instance.StartScenario(scenarioData[0]);
+        if (i == 0) TalkSimulator.Instance.StartScenario(scenarioData[0]);
         yield return YieldInstructionCache.waitForSeconds(3);
         if (i == 1)
         {
             SceneManager.LoadScene(4);
             FadeEffect(false, 1);
         }
+    }
+
+    public static void SetVideoPlay()
+    {
+        if (Instance.vidoePlayer.isPlaying) Instance.vidoePlayer.Pause();
+        else Instance.vidoePlayer.Play();
+    }
+
+    public static void SetVideoPlay(bool value)
+    {
+        Debug.Log("CutScene " + value);
+        if (!value) Instance.vidoePlayer.Pause();
+        else Instance.vidoePlayer.Play();
     }
 
     public static void VideoImage(bool value, float delay)

@@ -74,6 +74,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.24299066
+        functionName: AttackForce
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 6
+        messageOptions: 0
       - time: 0.35589346
         functionName: AttackSound
         data: 
@@ -88,15 +95,8 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.4472228
+      - time: 0.4626074
         functionName: PlayVib_PlayHigh
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.5480543
-        functionName: PlayVib_Stop
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -104,6 +104,13 @@ ModelImporter:
         messageOptions: 0
       - time: 0.64035386
         functionName: AttackBoxOff
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6834389
+        functionName: PlayVib_Stop
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
