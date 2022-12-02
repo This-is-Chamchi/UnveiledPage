@@ -39,6 +39,7 @@ public class UIPausePopup : UIBasePopup
         pausePopupData = uiData as UIPausePopupData;
         action.UI.Move.performed += val => Move(val.ReadValue<Vector2>());
         action.UI.Move.canceled += val => EndMove();
+        action.UI.Esc.started += val => Close();
         action.UI.Select.started += val => Select();
 
         action.UI.Enable();

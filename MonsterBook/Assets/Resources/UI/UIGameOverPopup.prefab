@@ -271,8 +271,8 @@ MonoBehaviour:
   selectMenuIndex: 0
   menuStates: 0100000002000000
   menuHighlights:
-  - {fileID: 8862689624912090285}
-  - {fileID: 2506408543541210015}
+  - {fileID: 8862689623797168685}
+  - {fileID: 1716189899843541290}
 --- !u!1 &1056274092732503607
 GameObject:
   m_ObjectHideFlags: 0

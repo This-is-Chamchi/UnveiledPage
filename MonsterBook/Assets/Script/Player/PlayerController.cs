@@ -244,7 +244,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
 
     public void AttackBoxOff(int i) {attackWeapon[i].Collider(false);}
 
-    protected void AttackForce (int i ){ rigid.AddForce(lookVector * i ,  ForceMode.Impulse);}
+    protected void AttackForce (int i ){ if(!CheckWall()) rigid.AddForce(lookVector * i ,  ForceMode.Impulse);}
 
     protected void DashForce()  {
         if(Falling)
@@ -497,7 +497,7 @@ public class PlayerController : MonoBehaviour, IEntity, IKnockBack, IRotate {
         if (Application.isPlaying)  {
             Gizmos.DrawWireCube(collid.bounds.center + new Vector3(0, -collid.height/2), new Vector3(0.35f, 0.5f, 0.5f)); //Ground
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireCube(collid.bounds.center + lookVector * collid.radius * 2, new Vector3(0.3f, 1.0f, 0.3f));  //Front
+            Gizmos.DrawWireCube(collid.bounds.center + lookVector * collid.radius * 2, new Vector3(0.5f, 1.0f, 0.3f));  //Front
         }
 
         if (isLookTarget)   {
@@ -524,7 +524,8 @@ protected void FixedUpdate()  {
         //=================Debug . ing=================//
         if (Input.GetKeyDown(KeyCode.F11))  {
             //Cursor.visible = false;
-            IntroProduction();
+            //IntroProduction();
+            OnDamage(90 , transform.position);
         }
         if(Input.GetKeyDown(KeyCode.F5)) input.SetInputAction(true);
         //=============================================//
@@ -730,12 +731,13 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
     #region Check Func
 
     public void CheckGround()   {
+        if(CheckDamage || m_curHP <= 0) return;
         
         isGround = Physics.BoxCast(collid.bounds.center, new Vector3(0.35f, 0.5f, 0.5f),
             -transform.up, Quaternion.identity, collid.height/2, groundLayer);
         //N sec after jump , play the falling animation (if Jump attacking, then dosent work.)
         if (!isGround && !LockLookTartget &&
-         state != PlayerState.AttackState && state != PlayerState.DashState)    {
+         state != PlayerState.AttackState && state != PlayerState.DashState )    {
 
                 m_WeaponIK.m_WeaponIKSet.weight = 0;
                 ParticleStopPlay("Run");
@@ -796,7 +798,7 @@ protected void WireTartgetFollow()  {         //Xbox controller Thumbstick Parts
         return false;
     }
 
-    public bool CheckWall() {return Physics.BoxCast(collid.bounds.center, new Vector3(0.3f, 1.0f, 0.3f), lookVector, Quaternion.identity, collid.radius * 2, wallLayer);}
+    public bool CheckWall() {return Physics.BoxCast(collid.bounds.center, new Vector3(0.5f, 1.0f, 0.3f), lookVector, Quaternion.identity, collid.radius * 2, wallLayer);}
 
     public bool CheckGround_ForWireAttack() {
         return Physics.BoxCast(collid.bounds.center, new Vector3(0.3f, 1.0f, 0.3f),

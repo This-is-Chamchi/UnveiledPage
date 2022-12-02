@@ -53,7 +53,7 @@ TagManager:
   - NearObjects
   - MiddleObjets
   - FarObjects
-  - 
+  - WireBlock
   - CameraView
   - Platform
   - NullPlatform

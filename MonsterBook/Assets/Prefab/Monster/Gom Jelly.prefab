@@ -734,9 +734,9 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3522955778539423533, guid: 8a252c45051887c4ca04815a65fedfae, type: 3}
-  - {fileID: 9185737683893222716, guid: 8a252c45051887c4ca04815a65fedfae, type: 3}
-  - {fileID: -2813467912831258332, guid: 8a252c45051887c4ca04815a65fedfae, type: 3}
+  - {fileID: 2100000, guid: 66c1f3887d307744c984f9b514bf9246, type: 2}
+  - {fileID: 2100000, guid: 66c1f3887d307744c984f9b514bf9246, type: 2}
+  - {fileID: 2100000, guid: 66c1f3887d307744c984f9b514bf9246, type: 2}
   - {fileID: 2100000, guid: 66c1f3887d307744c984f9b514bf9246, type: 2}
   - {fileID: 2100000, guid: 66c1f3887d307744c984f9b514bf9246, type: 2}
   - {fileID: 2100000, guid: 66c1f3887d307744c984f9b514bf9246, type: 2}
@@ -2712,7 +2712,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 29141bc7e80b81d47b840cef36937519, type: 2}
     - target: {fileID: -5232321691381828123, guid: 057cc8a23fd931a4dbadca8be4fd81f9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 29141bc7e80b81d47b840cef36937519, type: 2}
+    - target: {fileID: -5232321691381828123, guid: 057cc8a23fd931a4dbadca8be4fd81f9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 29141bc7e80b81d47b840cef36937519, type: 2}
+    - target: {fileID: -5232321691381828123, guid: 057cc8a23fd931a4dbadca8be4fd81f9, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 29141bc7e80b81d47b840cef36937519, type: 2}
+    - target: {fileID: -5232321691381828123, guid: 057cc8a23fd931a4dbadca8be4fd81f9, type: 3}
       propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 29141bc7e80b81d47b840cef36937519, type: 2}
+    - target: {fileID: -5232321691381828123, guid: 057cc8a23fd931a4dbadca8be4fd81f9, type: 3}
+      propertyPath: m_Materials.Array.data[4]
       value: 
       objectReference: {fileID: 2100000, guid: 29141bc7e80b81d47b840cef36937519, type: 2}
     - target: {fileID: -5232321691381828123, guid: 057cc8a23fd931a4dbadca8be4fd81f9, type: 3}
