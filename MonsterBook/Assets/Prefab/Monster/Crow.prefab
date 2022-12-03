@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonsterID: 
-  HP: 20
+  HP: 10
   WalkSpeed: 5
   RunSpeed: 5
   PatrolPoint:
@@ -351,13 +351,14 @@ MonoBehaviour:
   Alive_Object: {fileID: 274322663675380363}
   Effects: []
   IdleTime: 3
-  ExplosionForce: 0
+  ExplosionForce: 15
   AnimatorCtrl: {fileID: 1085366220602539998}
   AnimationTrigger: {fileID: 1085366220602539993}
+  KnockbackForce: 0
   AttackChecer: {fileID: 1085366221188102100}
   FindMonsterScript: {fileID: 1085366219714753775}
   AttackDamage: 10
-  AttackDelay: 2
+  AttackDelay: 3.7
 --- !u!1 &1085366219893475257
 GameObject:
   m_ObjectHideFlags: 0

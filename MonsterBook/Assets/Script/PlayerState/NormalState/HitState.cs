@@ -17,7 +17,7 @@ public class HitState : IState  {
     public override void OnStateExcute(PlayerController player) {
         m_HitRunningTime += Time.deltaTime;
         if (m_HitRunningTime >= 0.4f) {
-            player.input.SetInputAction(true);
+            //player.input.SetInputAction(true);
             m_HitRunningTime = 0;
             player.ChangeState(PlayerState.IdleState);
         }
@@ -28,7 +28,7 @@ public class HitState : IState  {
     }
 
     private IEnumerator Routine(PlayerController player)    {
-        player.input.SetInputAction(false);
+        //player.input.SetInputAction(false);
         yield return YieldInstructionCache.waitForSeconds(player.InvinsibleTime);
         player.CheckDamage = false ;
         player.invinBool = false;

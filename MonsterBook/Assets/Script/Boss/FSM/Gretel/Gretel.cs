@@ -237,7 +237,7 @@ public class Gretel : MonoBehaviour, IEntity
 
     void KnifeColliderOff()
     {
-         KnifeCollider.GetComponent<BoxCollider>().enabled = true;
+         KnifeCollider.GetComponent<BoxCollider>().enabled = false;
     }
 
 }

@@ -123,7 +123,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.57051283
+      - time: 0.54375
         functionName: KnifeColliderOff
         data: 
         objectReferenceParameter: {instanceID: 0}

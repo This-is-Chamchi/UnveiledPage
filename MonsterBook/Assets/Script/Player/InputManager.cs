@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour   {
     #region No Touch
-    private PlayerAction m_action;
+    public PlayerAction m_action;
     private PlayerController m_player;
     private float m_prevCurTime;
     private float m_JumpDelayTime = 0;

@@ -15,5 +15,5 @@ MonoBehaviour:
   talkElementDataList:
   - {fileID: 11400000, guid: 0fa7138f9bc8d494ca470f6b4c5c86d1, type: 2}
   - {fileID: 11400000, guid: e5038e2c4814db74695f80ccfb56269a, type: 2}
-  - {fileID: 11400000, guid: 317daad29eb746f4ab528b18300f16fa, type: 2}
+  - {fileID: 11400000, guid: d3334a272ffd3ba49870c359e7a12596, type: 2}
   - {fileID: 11400000, guid: d1d6e78977859e34ca2029c1396b2504, type: 2}

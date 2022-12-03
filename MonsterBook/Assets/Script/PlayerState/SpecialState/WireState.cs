@@ -8,6 +8,7 @@ public class WireState : IState{
 
     public override void OnStateEnter(PlayerController player)  {     
         player.rigid.useGravity = false;
+        gameObject.layer = LayerMask.NameToLayer("PlayerDash");        
 
 #region HitInter
     IWireEffect IWE = GetComponent<IWireEffect>();
@@ -85,6 +86,7 @@ public class WireState : IState{
 
     public override void OnStateExit(PlayerController player)   {    
         player.line.GetComponent<Renderer>().material = null; 
+         gameObject.layer = LayerMask.NameToLayer("Player");
         player.SetVibValue(false, 0.0f, 0.0f, 0.0f, false);
         player.line.SetPosition(0, Vector3.zero);
         player.line.SetPosition(1, Vector3.zero);

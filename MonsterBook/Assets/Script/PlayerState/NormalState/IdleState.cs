@@ -16,7 +16,7 @@ public class IdleState : IState {
         }
         else if (m_restBool)    {
             m_restTime += UnityEngine.Time.deltaTime;
-            if (m_restTime > 1) {
+            if (m_restTime > 5) {
                 player.attackCount = 1;
                 player.ani.SetTrigger("Rest");
                 m_restTime = 0;

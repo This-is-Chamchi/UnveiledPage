@@ -61,7 +61,7 @@ MonoBehaviour:
   Alive_Object: {fileID: 347265879894390836}
   Effects: []
   IdleTime: 0
-  ExplosionForce: 10
+  ExplosionForce: 15
   AnimatorCtrl: {fileID: 581199286243660947}
   AnimationTrigger: {fileID: 581199286243660948}
   KnockbackForce: 10
