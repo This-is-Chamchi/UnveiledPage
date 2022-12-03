@@ -22664,6 +22664,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5719269547919210473, guid: 351da02d3b18562458de52106c481b21, type: 3}
+      propertyPath: scenarioData
+      value: 
+      objectReference: {fileID: 11400000, guid: e0d48d40e19a5f0478cbb14da55ed496, type: 2}
     - target: {fileID: 5719269547919210476, guid: 351da02d3b18562458de52106c481b21, type: 3}
       propertyPath: m_Name
       value: TalkSimulator
