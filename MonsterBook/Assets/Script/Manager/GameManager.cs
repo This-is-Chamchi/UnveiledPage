@@ -448,14 +448,17 @@ public class GameManager : MonoBehaviour
 
     public static void SkipCutScene()
     {
+        if (!Instance.isCutScene) return;
         if (Instance.vidoePlayer.isPlaying) Instance.EndCutScene(Instance.vidoePlayer);
     }
 
     float cutSceneTime = 0f;
     int cutScene;
+    bool isCutScene;
 
     private IEnumerator CutSceneRoutine(int i, float delay)
     {
+        isCutScene = true;
         SetInGameInput(false);
         Instance.blackImage.color = new Color32(0, 0, 0, 255);
         yield return YieldInstructionCache.waitForSeconds(delay);
@@ -476,6 +479,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator CutSceneEndRoutine(int i)
     {
+        isCutScene = false;
         vidoePlayer.Stop();
         yield return YieldInstructionCache.waitForSeconds(2.5f);
         if (i == 0) SoundManager.PlayBackGroundSound("1Stage_Nomal_BGM");
@@ -501,7 +505,7 @@ public class GameManager : MonoBehaviour
 
     public static void SetVideoPlay(bool value)
     {
-        Debug.Log("CutScene " + value);
+        if (!Instance.isCutScene) return;        
         if (!value) Instance.vidoePlayer.Pause();
         else Instance.vidoePlayer.Play();
     }
