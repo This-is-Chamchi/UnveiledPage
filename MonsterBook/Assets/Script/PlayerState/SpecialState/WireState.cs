@@ -80,13 +80,15 @@ public class WireState : IState{
             player.SaveMonDetect = false;
             player.ani.SetTrigger("WireMoveEnd");
             player.ChangeState(PlayerState.WalkState);
+            gameObject.layer = LayerMask.NameToLayer("Player");
+            player.SetVibValue(false, 0.0f, 0.0f, 0.0f, false);
         }
         //==================================+++++++++++======//
     }
 
     public override void OnStateExit(PlayerController player)   {    
         player.line.GetComponent<Renderer>().material = null; 
-         gameObject.layer = LayerMask.NameToLayer("Player");
+        gameObject.layer = LayerMask.NameToLayer("Player");
         player.SetVibValue(false, 0.0f, 0.0f, 0.0f, false);
         player.line.SetPosition(0, Vector3.zero);
         player.line.SetPosition(1, Vector3.zero);
