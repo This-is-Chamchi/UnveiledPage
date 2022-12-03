@@ -207,7 +207,9 @@ public class Anna : MonoBehaviour , IEntity
     [SerializeField] private ScenarioData scenarioData;
     public void AnnaLastAttackText()
     {
+
         TalkSimulator.Instance.StartScenario(scenarioData);
+        GameManager.SetInGameInput(true);
     }
 
     protected void following_Matches(int MatchNum)
@@ -279,7 +281,6 @@ public class Anna : MonoBehaviour , IEntity
 
 
         var Randomvalue = Random.Range(0, 100);
-        Debug.Log(Randomvalue + ": ·£´ý°ª");
         if(Randomvalue <= Anna_MatchAttack_Probability)
         {
             ChangeState(Anna_Match_Attack.Instance);
@@ -327,6 +328,7 @@ public class Anna : MonoBehaviour , IEntity
 
         if (finishAttackAble == true)
         {
+            HitEffect.Play();
             AnnaSoundLoopEnd(GroggySoundID);
             Anna_Ani.SetTrigger("Anna_Death");
             Anna_Frozen_Die = true;

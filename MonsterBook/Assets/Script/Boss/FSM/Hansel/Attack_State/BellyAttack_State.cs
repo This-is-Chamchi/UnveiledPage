@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BellyAttack_State : FSM_State<Hansel>
+public class BellyAttack_State : FSM_State<Hansel>  //ÇöÀç
 {
     static readonly BellyAttack_State instance = new BellyAttack_State();
 
