@@ -66,13 +66,13 @@ public class Anna_Phase2Change_State : FSM_State<Anna>     //Anna2PhaseEvent
             time += Time.deltaTime;
             if(time > 0 && time < 1)
             {
-                Debug.Log("불타는 이펙트 값 증가중");
+                
                 _Anna.BodyFire.GetComponent<ParticleSystemRenderer>().material.SetFloat("_Dissolve_Value",time);
             }
 
             if(time > -1 && time < 1)
             {
-                Debug.Log("안광 생성중");
+                
                 _Anna.ThirdEye.GetComponent<MeshRenderer>().material.SetFloat("_Mask_Dissolve_Control", time);
             }
 

@@ -35,13 +35,17 @@ public class Protected_State : FSM_State<Gretel>
 
     public override void UpdateState(Gretel _Gretel)
     {
+
+        Debug.Log("보호상태");
         if(_Gretel.KnifeAnimation == true)
         {
             return;
         }
         m_AttackTimer += Time.deltaTime;
+        Debug.Log(m_AttackTimer);
         //_Gretel.transform.position = new Vector3(Vector3.MoveTowards(_Gretel.transform.position, _Gretel.Hansel.transform.position, 100 * Time.deltaTime).x,_Gretel.transform.position.y, _Gretel.transform.position.z);
         
+
         LookTarget(_Gretel.Hansel.transform, _Gretel.GretelTransform);
         if (m_AttackTimer > _Gretel.ProtectedTime) 
         {
@@ -82,7 +86,7 @@ public class Protected_State : FSM_State<Gretel>
 
     void LookTarget(Transform Target, Transform _Gretel)
     {
-
+        Debug.Log("헨젤 바라보는 중");
         Vector3 dir = Target.position - _Gretel.transform.position;
         Vector3 dirXZ = new Vector3(dir.x, 0f, dir.z);
 

@@ -51,6 +51,11 @@ public class RollingAttack_State : FSM_State<Hansel>
     public override void UpdateState(Hansel _Hansel)
     {
 
+        if(_Hansel.ZeroRB == true)
+        {
+            _Hansel.rb.velocity = Vector3.zero;
+        }
+
         m_WaitForFood += Time.fixedDeltaTime;
         if (m_WaitForFood >= _Hansel.RollingWaitTime)
         {
