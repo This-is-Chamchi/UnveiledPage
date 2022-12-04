@@ -76,6 +76,20 @@ ModelImporter:
         messageOptions: 0
       - time: 0.8780488
         functionName: Particle_anime_end
+        data: Eat
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.023752969
+        functionName: LockRbZero
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9691211
+        functionName: OpenRbZero
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

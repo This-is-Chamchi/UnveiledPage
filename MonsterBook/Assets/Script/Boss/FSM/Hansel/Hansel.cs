@@ -152,6 +152,7 @@ public class Hansel : MonoBehaviour, IEntity
 
 
     public GameObject RollingCollider;                         //Rolling에 사용할 Col 
+    public bool ZeroRB;
 
     #endregion
 
@@ -423,6 +424,7 @@ public class Hansel : MonoBehaviour, IEntity
 
     public void ResetState()        //Hansel 리셋
     {
+        ZeroRB = false;
         CurrentHP = HanselHP;
         state = new StateMachine<Hansel>();
         state.Initial_Setting(this, HanselIdelState.Instance);
@@ -830,6 +832,15 @@ public class Hansel : MonoBehaviour, IEntity
 
     }
 
+    public void LockRbZero()
+    {
+        ZeroRB = true;
+    }
+
+    public void OpenRbZero()
+    {
+        ZeroRB = false;
+    }
 
 
 }
