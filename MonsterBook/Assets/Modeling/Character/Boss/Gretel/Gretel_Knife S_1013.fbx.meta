@@ -81,6 +81,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.54375
+        functionName: KnifeColliderOff
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.59840775
         functionName: KnifeTraceEnd
         data: 
@@ -116,15 +123,8 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9959515
+      - time: 0.9542848
         functionName: KnifeAnimationOff
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.54375
-        functionName: KnifeColliderOff
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

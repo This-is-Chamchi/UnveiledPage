@@ -13,6 +13,7 @@ public class HumanMatch_Finish : MonoBehaviour ,IEntity
     public float deleteTime;
     public GameObject Circle;
     public ParticleSystem HitEffect;
+    public GameObject BoomEffect;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class HumanMatch_Finish : MonoBehaviour ,IEntity
         destroying = false;
         Player = GameObject.FindWithTag("Player");
         Anna = GameObject.FindWithTag("Anna");
+        BoomEffect = GameObject.FindWithTag("BoomEffect");
 
     }
 
@@ -45,6 +47,7 @@ public class HumanMatch_Finish : MonoBehaviour ,IEntity
             {
                 if (destroy == false)
                 {
+                    BoomEffect.GetComponent<ParticleSystem>().Play();
                     Player.GetComponent<PlayerController>().OnDamage(90, transform.position);    //¡ÔªÁ 90µÙ
                 }
                 Destroy(this.gameObject);

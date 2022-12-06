@@ -57,7 +57,6 @@ public class SmashAttack_State : FSM_State<Hansel>
         #endregion
 
         _Hansel.OnDircalculator(1);
-
         #region Pattern Checker
         switch (_Hansel.ForSmashP)
         {
@@ -84,6 +83,7 @@ public class SmashAttack_State : FSM_State<Hansel>
                 _Hansel.Ani.SetTrigger("H_SmashAttack4");
                 break;
             //Pattern 4 : 4
+
         }
         #endregion
 
@@ -91,7 +91,6 @@ public class SmashAttack_State : FSM_State<Hansel>
 
     public override void UpdateState(Hansel _Hansel)
     {
-
 
         if (_Hansel.myTarget && _Hansel.isSmash)
         {

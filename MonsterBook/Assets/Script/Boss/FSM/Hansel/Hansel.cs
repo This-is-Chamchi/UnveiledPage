@@ -37,6 +37,7 @@ public class Hansel : MonoBehaviour, IEntity
     public bool StunMove = false;
     public GameObject WorldSound;
     private int crySoundID;
+    private int EatSoundID;
 
     [Header("=====================Smash")]
     #region  SmashAttack var
@@ -96,7 +97,7 @@ public class Hansel : MonoBehaviour, IEntity
     public int Hansel_BellyDamage = 10;
 
     [Header("Belly 지속시간")]
-    public float BellyAttackSpeed = 2;
+    public float BellyAttackSpeed = 1;
 
     [Header("Belly 강도 - Force")]
     public float BellyPower = 4;
@@ -151,6 +152,7 @@ public class Hansel : MonoBehaviour, IEntity
 
 
     public GameObject RollingCollider;                         //Rolling에 사용할 Col 
+    public bool ZeroRB;
 
     #endregion
 
@@ -268,6 +270,7 @@ public class Hansel : MonoBehaviour, IEntity
         rb = GetComponent<Rigidbody>();
         CapCol_Hansel = GetComponent<CapsuleCollider>();
         Ani.SetTrigger("StageStart");
+        EatHanselSoundLoop("1StageHansel_Eating");
         Constraints = rb.constraints;                
     }
 
@@ -421,6 +424,7 @@ public class Hansel : MonoBehaviour, IEntity
 
     public void ResetState()        //Hansel 리셋
     {
+        ZeroRB = false;
         CurrentHP = HanselHP;
         state = new StateMachine<Hansel>();
         state.Initial_Setting(this, HanselIdelState.Instance);
@@ -702,9 +706,22 @@ public class Hansel : MonoBehaviour, IEntity
     {
         crySoundID = SoundManager.PlayVFXLoopSound(name, transform);
     }
+    public void EatHanselSoundLoop(string name)
+    {
+        EatSoundID = SoundManager.PlayVFXLoopSound(name, transform);
+    }
     public void HanselCrySoundLoopEnd()
     {
         SoundManager.StopVFXLoopSound(crySoundID);
+    }
+
+    public void HanselEatSoundLoopEnd()
+    {
+        if(EatSoundID != 0)
+        {
+            SoundManager.StopVFXLoopSound(EatSoundID);
+            EatSoundID = 0;
+        }
     }
 
 
@@ -815,6 +832,15 @@ public class Hansel : MonoBehaviour, IEntity
 
     }
 
+    public void LockRbZero()
+    {
+        ZeroRB = true;
+    }
+
+    public void OpenRbZero()
+    {
+        ZeroRB = false;
+    }
 
 
 }

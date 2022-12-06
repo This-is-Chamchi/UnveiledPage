@@ -13,7 +13,8 @@ public class PaperObject : Event
     [SerializeField] private bool isFinish;
     [SerializeField] private float speed = 3f;
     [SerializeField] private bool awakeStart;
-    [SerializeField] private float awakeDelay;   
+    [SerializeField] private float awakeDelay;
+    [SerializeField] private bool isSelf;
 
     private Quaternion startRotation;
     private Quaternion foldRotation;
@@ -46,6 +47,7 @@ public class PaperObject : Event
                 }
             }
         }
+        if (isSelf) GetComponent<MeshRenderer>().enabled = false;
         transform.localRotation = startRotation;        
     }
 
@@ -82,6 +84,7 @@ public class PaperObject : Event
                 child[i].SetActive(true);
             }
         }
+        if (isSelf) GetComponent<MeshRenderer>().enabled = true;
         transform.localRotation = startRotation;
         while (Quaternion.Angle(transform.localRotation, foldRotation) > 0.1f)
         {            

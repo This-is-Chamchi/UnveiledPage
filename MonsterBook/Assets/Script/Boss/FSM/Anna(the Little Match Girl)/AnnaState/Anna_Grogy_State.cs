@@ -19,6 +19,7 @@ public class Anna_Grogy_State : FSM_State<Anna>
 
     public override void EnterState(Anna _Anna)
     {
+        GameManager.SetInGameInput(false);
         _Anna.BodyFire.SetActive(false);
         _Anna.ThirdEye.SetActive(false);
 
@@ -89,7 +90,6 @@ public class Anna_Grogy_State : FSM_State<Anna>
                 //_Anna.AnnaSoundLoopEnd(fallSoundID);
                 _Anna.GroggySoundID = _Anna.AnnaSoundLoop("2StageAnna_Groggy");
                 _Anna.finishAttackAble = true;
-
                 _Anna.AnnaFalling = false;
                 onetime = true;
             }

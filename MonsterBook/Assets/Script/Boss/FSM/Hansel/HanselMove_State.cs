@@ -20,6 +20,7 @@ public class HanselMove_State : FSM_State<Hansel>
 
     public override void EnterState(Hansel _Hansel)
     {
+        _Hansel. HanselEatSoundLoopEnd();
         //타겟 확인(플레이어)
         if (_Hansel.myTarget == null)
         {
